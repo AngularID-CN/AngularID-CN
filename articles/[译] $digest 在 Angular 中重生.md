@@ -1,0 +1,220 @@
+# $digest 在 Angular 中重生
+
+> 原文链接：**[Angular.js' $digest is reborn in the newer version of Angular](https://blog.angularindepth.com/angulars-digest-is-reborn-in-the-newer-version-of-angular-718a961ebd3e)**
+
+![$digest](https://cdn-images-1.medium.com/max/1600/1*DEeCWAZ_UhN36xf4aY4EBg.jpeg)
+
+我使用 Angular.js 框架好些年了，尽管它饱受批评，但我依然觉得它是个不可思议的框架。我是从这本书 **[Building your own Angular.js](https://teropa.info/build-your-own-angular/)** 开始学习的，并且读了框架的大量源码，所以我觉得自己对 Angular.js 内部机制比较了解，并且对创建这个框架的架构思想也比较熟悉。最近我在试图掌握新版 Angular 框架内部架构思想，并与旧版 Angular.js 内部架构思想进行比较。我发现并不是像网上说的那样，恰恰相反，Angular 大量借鉴了 Angular.js 的设计思想。
+
+其中之一就是名声糟糕的 **[digest loop](https://larseidnes.com/2014/11/05/angularjs-the-bad-parts)**：
+
+> 这个设计的主要问题就是成本太高。改变程序中的任何事物，需要执行成百上千个函数去查询哪个数据发生变化。而这是 Angular 的基础部分，但是它会把查询限定在部分 UI 上，从而提高性能。
+
+如果能更好理解 Angular 是如何实现 digest 的，就可能把你的程序设计的更高效，比如，使用 `$scope.$digest()` 而不是 `$scope.$apply`，或者使用不可变对象。但事实是，为了设计出更高效的程序，从而去理解框架内部实现，这可能对很多人来说不是简单的事情。
+
+所以大量有关 Angular 的文章教程里都宣称框架里不会再有 `$digest cycle` 了。这取决于对 digest 概念如何理解，但我认为这很有误导性，因为它仍然存在。的确，在 Angular 里没有 `scopes 和 watchers`，也不再需要调用 `$scope.$digest()`，但是检测数据变化的机制依然是遍历整个组件树，隐式调用 `watchers` ，然后更新 DOM。所以实际上是完全重写了，但被优化增强了，关于新的查询机制可以查看我写的 **[Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f)**。
+
+## digest 的必要性
+开始前让我们先回忆下 Angular.js 中为何存在 `digest`。所有框架都是在解决数据模型（JavaScript Objects）和 UI（Browser DOM）的同步问题，最大难题是如何知道什么时候数据模型发生改变，而查询数据模型何时发生改变的过程就是变更检测（change detection）。这个问题的不同实现方案也是现在众多前端框架的最大区别点。我计划写篇文章，有关不同框架变更检测实现的比较，如果你感兴趣并希望收到通知，可以关注我。
+
+有两种方式来检测变化：需要使用者通知框架；通过比较来自动检测变化。
+
+假设我们有如下一个对象：
+
+```ts
+let person = {name: 'Angular'};
+```
+
+然后我们去更新 `name` 属性值，但是框架是怎么知道这个值何时被更新呢？一种方式是需要使用者告诉框架（注：如 React 方式）：
+
+```ts
+constructor() {
+    let person = {name: 'Angular'};
+    this.state = person;
+}
+...
+// explicitly notifying React about the changes
+// and specifying what is about to change
+this.setState({name: 'Changed'});
+```
+
+或者强迫用户去封装该属性，从而框架能添加 `setters`（注：如 Vue 方式）：
+
+```ts
+let app = new Vue({
+    data: {
+        name: 'Hello Vue!'
+    }
+});
+// the setter is triggered so Vue knows what changed
+app.name = 'Changed';
+```
+
+另一种方式是保存 `name` 属性的上一个值，并与当前值进行比较：
+
+```ts
+if (previousValue !== person.name) // change detected, update DOM
+```
+
+但是什么时候结束比较呢？我们应该在每一次异步代码运行时都去检查，由于这部分运行的代码是作为异步事件去处理，即所谓的 Virtual Machine(VM) turn/tick（注：Virtual Machine 的理解可参考 **[VM](https://stackoverflow.com/questions/38783544/angular2-understanding-vm-turns-and-events)**），所以可以紧接着在 VM turn 的后面，执行数据变化检查代码。这也是为何 Angular.js 使用 `digest`，所以我们可以定义 `digest` 为（注：为清晰理解，不翻译）：
+
+> a change detection mechanism that walks the tree of components, checks each component for changes and updates DOM when a component property is changed。
+
+如果我们这么去定义 `digest`的话，那我可以说数据变化检查机制的主要部分在 Angular 里没有变化，变化的是 `digest` 的实现。
+
+## Angular.js
+Angular.js 使用 `watcher` 和 `listener` 的概念，`watcher` 就是一个返回被监测值的函数，大多数时候这个被监测值就是数据模型的属性。但也不总是数据模型属性，如我们可以在作用域里追踪组件状态，计算属性值，第三方组件等等。如果当前返回值与先前值不同，Angular.js 就会调用 `listener`，而 `listener` 通常用来更新 UI。
+
+`$watch` 函数的参数列表如下：
+
+```ts
+$watch(watcher, listener);
+```
+
+所以，如果我们有一个带有`name` 属性的 `person` 对象，并在模板里这样使用 `<span>{{name}}</span>`，那就可以像这样去追踪这个属性变化从而更新 DOM：
+
+```ts
+$watch(() => {
+    return person.name
+}, (value) => {
+    span.textContent = value
+});
+```
+
+这与插值和 `ng-bind` 类的指令本质上做的一样，Angular.js 使用指令来映射 DOM 的数据模型。但是 Angular 不再这么去做，它使用属性映射来连接数据模型和 DOM。上面的示例在 Angular 会这么实现：
+
+```html
+<span [textContent]="person.name"></span>
+```
+
+由于存在很多组件，并组成了组件树，每一个组件都有着不同的数据模型，所以就存在分层的 `watchers`，与分层的组件树很相似。尽管使用作用域把 `watchers` 组合在一起，但它们并不相关。
+
+现在，在 `digest` 期间，Angular.js 会遍历 `watchers` 树并更新 DOM。如果你使用 `$timeout`，`$http` 或根据需要使用 `$scope.$apply` 和 `$scope.$digest` 等方式，就会在每一次异步事件中触发 `digest cycle`。
+
+`watchers` 是严格按照顺序触发：首先是父组件，然后是子组件。这很有意义，但却有着不受欢迎的缺点。一个被触发的 `watcher listener` 有很多副作用，比如包括更新父组件的属性。如果父监听器已经被触发了，然后子监听器又去更新父组件属性，那这个变化不会被检测到。这就是为何 `digest loop` 要运行多次来获取稳定的程序状态，即确保没有数据再发生变化。运行次数最大限定为 10 次，这个设计现在被认为是有缺陷的，并且 Angular 不容许这样做。
+
+## Angular
+Angular 并没有类似 Angular.js 中 `watcher` 概念，但是追踪模型属性的函数依然存在。这些函数是由框架编译器生成的，并且是私有不可访问的。另外，它们也和 DOM 紧密耦合在一起，这些函数就存储在生成视图结构 **[ViewDefinition](https://github.com/angular/angular/blob/master/packages/core/src/view/types.ts#L51)** 的 **[updateRenderer](https://github.com/angular/angular/blob/master/packages/core/src/view/view.ts#L148)** 中。
+
+它们也很特别：只追踪模型变化，而不是像 Angular.js 追踪一切数据变化。每一个组件都有一个 `watcher` 来追踪在**模板中使用的组件属性**，并对每一个被监听的属性调用 **[checkAndUpdateTextInline](https://github.com/angular/angular/blob/master/packages/core/src/view/text.ts#L64)** 函数。这个函数会比较属性的上一个值与当前值，如果有变化就更新 DOM。
+
+比如，`AppComponent` 组件的模板：
+
+```html
+<h1>Hello {{model.name}}</h1>
+```
+
+Angular Compiler 会生成如下类似代码：
+
+```ts
+function View_AppComponent_0(l) {
+    // jit_viewDef2 is `viewDef` constructor
+    return jit_viewDef2(0,
+        // array of nodes generated from the template
+        // first node for `h1` element
+        // second node is textNode for `Hello {{model.name}}`
+        [
+            jit_elementDef3(...),
+            jit_textDef4(...)
+        ],
+        ...
+        // updateRenderer function similar to a watcher
+        function (ck, v) {
+            var co = v.component;
+            // gets current value for the component `name` property
+            var currVal_0 = co.model.name;
+            // calls CheckAndUpdateNode function passing
+            // currentView and node index (1) which uses
+            // interpolated `currVal_0` value
+            ck(v, 1, 0, currVal_0);
+        });
+}
+```
+
+> 注：使用 Angular-CLI `ng new` 一个新项目，执行 `ng serve` 运行程序后，就可在 Chrome Dev Tools 的 Source Tab 的 `ng://` 域下查看到编译组件后生成的 `**.ngfactory.js` 文件，即上面类似代码。
+
+
+所以，即使 `watcher` 实现方式不同，但 `digest loop` 仍然存在，仅仅是换了名字为 **[change detection cycle](https://angular.io/api/core/ApplicationRef#!#tick-anchor)** （注： 为清晰理解，不翻译）：
+
+> In development mode, tick() also performs a second change detection cycle to ensure that no further changes are detected.
+
+上文说到在 `digest` 期间，Angular.js 会遍历 `watchers` 树并更新 DOM，这与 Angular 中机制非常类似。在变更检测循环期间（注：与本文中 `digest cycle` 相同概念），Angular 也会遍历组件树并调用渲染函数更新 DOM。这个过程是 **[checking and updating view process](https://hackernoon.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#bbd8)** 过程的一部分，我也写了一篇长文 **[Everything you need to know about change detection in Angular](https://hackernoon.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#c35d)** 。
+
+就像 Angular.js 一样，在 Angular 中变更检测也同样是由异步事件触发（注：如异步请求数据返回事件；用户点击按钮事件；`setTimeout/setInterval`）。但是由于 Angular 使用 **[zone](https://github.com/angular/zone.js)** 包来给所有异步事件打补丁，所以对于大部分异步事件来说，不需要手动触发变更检测。Angular 框架会订阅 **[onMicrotaskEmpty](https://angular.io/api/core/NgZone#onMicrotaskEmpty)** 事件，并在一个异步事件完成时会通知 Angular 框架，而这个 onMicrotaskEmpty 事件是在当前 VM Turn 的 `microtasks` 队列里不存在任务时被触发。然而，变更检测也可以手动方式触发，如使用 **[view.detectChanges](https://angular.io/api/core/ChangeDetectorRef#detectChanges)** 或 **[ApplicationRef.tick](https://angular.io/api/core/ApplicationRef#tick)** （注：`view.detectChanges` 会触发当前组件及子组件的变更检测，`ApplicationRef.tick` 会触发整个组件树即所有组件的变更检测）。
+
+Angular 强调所谓的单向数据流，从顶部流向底部。在父组件完成变更检测后，低层级里的组件，即子组件，不容许改变父组件的属性。但如果一个组件在 **[DoCheck](https://angular.io/api/core/DoCheck)** 生命周期钩子里改变父组件属性，却是可以的，因为这个钩子函数是在**[更新父组件属性变化之前调用的](https://hackernoon.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#fa73)**（注：即第 6 步 DoCheck， 在 第 9 步 **updates DOM interpolations for the current view if properties on current view component instance changed** 之前调用）。但是，如果改变父组件属性是在其他阶段，比如 **[AfterViewChecked](https://angular.io/api/core/AfterViewChecked)** 钩子函数阶段，在父组件已经完成变更检测后，再去调用这个钩子函数，在开发者模式下框架会抛出错误：
+
+> Expression has changed after it was checked
+
+关于这个错误，你可以读这篇文章 **[Everything you need to know about the ExpressionChangedAfterItHasBeenCheckedError error](https://juejin.im/post/5ab7805b518825557459aa0a)** 。（注：这篇文章已翻译）
+
+在生产环境下 Angular 不会抛出错误，但是也不会检查数据变化直到下一次变更检测循环。（注：因为开发者模式下 Angular 会执行两次变更检测循环，第二次检查会发现父组件属性被改变就会抛出错误，而生产环境下只执行一次。）
+
+## 使用生命周期钩子来追踪数据变化
+在 Angular.js 里，每一个组件定义了一堆 `watchers` 来追踪如下数据变化：
+*  父组件绑定的属性
+*  当前组件的属性
+*  计算属性值
+*  Angular.js 系统外的第三方组件
+
+在 Angular 里却是这么实现这些功能的：可以使用 **[OnChanges](https://angular.io/api/core/OnChanges)** 生命周期钩子函数来监听父组件属性；可以使用 **[DoCheck](https://angular.io/api/core/DoCheck)** 生命周期钩子来监听当前组件属性，因为这个钩子函数会在 Angular 处理当前组件属性变化前去调用，所以可以在这个函数里做任何需要的事情，来获取即将在 UI 中显示的改变值；也可以使用 **[OnInit](https://angular.io/api/core/OnInit)** 钩子函数来监听第三方组件并手动运行变更检测循环。
+
+比如，我们有一个显示当前时间的组件，时间是由 `Time` 服务提供，在 Angular.js 中是这么实现的：
+
+```ts
+function link(scope, element) {
+    scope.$watch(() => {
+        return Time.getCurrentTime();
+    }, (value) => {
+        $scope.time = value;
+    })
+}
+```
+
+而在 Angular 中是这么实现的：
+
+```ts
+class TimeComponent {
+    ngDoCheck()
+    {
+        this.time = Time.getCurrentTime();
+    }
+}
+```
+
+另一个例子是如果我们有一个没集成在 Angular 系统内的第三方 `slider` 组件，但我们需要显示当前 slide，那就仅仅需要把这个组件封装进 Angular 组件内，监听 `slider's changed` 事件，并手动触发变更检测循环来同步 UI。Angular.js 里这么写：
+
+```
+function link(scope, element) {
+    slider.on('changed', (slide) => {
+        scope.slide = slide;
+        
+        // detect changes on the current component
+        $scope.$digest();
+        
+        // or run change detection for the all app
+        $rootScope.$digest();
+    })
+}
+```
+
+Angular 里也同样原理（注：也同样需要手动触发变更检测循环，`this.appRef.tick()` 会检测所有组件，而 `this.cd.detectChanges()` 会检测当前组件及子组件）：
+
+```ts
+class SliderComponent {
+    ngOnInit() {
+        slider.on('changed', (slide) => {
+            this.slide = slide
+
+            // detect changes on the current component
+            // this.cd is an injected ChangeDetector instance
+            this.cd.detectChanges();
+
+            // or run change detection for the all app
+            // this.appRef is an ApplicationRef instance
+            this.appRef.tick();
+        })
+    }
+}
+```
+
