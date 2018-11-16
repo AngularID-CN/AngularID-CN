@@ -2,7 +2,7 @@
 
 ## Articles
 
-* [[翻译] Angular的单向数据流](articles/1. [翻译] Angular的单向数据流.md)
+* [[翻译] Angular的单向数据流](articles/1.[翻译]Angular的单向数据流.md)
 * [[翻译] $digest 在 Angular 中重生](articles/2. [翻译] $digest 在 Angular 中重生.md)
 * [[翻译] Angular 的 @Host 装饰器和元素注入器](articles/3. [翻译] Angular 的 @Host 装饰器和元素注入器.md)
 * [[翻译] 探索 Angular 使用 ViewContainerRef 技术操作 DOM](articles/4. [翻译] 探索 Angular 使用 ViewContainerRef 技术操作 DOM.md)
