@@ -14,7 +14,7 @@
 * [[翻译] 别再对 Angular Form 的 ControlValueAccessor 感到迷惑](articles/8.[翻译]别再对Angular_Form的ControlValueAccessor感到迷惑.md)
 * [[翻译] 关于 Angular 动态组件你需要知道的](articles/9.[翻译]关于Angular动态组件你需要知道的.md)
 * [[翻译] 关于 Angular 依赖注入你需要知道的](articles/10.[翻译]关于Angular依赖注入你需要知道的.md)
-* [[翻译] 关于 `ExpressionChangedAfterItHasBeenCheckedError` 错误你所需要知道的事情](articles/11.[翻译]关于 ExpressionChangedAfterItHasBeenCheckedError错误你所需要知道的事情.md)
+* [[翻译] 关于 ExpressionChangedAfterItHasBeenCheckedError 错误你所需要知道的事情](articles/11.[翻译]关于ExpressionChangedAfterItHasBeenCheckedError错误你所需要知道的事情.md)
 * [[翻译] 为何 Angular 内部没有组件](articles/12.[翻译]为何Angular内部没有组件.md)
 * [[翻译] Angular 属性绑定更新机制](articles/13.[翻译]Angular属性绑定更新机制.md)
 * [[翻译] Angular DOM 更新机制](articles/14.[翻译]Angular_DOM更新机制.md)
