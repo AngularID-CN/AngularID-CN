@@ -19,4 +19,5 @@
 * [[翻译] Angular 属性绑定更新机制](articles/13.[翻译]Angular属性绑定更新机制.md)
 * [[翻译] Angular DOM 更新机制](articles/14.[翻译]Angular_DOM更新机制.md)
 * [[翻译] zone.js逆向工程以及收获](articles/15.[翻译]zone.js逆向工程以及收获.md)
+* [[翻译] 调试Rxjs（一）：工具](articles/16.[翻译]调试Rxjs（一）：工具.md)
 
