@@ -178,7 +178,7 @@ No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完
 5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - |  |  |  |  |
 4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  |
 3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  |
-2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 40% | 调试Rxjs（一）：工具 |
+2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | 调试Rxjs（一）：工具 |
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  |
 
 ## NGRX
