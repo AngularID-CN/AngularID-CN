@@ -2,7 +2,7 @@
 
 ## Angular
 
-No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完成度 | 译文
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
@@ -141,7 +141,7 @@ No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完
 
 ## RxJS
 
-No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完成度 | 译文
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
 37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - |  |  |  |  |
 36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - |  |  |  |  |
@@ -183,7 +183,7 @@ No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完
 
 ## NGRX
 
-No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完成度 | 译文
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
 10 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------0---------------------) | - |  |  |  |  |
 9 | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------1---------------------) | - |  |  |  |  |
