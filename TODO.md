@@ -175,10 +175,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 8 | [The new Angular HttpClient API](https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361?source=---------29---------------------) | - |  |  |  |  |
 7 | [RxJS: multicast’s Secret](https://blog.angularindepth.com/rxjs-multicasts-secret-760e1a2b176e?source=---------30---------------------) | - |  |  |  |  |
 6 | [3 reasons why you should follow Angular-In-Depth publication](https://blog.angularindepth.com/3-reasons-why-you-should-follow-angular-in-depth-publication-6e37a7d7f988?source=---------31---------------------) | - |  |  |  |  |
-5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - |  |  |  |  |
+5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 1% |  |
 4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  |
 3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  |
-2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | 调试Rxjs（一）：工具 | [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md)
+2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md) | 
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  |
 
 ## NGRX
