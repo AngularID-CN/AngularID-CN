@@ -20,5 +20,6 @@
 12. [[翻译] 为何 Angular 内部没有组件](articles/12.[翻译]-为何-Angular-内部没有组件.md)
 13. [[翻译] Angular 属性绑定更新机制](articles/13.[翻译]-Angular-属性绑定更新机制.md)
 14. [[翻译] Angular DOM 更新机制](articles/14.[翻译]-Angular-DOM-更新机制.md)
-15. [[翻译] zone.js 逆向工程以及收获](articles/15.[翻译]-zone.js-逆向工程以及收获.md)
+15. [[翻译] 翻阅源码后，我终于理解了Zone.js](articles/15.[翻译]-翻阅源码后，我终于理解了Zone.js.md)
 16. [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md)
+
