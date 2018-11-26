@@ -22,4 +22,5 @@
 14. [[翻译] Angular DOM 更新机制](articles/14.[翻译]-Angular-DOM-更新机制.md)
 15. [[翻译] 翻阅源码后，我终于理解了Zone.js](articles/15.[翻译]-翻阅源码后，我终于理解了Zone.js.md)
 16. [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md)
+17. [[翻译] 调试 Rxjs（二）：日志记录](articles/17.[翻译]-调试-Rxjs（二）：日志记录.md)
 
