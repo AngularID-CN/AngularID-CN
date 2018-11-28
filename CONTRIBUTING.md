@@ -57,3 +57,15 @@
     3. `译文` 处填写 `[转载](链接)`
 
 > P.S. `Angular`,`RxJS`,`NGRX` 下的表格项（即原文）可能存在重复，出现重复的情况下优先更新靠上的表格项，冗余的表格项除头两列外所有列更新为 `-`
+
+## 关于转载
+
+> P.S. 在已经存在对应译文的情况下，期望优先转载，避免重复劳动。
+
+若转载已经翻译好的译文，可以在评论或者私信里请求译者的同意。模板如下：
+
+```markdown
+你好，请问可以转载么？（顺便借楼插下硬广 :P）我们计划在 https://github.com/AngularInDepth/angularindepth 这个项目下陆续翻译 angular in depth 里的文章，以造福国内的 Angular 开发者。我们热爱前端，力求深耕 Angular，欢迎交流讨论和贡献翻译～
+```
+
+在征得译者同意后，上传文章[同上](https://github.com/AngularInDepth/angularindepth/blob/master/CONTRIBUTING.md#%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0)，TODO 文件的修改详见[TODO 文件的使用规则小节](https://github.com/AngularInDepth/angularindepth/blob/master/CONTRIBUTING.md#todo-%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99)。
