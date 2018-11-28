@@ -39,7 +39,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 102 | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------32---------------------) | - |  |  |  |  
 101 | [Changing the behavior of a 3rd party Angular Component](https://blog.angularindepth.com/changing-the-behavior-of-a-3rd-party-angular-component-91f84fb9af28?source=---------33---------------------) | - |  |  |  |  
 100 | [Integrate Jest into an Angular application and library](https://blog.angularindepth.com/integrate-jest-into-an-angular-application-and-library-163b01d977ce?source=---------34---------------------) | - |  |  |  |  
-99 | [Angular Testing with Headless Chrome](https://blog.angularindepth.com/angular-testing-with-headless-chrome-d1343b349699?source=---------35---------------------) | - |  |  |  |  
+99 | [~~Angular Testing with Headless Chrome~~](https://blog.angularindepth.com/angular-testing-with-headless-chrome-d1343b349699?source=---------35---------------------) | - |  |  | 删除 |  
 98 | [Inside Ivy: Exploring the New Angular Compiler](https://blog.angularindepth.com/inside-ivy-exploring-the-new-angular-compiler-ebf85141cee1?source=---------36---------------------) | - |  |  |  |  
 97 | [NgRx: tips & tricks](https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7?source=---------37---------------------) | - |  |  |  |  
 96 | [Let’s have a chat about Actions and Action Creators within NgRx](https://blog.angularindepth.com/lets-have-a-chat-about-actions-and-action-creators-within-ngrx-41277ecc739d?source=---------38---------------------) | - |  |  |  |  
