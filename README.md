@@ -4,7 +4,7 @@
 
 ## Articles
 
-> P.S. 以下文章列表按照翻译时间升序排列
+> P.S. **以下文章列表按照翻译时间升序排列**
 
 1. [[翻译] Angular 的单向数据流](articles/1.[翻译]-Angular-的单向数据流.md)
 2. [[翻译] `$digest` 在 Angular 中重生](articles/2.[翻译]-$digest-在-Angular-中重生.md)
@@ -23,4 +23,7 @@
 15. [[翻译] 翻阅源码后，我终于理解了Zone.js](articles/15.[翻译]-翻阅源码后，我终于理解了Zone.js.md)
 16. [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md)
 17. [[翻译] 调试 Rxjs（二）：日志记录](articles/17.[翻译]-调试-Rxjs（二）：日志记录.md)
-18. [[翻译] 关于Angular变更检测不那么硬核的介绍](articles/135.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
+18. [[翻译] ReflectiveInjector-vs-StaticInjector](articles/18.[翻译]-Angular-的-ReflectiveInjector-vs-StaticInjector)
+19. [[翻译] Angular的状态变更机制并不一定依赖于NgZone(zone.js)](articles/19.[翻译]-Angular的状态变更机制并不一定依赖于NgZone(zone.js).md)
+20. [[翻译] 关于Angular变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
+21. [[翻译] Angular-单元测试性能提升](articles/21.[翻译]-Angular-单元测试性能提升.md)
