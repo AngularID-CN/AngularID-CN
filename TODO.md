@@ -3,7 +3,8 @@
 ## Angular
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
- :-: | :- | :-: | :-: | :- | :-: | :- 
+ :-: | :- | :-: | :-: | :- | :-: | :-
+135 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton |  | 已完成 |
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
 132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - |  |  |  |  
@@ -98,7 +99,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 43 | [Creating your own application template for angular-cli](https://blog.angularindepth.com/creating-your-own-application-template-for-angular-cli-95e22319cc24?source=---------91---------------------) | - |  |  |  |  
 42 | [Creating an Angular Universal app with the Angular CLI](https://blog.angularindepth.com/creating-an-angular-universal-app-with-the-angular-cli-5ef26c9fd9a5?source=---------92---------------------) | - |  |  |  |  
 41 | [Using TransferState API in an Angular v5 Universal App](https://blog.angularindepth.com/using-transferstate-api-in-an-angular-5-universal-app-130f3ada9e5b?source=---------93---------------------) | - |  |  |  |  
-40 | [Do you still think that NgZone (zone.js) is required for change detection in Angular?](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef?source=---------94---------------------) | - | [秋天](http://www.github.com/jkhhuse) |  | 正在翻译 |  
+40 | [Do you still think that NgZone (zone.js) is required for change detection in Angular?](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef?source=---------94---------------------) | - | [秋天](http://www.github.com/jkhhuse) |  [sunny](https://segmentfault.com/u/lx1036/articles) | 正在校对 |  
 39 | [As busy as a bee — lazy loading in the Angular CLI](https://blog.angularindepth.com/as-busy-as-a-bee-lazy-loading-in-the-angular-cli-d2812141637f?source=---------95---------------------) | - |  |  |  |  
 38 | [TemplateRefs are Angular’s Render Props](https://blog.angularindepth.com/templaterefs-are-angulars-render-props-a2b97cbcc362?source=---------96---------------------) | - |  |  |  |  
 37 | [RxJS: How to Use Lettable Operators with Promises](https://blog.angularindepth.com/rxjs-how-to-use-lettable-operators-and-promises-2e717313bf76?source=---------97---------------------) | - |  |  |  |  
