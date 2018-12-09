@@ -69,7 +69,7 @@
         });
         const markdown = dataList.reduce((acc, { title, link, index }) => {
             return (acc += `${index + offset} | [${title}](${link}) | - |  |  |  |  |\n`);
-        }, 'No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完成度 | 译文\n :-: | :- | :-: | :-: | :- | :-: | :- \n');
+        }, 'No. | 原文 | 已有翻译 => 转载 | 小组翻译 => 译者 | 校对者 | 完成度 | 译文\n :-: | :- | :-: | :-: | :- | :-: | :- \n');
         return markdown;
     }
     genMD();
