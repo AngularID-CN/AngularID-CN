@@ -4,7 +4,15 @@
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-135 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton |  | 已完成 |
+143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
+142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton |  | 已完成 | [[翻译] 关于 Angular 变更检测不那么硬核的介绍])(articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
+141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
+140 | [My Adventures Running Angular Ivy inside StackBlitz: Yes, It Is Possible!](https://blog.angularindepth.com/my-adventures-running-angular-ivy-inside-stackblitz-yes-it-is-possible-f4984fafd7d4?source=---------3---------------------) | - |  |  |  |  |
+139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - |  |  |  |  |
+138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - |  |  |  |  |
+137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - |  |  |  |  |
+136 | [Angular Routing — Reusing common layout for pages from different modules](https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57?source=---------7---------------------) | - |  |  |  |  |
+135 | [How to Read the RxJS 6 Sources Part 1: Understanding of() and Subscriptions](https://blog.angularindepth.com/how-to-read-the-rxjs-6-sources-part-1-understanding-of-and-subscriptions-694e7d9def6b?source=---------8---------------------) | - |  |  |  |  |
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
 132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - |  |  |  |  
