@@ -1,4 +1,5 @@
 {
     "deepscan.ignoreConfirmWarning": true,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.renderControlCharacters": true
 }
