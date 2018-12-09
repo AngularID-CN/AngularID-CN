@@ -3,7 +3,8 @@
 ## Angular
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
- :-: | :- | :-: | :-: | :- | :-: | :- 
+ :-: | :- | :-: | :-: | :- | :-: | :-
+135 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton |  | 已完成 |
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
 132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - |  |  |  |  
