@@ -76,7 +76,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 74 | [A modern solution to lazy loading images using Intersection Observer](https://blog.angularindepth.com/a-modern-solution-to-lazy-loading-using-intersection-observer-9280c149bbc?source=---------60---------------------) | - |  |  |  |  
 73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - |  |  |  |  
 72 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------62---------------------) | - |  |  |  |  
-71 | [Angular Unit Testing performance](https://blog.angularindepth.com/angular-unit-testing-performance-34363b7345ba?source=---------63---------------------) | - | [sunny](https://segmentfault.com/u/lx1036/articles) |  | 翻译中 |  
+71 | [Angular Unit Testing performance](https://blog.angularindepth.com/angular-unit-testing-performance-34363b7345ba?source=---------63---------------------) | - | [sunny](https://segmentfault.com/u/lx1036/articles) |  | 翻译完/待校对 |  
 70 | [Angular 5 Universal + Firebase](https://blog.angularindepth.com/angular-5-universal-firebase-4c85a7d00862?source=---------64---------------------) | - |  |  |  |  
 69 | [Gestures in an Angular Application](https://blog.angularindepth.com/gestures-in-an-angular-application-dde71804c0d0?source=---------65---------------------) | - |  |  |  |  
 68 | [Angular and Internet Explorer](https://blog.angularindepth.com/angular-and-internet-explorer-5e59bb6fb4e9?source=---------66---------------------) | - |  |  |  |  
