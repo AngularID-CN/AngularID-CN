@@ -27,3 +27,5 @@
 19. [[翻译] Angular的状态变更机制并不一定依赖于NgZone(zone.js)](articles/19.[翻译]-Angular的状态变更机制并不一定依赖于NgZone(zone.js).md)
 20. [[翻译] 关于Angular变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 21. [[翻译] Angular-单元测试性能提升](articles/21.[翻译]-Angular-单元测试性能提升.md)
+22. xx
+23. [[翻译] Angular Ivy 与元编程,高阶组件和混入(mixins)](articles/23.[翻译]-Angular Ivy 与元编程,高阶组件和混入(mixins).md)
