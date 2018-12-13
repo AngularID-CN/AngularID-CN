@@ -28,4 +28,4 @@
 20. [[翻译] 关于Angular变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 21. [[翻译] Angular-单元测试性能提升](articles/21.[翻译]-Angular-单元测试性能提升.md)
 22. [[翻译] Angular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里](articles/22.[翻译]-Aangular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里.md)
-23. [[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/23.[翻译]-Angular Ivy 与元编程,高阶组件和混入(mixins).md)
+23. [[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/23.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
