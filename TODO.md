@@ -152,7 +152,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
-37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - |  |  |  |  |
+37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 1% |  |
 36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - |  |  |  |  |
 35 | [The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------2---------------------) | - |  |  |  |  |
 34 | [Angular CDK Tables](https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99?source=---------3---------------------) | - |  |  |  |  |
