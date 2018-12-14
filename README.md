@@ -4,7 +4,7 @@
 
 ## Articles
 
-> P.S. **以下文章列表按照翻译时间升序排列**
+> P.S. 以下文章列表按照**翻译时间先后顺序**排列
 
 1. [[翻译] Angular 的单向数据流](articles/1.[翻译]-Angular-的单向数据流.md)
 2. [[翻译] `$digest` 在 Angular 中重生](articles/2.[翻译]-$digest-在-Angular-中重生.md)
