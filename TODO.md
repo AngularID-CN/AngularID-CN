@@ -196,15 +196,15 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 ## NGRX
 
-No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
- :-: | :- | :-: | :-: | :- | :-: | :- 
-10 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------0---------------------) | - |  |  |  |  |
-9 | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------1---------------------) | - |  |  |  |  |
-8 | [NgRx: tips & tricks](https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7?source=---------2---------------------) | - |  |  |  |  |
-7 | [Let’s have a chat about Actions and Action Creators within NgRx](https://blog.angularindepth.com/lets-have-a-chat-about-actions-and-action-creators-within-ngrx-41277ecc739d?source=---------3---------------------) | - |  |  |  |  |
-6 | [Start using ngrx/effects for this](https://blog.angularindepth.com/start-using-ngrx-effects-for-this-e0b2bd9da165?source=---------4---------------------) | - |  |  |  |  |
-5 | [How I test my NgRx selectors](https://blog.angularindepth.com/how-i-test-my-ngrx-selectors-c50b1dc556bc?source=---------5---------------------) | - |  |  |  |  |
-4 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------6---------------------) | - |  |  |  |  |
-3 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------7---------------------) | - |  |  |  |  |
-2 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------8---------------------) | - |  |  |  |  |
-1 | [The Angular Model (ngx-model)](https://blog.angularindepth.com/model-pattern-for-angular-state-management-6cb4f0bfed87?source=---------9---------------------) | - |  |  |  |  |
+| No. | 原文                                                                                                                                                                                                                  | 转载 | 译者 | 校对 | 进度 | 译文 |
+| :-: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--: | :--: | :--- | :--: | :--- |
+| 10  | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------0---------------------)                                                |  -   |      |      |      |      |
+|  9  | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------1---------------------)                                                                       |  -   |      |      |      |      |
+|  8  | [NgRx: tips & tricks](https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7?source=---------2---------------------)                                                                                           |  -   |      |      |      |      |
+|  7  | [Let’s have a chat about Actions and Action Creators within NgRx](https://blog.angularindepth.com/lets-have-a-chat-about-actions-and-action-creators-within-ngrx-41277ecc739d?source=---------3---------------------) |  -   |      |      |      |      |
+|  6  | [Start using ngrx/effects for this](https://blog.angularindepth.com/start-using-ngrx-effects-for-this-e0b2bd9da165?source=---------4---------------------)                                                            |  -   |      |      |      |      |
+|  5  | [How I test my NgRx selectors](https://blog.angularindepth.com/how-i-test-my-ngrx-selectors-c50b1dc556bc?source=---------5---------------------)                                                                      |  -   |      |      |      |      |
+|  4  | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------6---------------------)                                            |  -   |      |      |      |      |
+|  3  | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------7---------------------)                                                                |  -   |      |      |      |      |
+|  2  | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------8---------------------)          |  -   |      |      |      |      |
+|  1  | [The Angular Model (ngx-model)](https://blog.angularindepth.com/model-pattern-for-angular-state-management-6cb4f0bfed87?source=---------9---------------------)                                                       |  -   |      |      |      |      |
