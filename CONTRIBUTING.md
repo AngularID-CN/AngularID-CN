@@ -27,13 +27,15 @@
 ```markdown
 > 原文链接：[Original Article Title](original-link)
 > 
+> 原文作者：[Original Author](home-page-of-original-author)
+> 
 > 译者：[译者昵称](译者主页)；校对者：[校对者甲昵称](校对者甲主页)，[校对者乙昵称](校对者乙主页)
 ```
 
-* 来自Max的文章经与原作者沟通,在上述基础上需要添加如下内容：
+P.S. 来自 Max 的文章经与原作者沟通，在上述基础上需要添加如下内容：
 
 ```markdown
-> 原技术博文由`Max Koretskyi`撰写发布，他目前于[ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom)担任开发者职位
+> *原技术博文由 [`Max Koretskyi`](https://twitter.com/maxim_koretskyi) 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位。*
 ```
 
 ## TODO 文件的使用规则
