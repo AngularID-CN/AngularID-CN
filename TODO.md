@@ -4,15 +4,15 @@
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  
-142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton |  | 已完成 | [[翻译] 关于 Angular 变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
-141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  
-140 | [My Adventures Running Angular Ivy inside StackBlitz: Yes, It Is Possible!](https://blog.angularindepth.com/my-adventures-running-angular-ivy-inside-stackblitz-yes-it-is-possible-f4984fafd7d4?source=---------3---------------------) | - |  |  |  |  
-139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - |  |  |  |  
-138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - |  |  |  |  
-137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - |  |  |  |  
-136 | [Angular Routing — Reusing common layout for pages from different modules](https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57?source=---------7---------------------) | - |  |  |  |  
-135 | [How to Read the RxJS 6 Sources Part 1: Understanding of() and Subscriptions](https://blog.angularindepth.com/how-to-read-the-rxjs-6-sources-part-1-understanding-of-and-subscriptions-694e7d9def6b?source=---------8---------------------) | - |  |  |  |  
+143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
+142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | [sawyerbutton](https://github.com/sawyerbutton) | [baishusama](https://github.com/baishusama) | 已完成/已发表 | [[翻译] 关于 Angular 变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
+141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
+140 | [My Adventures Running Angular Ivy inside StackBlitz: Yes, It Is Possible!](https://blog.angularindepth.com/my-adventures-running-angular-ivy-inside-stackblitz-yes-it-is-possible-f4984fafd7d4?source=---------3---------------------) | - |  |  |  |  |
+139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - |  |  |  |  |
+138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - |  |  |  |  |
+137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - |  |  |  |  |
+136 | [Angular Routing — Reusing common layout for pages from different modules](https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57?source=---------7---------------------) | - |  |  |  |  |
+135 | [How to Read the RxJS 6 Sources Part 1: Understanding of() and Subscriptions](https://blog.angularindepth.com/how-to-read-the-rxjs-6-sources-part-1-understanding-of-and-subscriptions-694e7d9def6b?source=---------8---------------------) | - |  |  |  |  |
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
 132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - |  |  |  |  
@@ -24,7 +24,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 126 | [The Angular DevOps Series: Semantically release your Angular library](https://blog.angularindepth.com/the-angular-devops-series-semantically-release-your-angular-library-7d78afb4c845?source=---------8---------------------) | - |  |  |  |  
 125 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------9---------------------) | - |  |  |  |  
 124 | [Model-View-Presenter with Angular](https://blog.angularindepth.com/model-view-presenter-with-angular-3a4dbffe49bb?source=---------10---------------------) | - |  |  |  |  
-123 | [The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------11---------------------) | - | [vaanxy](https://github.com/vaanxy) |  | :heavy_check_mark: | [[翻译] Aangular开发常见问题：subscribe()  还是 \| async 管道 ? 终极答案就在这里](articles/22.[翻译]-Aangular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里.md) 
+123 | [The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------11---------------------) | - | [vaanxy](https://github.com/vaanxy) | [Ice Panpan](http://www.github.com/TanYiBing) | 已完成 | [[翻译] Aangular开发常见问题：subscribe()  还是 \| async 管道 ? 终极答案就在这里](articles/22.[翻译]-Angular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里.md) 
 122 | [Improve Angular’s performance through memoization and TypeScript decorators](https://blog.angularindepth.com/how-to-improve-angular-performance-by-just-adding-just-8-characters-877bde708ddd?source=---------12---------------------) | - |  |  |  |  
 121 | [Test for accessibility and help millions of people](https://blog.angularindepth.com/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4?source=---------13---------------------) | - |  |  |  |  
 120 | [Angular Flex Layout: The Masquerade](https://blog.angularindepth.com/angular-flex-layout-the-masquerade-58fb58d0ab45?source=---------14---------------------) | - |  |  |  |  
@@ -101,7 +101,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 49 | [React Call Return in Angular](https://blog.angularindepth.com/react-call-return-in-angular-32a1c9751d6?source=---------85---------------------) | - |  |  |  |  
 48 | [Do you really know what unidirectional data flow means in Angular](https://blog.angularindepth.com/do-you-really-know-what-unidirectional-data-flow-means-in-angular-a6f55cefdc63?source=---------86---------------------) | - |  |  |  | [[翻译] Angular 的单向数据流](articles/1.[翻译]-Angular-的单向数据流.md)
 47 | [How to Reduce Action Boilerplate](https://blog.angularindepth.com/how-to-reduce-action-boilerplate-90dc3d389e2b?source=---------87---------------------) | - |  |  |  |  
-46 | [These 5 articles will make you an Angular Change Detection expert](https://blog.angularindepth.com/these-5-articles-will-make-you-an-angular-change-detection-expert-ed530d28930?source=---------88---------------------) | - |  |  |  |  
+46 | [These 5 articles will make you an Angular Change Detection expert](https://blog.angularindepth.com/these-5-articles-will-make-you-an-angular-change-detection-expert-ed530d28930?source=---------88---------------------) | - | [baishusama](https://github.com/baishusama) |  | 翻译中 |  
 45 | [Angular CDK Portals](https://blog.angularindepth.com/angular-cdk-portals-b02f66dd020c?source=---------89---------------------) | - |  |  |  |  
 44 | [Content Directives Are Angular’s Prop Getters](https://blog.angularindepth.com/content-directives-are-angulars-prop-getters-360fdae60576?source=---------90---------------------) | - |  |  |  |  
 43 | [Creating your own application template for angular-cli](https://blog.angularindepth.com/creating-your-own-application-template-for-angular-cli-95e22319cc24?source=---------91---------------------) | - |  |  |  |  
@@ -152,43 +152,43 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
-37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - |  |  |  |  |
-36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - |  |  |  |  |
-35 | [The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------2---------------------) | - |  |  |  |  |
-34 | [Angular CDK Tables](https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99?source=---------3---------------------) | - |  |  |  |  |
-33 | [The Extensive Guide to Creating Streams in RxJS](https://blog.angularindepth.com/the-extensive-guide-to-creating-streams-in-rxjs-aaa02baaff9a?source=---------4---------------------) | - |  |  |  |  |
-32 | [RxJS: Avoiding Unbound Methods](https://blog.angularindepth.com/rxjs-avoiding-unbound-methods-fcf2648a805?source=---------5---------------------) | - |  |  |  |  |
-31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  |
-30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  |
-29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - |  |  |  |  |
-28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  |
-27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  |
-26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  |
-25 | [RxJS: TSLint Rules for Version 6](https://blog.angularindepth.com/rxjs-tslint-rules-for-version-6-d10e2482292d?source=---------12---------------------) | - |  |  |  |  |
-24 | [RxJS: When to Use switchMap](https://blog.angularindepth.com/when-to-use-switchmap-dfe84ac5a1ff?source=---------13---------------------) | - |  |  |  |  |
-23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - |  |  |  |  |
-22 | [RxJS: Understanding Expand](https://blog.angularindepth.com/rxjs-understanding-expand-a5f8b41a3602?source=---------15---------------------) | - |  |  |  |  |
-21 | [Practical RxJS In The Wild 🦁— Requests with concatMap() vs mergeMap() vs forkJoin() 🥊](https://blog.angularindepth.com/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293?source=---------16---------------------) | - |  |  |  |  |
-20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  |
-19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - |  |  |  |  |
-18 | [RxJS: Understanding Subjects](https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1?source=---------19---------------------) | - |  |  |  |  |
-17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - |  |  |  |  |
-16 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------21---------------------) | - |  |  |  |  |
-15 | [How to Reduce Action Boilerplate](https://blog.angularindepth.com/how-to-reduce-action-boilerplate-90dc3d389e2b?source=---------22---------------------) | - |  |  |  |  |
-14 | [RxJS: How to Use Lettable Operators with Promises](https://blog.angularindepth.com/rxjs-how-to-use-lettable-operators-and-promises-2e717313bf76?source=---------23---------------------) | - |  |  |  |  |
-13 | [RxJS: Pipelining Lettable Operators](https://blog.angularindepth.com/rxjs-pipelining-lettable-operators-f92f6843d817?source=---------24---------------------) | - |  |  |  |  |
-12 | [RxJS: Understanding Lettable Operators](https://blog.angularindepth.com/rxjs-understanding-lettable-operators-fe74dda186d3?source=---------25---------------------) | - |  |  |  |  |
-11 | [RxJS: How to Use Type Guards with Observables](https://blog.angularindepth.com/rxjs-how-to-use-type-guards-with-observables-11cc4d4f380f?source=---------26---------------------) | - |  |  |  |  |
-10 | [RxJS: How to Use refCount](https://blog.angularindepth.com/rxjs-how-to-use-refcount-73a0c6619a4e?source=---------27---------------------) | - |  |  |  |  |
-9 | [RxJS: Understanding the publish and share Operators](https://blog.angularindepth.com/rxjs-understanding-the-publish-and-share-operators-16ea2f446635?source=---------28---------------------) | - |  |  |  |  |
-8 | [The new Angular HttpClient API](https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361?source=---------29---------------------) | - |  |  |  |  |
-7 | [RxJS: multicast’s Secret](https://blog.angularindepth.com/rxjs-multicasts-secret-760e1a2b176e?source=---------30---------------------) | - |  |  |  |  |
-6 | [3 reasons why you should follow Angular-In-Depth publication](https://blog.angularindepth.com/3-reasons-why-you-should-follow-angular-in-depth-publication-6e37a7d7f988?source=---------31---------------------) | - |  |  |  |  |
-5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | [[翻译] 调试 Rxjs（二）：日志记录](articles/17.[翻译]-调试-Rxjs（二）：日志记录.md) |
-4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  |
-3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  |
-2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md) | 
-1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  |
+37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) | [vaanxy](https://github.com/vaanxy) | 已完成/校验完毕 | [[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md](articles/23.[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md) 
+36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - | vaanxy占坑 |  |  |  
+35 | [The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------2---------------------) | - |  |  |  |  
+34 | [Angular CDK Tables](https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99?source=---------3---------------------) | - |  |  |  |  
+33 | [The Extensive Guide to Creating Streams in RxJS](https://blog.angularindepth.com/the-extensive-guide-to-creating-streams-in-rxjs-aaa02baaff9a?source=---------4---------------------) | - |  |  |  |  
+32 | [RxJS: Avoiding Unbound Methods](https://blog.angularindepth.com/rxjs-avoiding-unbound-methods-fcf2648a805?source=---------5---------------------) | - |  |  |  |  
+31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  
+30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  
+29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - |  |  |  |  
+28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  
+27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  
+26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
+25 | [RxJS: TSLint Rules for Version 6](https://blog.angularindepth.com/rxjs-tslint-rules-for-version-6-d10e2482292d?source=---------12---------------------) | - |  |  |  |  
+24 | [RxJS: When to Use switchMap](https://blog.angularindepth.com/when-to-use-switchmap-dfe84ac5a1ff?source=---------13---------------------) | - |  |  |  |  
+23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - |  |  |  |  
+22 | [RxJS: Understanding Expand](https://blog.angularindepth.com/rxjs-understanding-expand-a5f8b41a3602?source=---------15---------------------) | - |  |  |  |  
+21 | [Practical RxJS In The Wild 🦁— Requests with concatMap() vs mergeMap() vs forkJoin() 🥊](https://blog.angularindepth.com/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293?source=---------16---------------------) | - |  |  |  |  
+20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  
+19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - |  |  |  |  
+18 | [RxJS: Understanding Subjects](https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1?source=---------19---------------------) | - |  |  |  |  
+17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - |  |  |  |  
+16 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------21---------------------) | - |  |  |  |  
+15 | [How to Reduce Action Boilerplate](https://blog.angularindepth.com/how-to-reduce-action-boilerplate-90dc3d389e2b?source=---------22---------------------) | - |  |  |  |  
+14 | [RxJS: How to Use Lettable Operators with Promises](https://blog.angularindepth.com/rxjs-how-to-use-lettable-operators-and-promises-2e717313bf76?source=---------23---------------------) | - |  |  |  |  
+13 | [RxJS: Pipelining Lettable Operators](https://blog.angularindepth.com/rxjs-pipelining-lettable-operators-f92f6843d817?source=---------24---------------------) | - |  |  |  |  
+12 | [RxJS: Understanding Lettable Operators](https://blog.angularindepth.com/rxjs-understanding-lettable-operators-fe74dda186d3?source=---------25---------------------) | - |  |  |  |  
+11 | [RxJS: How to Use Type Guards with Observables](https://blog.angularindepth.com/rxjs-how-to-use-type-guards-with-observables-11cc4d4f380f?source=---------26---------------------) | - |  |  |  |  
+10 | [RxJS: How to Use refCount](https://blog.angularindepth.com/rxjs-how-to-use-refcount-73a0c6619a4e?source=---------27---------------------) | - |  |  |  |  
+9 | [RxJS: Understanding the publish and share Operators](https://blog.angularindepth.com/rxjs-understanding-the-publish-and-share-operators-16ea2f446635?source=---------28---------------------) | - |  |  |  |  
+8 | [The new Angular HttpClient API](https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361?source=---------29---------------------) | - |  |  |  |  
+7 | [RxJS: multicast’s Secret](https://blog.angularindepth.com/rxjs-multicasts-secret-760e1a2b176e?source=---------30---------------------) | - |  |  |  |  
+6 | [3 reasons why you should follow Angular-In-Depth publication](https://blog.angularindepth.com/3-reasons-why-you-should-follow-angular-in-depth-publication-6e37a7d7f988?source=---------31---------------------) | - |  |  |  |  
+5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | [[翻译] 调试 Rxjs（二）：日志记录](articles/17.[翻译]-调试-Rxjs（二）：日志记录.md) 
+4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  
+3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  
+2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | [Ice Panpan](http://www.github.com/TanYiBing) |  | 已完成/已发表 | [[翻译] 调试 Rxjs（一）：工具](articles/16.[翻译]-调试-Rxjs（一）：工具.md) 
+1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  
 
 ## NGRX
 
