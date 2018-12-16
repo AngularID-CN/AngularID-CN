@@ -29,3 +29,4 @@
 21. [[翻译] Angular 单元测试性能提升](articles/21.[翻译]-Angular-单元测试性能提升.md)
 22. [[翻译] Angular 开发常见问题: subscribe 还是 async 管道?-终极答案就在这里](articles/22.[翻译]-Angular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里.md)
 23. [[翻译] OnPush 组件中 NgDoCheck 和 AsyncPipe 的区别](articles/23.[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md)
+24. [[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/24.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)

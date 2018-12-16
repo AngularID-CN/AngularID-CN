@@ -4,6 +4,7 @@
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
+ 144 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 已完成 |[24.[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/24.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
 143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
 142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | [sawyerbutton](https://github.com/sawyerbutton) | [baishusama](https://github.com/baishusama) | 已完成/已发表 | [[翻译] 关于 Angular 变更检测不那么硬核的介绍](articles/20.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
