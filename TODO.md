@@ -6,8 +6,6 @@
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-145 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-145.[翻译]-监听-Angular-启动过程.md)
-144 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 |[Angular Ivy 与元编程,高阶组件和混入](articles/angular-144.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
 143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
 142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton | baishusama | 已发表 | [关于 Angular 变更检测不那么硬核的介绍](articles/angular-142.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
@@ -208,3 +206,17 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 3 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------7---------------------) | - |  |  |  |  |
 2 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------8---------------------) | - |  |  |  |  |
 1 | [The Angular Model (ngx-model)](https://blog.angularindepth.com/model-pattern-for-angular-state-management-6cb4f0bfed87?source=---------9---------------------) | - |  |  |  |  |
+
+## Angular Related
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
+
+---
+
+## NRWL
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 | [Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
