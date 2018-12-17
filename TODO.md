@@ -13,6 +13,11 @@ P.S. 进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
+148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - |  |  |  |  |
+147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
+146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
+145 | [Improved UX with Ghost Elements + Angular 7 Animations](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba?source=---------3---------------------) | - |  |  |  |  |
+144 | [New in Angular v7.1: Updates to the Router](https://blog.angularindepth.com/new-in-angular-v7-1-updates-to-the-router-fd67d526ad05?source=---------4---------------------) | - |  |  |  |  |
 143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
 142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton | baishusama | 已发表 | [关于 Angular 变更检测不那么硬核的介绍](articles/angular-142.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
