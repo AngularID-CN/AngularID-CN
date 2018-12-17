@@ -1,12 +1,12 @@
 # [翻译] OnPush 组件中 NgDoCheck 和 AsyncPipe 的区别
 
-> 原文：[The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4)
-> 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**
-> 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位
-
+> 原文：[The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4)</br>
+> 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**</br>
+> 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发大使(Developer Advocate)</br>
+*译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。*</br>
 > 译者：**[Ice Panpan](https://github.com/TanYiBing)**；校对者：[vaanxy](https://github.com/vaanxy)
 
-![async or ngdocheck](../assets/23/1.jpeg)
+![async or ngdocheck](../assets/rxjs-37/1.jpeg)
 
 这篇文章是对[Shai这条推特](https://twitter.com/shai_reznik/status/1054868497363283968)的回应。他询问使用 `NgDoCheck` 生命周期钩子来手动比较值而不是使用 `asyncPipe` 是否有意义。这是一个非常好的问题，需要对引擎的工作原理有很多了解：变化检测(change detection)，管道(pipe)和生命周期钩子(lifecycle hooks)。那就是我探索的入口😎。
 

@@ -6,18 +6,14 @@
 >
 > *原技术博文由 [`Max Koretskyi`](https://twitter.com/maxim_koretskyi) 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位。*
 >
-> 译者：[尊重](https://www.zhihu.com/people/yiji-yiben-ming/activities)；校对者：[baishusama](https://github.com/baishusama)
-
-本文是一篇是关于「变更检测机制」，「zones」和「`ExpressionChangedAfterItHasBeenCheckedError` 错误」的高层次概述。
-
-> 原文作者: [Max Koretskyi, aka Wizard](https://twitter.com/maxim_koretskyi)
-
-> 原技术博文由`Max Koretskyi`撰写发布，他目前于[ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom)担任开发大使
-
 > 译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。
+> 
+> 译者：[尊重](https://www.zhihu.com/people/yiji-yiben-ming/activities)；校对者：[baishusama](https://github.com/baishusama)
+>
+> 本文是一篇是关于「变更检测机制」，「zones」和「`ExpressionChangedAfterItHasBeenCheckedError` 错误」的高层次概述。
 
 <p align="center"> 
-    <img src="../assets/20/1.jpeg">
+    <img src="../assets/angular-142/1.jpeg">
 </p>
 
 > 如果你更希望通过视频的方式了解这篇文章，可以查看[原作者在 *AngularConnect* 上所做的演讲](https://www.youtube.com/watch?v=DsBy9O0c6eo)。
@@ -33,7 +29,7 @@
 让我们从一个简单的 Angular 组件开始，它呈现了在应用中发生变更检测时的时刻，其时间戳具有毫秒的精度。点击按钮以触发变更检测：
 
 <p align="center"> 
-    <img src="../assets/20/2.gif">
+    <img src="../assets/angular-142/2.gif">
 </p>
 
 > [Demo 地址](https://stackblitz.com/edit/angular-hqbenm?file=src/app/app.component.ts)
@@ -65,7 +61,7 @@ export class AppComponent {
 你可以在[这里](https://stackblitz.com/edit/angular-hqbenm?file=src/app/app.component.ts)进行你自己的尝试。当 Angular 执行变更检测时，它获取了 `time` 属性的值将它传递给 `date` 管道并使用其结果更新 DOM 。目前为止一切都正常运作。然而当我检查控制台的时候看到了`ExpressionChangedAfterItHasBeenCheckedError` 这个错误：
 
 <p align="center"> 
-    <img src="../assets/20/3.png">
+    <img src="../assets/angular-142/3.png">
 </p>
 
 这着实让人惊讶，通常而言这个错误会伴随更加复杂的场景出现。那么我们是如何通过如此简单的功能产生了这个错误呢？别担心，我们好好调查一下。
@@ -94,7 +90,7 @@ export class AppComponent {
 Angular 中的每个组件都包含一个带有 HTML 元素的模版。当 Angular 创建 DOM 节点以在屏幕上呈现模板的内容时，它需要一个位置来存储这些 DOM 节点的引用。为此，内部有一个称为「View」的数据结构。它也用于存储组件实例的引用以及绑定表达式（binding expressions）的先前的值（previous values）。组件和 view 之间存在一对一的关系。下图示意了 view：
 
 <p align="center"> 
-    <img src="../assets/20/4.png">
+    <img src="../assets/angular-142/4.png">
 </p>
 
 当编译器分析模板时，它会识别在变更检测期间可能需要更新的 DOM 元素的属性，对于每个这样的属性，编译器都会创建一个「绑定（binding）」。绑定定义了要更新的属性名称和 Angular 用于获取新值的表达式。
@@ -102,7 +98,7 @@ Angular 中的每个组件都包含一个带有 HTML 元素的模版。当 Angul
 在我们的示例中，属性 `time` 在属性 `textContent` 的表达式中被使用，因此 Angular 创建了一个绑定并将其与 `span` 元素相关联：
 
 <p align="center"> 
-    <img src="../assets/20/5.png">
+    <img src="../assets/angular-142/5.png">
 </p>
 
 > 在实际的实现中绑定并不是具有所有必需信息的单个对象， `viewDefinition` 定义了模板元素的实际绑定和要更新的属性，而用于绑定的表达式放在 `updateRenderer` 函数中。
@@ -120,7 +116,7 @@ Angular 中的每个组件都包含一个带有 HTML 元素的模版。当 Angul
 在开发模式下，每个变更检测周期之后，Angular 会**同步**运行另一个检查以确保表达式生成与上一次变更检测运行结果相同的值。这个检查不是原始变更检测周期的一部分。它在完成对整个组件树的检查**之后**运行，并执行完全相同的步骤。只是这次当 Angular 检测到差异时它不会更新 DOM，而是抛出一个 `ExpressionChangedAfterItHasBeenCheckedError` 错误。
 
 <p align="center"> 
-    <img src="../assets/20/6.png">
+    <img src="../assets/angular-142/6.png">
 </p>
 
 ### 原因
@@ -169,7 +165,7 @@ export class AppComponent {
 有趣的是，你可以在一个网页上拥有许多不同的 zone，而其中一个将是 `NgZone`。`NgZone` 是在 Angular 项目引导（bootstrap）时创建的，Angular 应用就是在这个 zone 里运行的。而且，**Angular 仅仅获取有关这个 zone 内发生的事件的通知。**
 
 <p align="center"> 
-    <img src="../assets/20/7.png">
+    <img src="../assets/angular-142/7.png">
 </p>
 
 但是，`zone.js` 也提供了一个 API 允许在 Angular 的 zone（NgZone）外的其它 zone 执行代码，而 Angular 不会收到有关这些其他 zone 中发生的异步事件的通知。而没有通知意味着不会触发变更检测。执行此操作的方法名称为 `runOutsideAngular`，它由 `NgZone` 服务实现。
@@ -206,7 +202,7 @@ export class AppComponent {
 请自己试着去调试看看吧。前往这个 [demo 地址](https://angular-eobrrh.stackblitz.io/)并打开控制台。在代码中找到该函数并设置一个断点，单击按钮以触发变更检测，检查 `view` 变量。以下是我在这么做时的记录：
 
 <p align="center"> 
-    <img src="../assets/20/8.gif">
+    <img src="../assets/angular-142/8.gif">
 </p>
 
 第一个 `view` 将是主 view（host view）。（译者注：主 view 对于其它 view 而言，）就像 Angular 为了托管我们的 app component 而创建的根组件（root component）。我们需要继续执行才能进入其子 view，而这个子 view 就是为 `AppComponent` 组件所创建的 view。探索一番。`component` 属性包含对 `App` 组件实例的引用，`nodes` 属性包含为 `App` 组件模板内的元素而创建的 DOM 节点的引用，而 `oldValues` 数组存储绑定表达式的结果。
@@ -282,7 +278,7 @@ function checkAndUpdateView(view，...) {
 正如你所见，Angular 在变更检测期间也触发了生命周期钩子。**有趣的是，某些生命周期钩子「在 Angular 处理绑定时、在渲染部分之前」被调用，另外一些钩子则会在之后被调用**。下面的图表演示了当 Angular 运行父组件的变更检测时会发生什么：
 
 <p align="center"> 
-    <img src="../assets/20/9.png">
+    <img src="../assets/angular-142/9.png">
 </p>
 
 让我们一步步地去理解它。首先，它对**子组件**更新了输入绑定（input bindings），然后它再次对**子组件**调用了其 `OnInit`，`DoCheck` 和 `OnChanges` 生命周期钩子。这一过程是有道理的，因为它只是更新了输入绑定以及 Angular 需要通知子组件其输入绑定的初始化已经完成。**之后 Angular 对当前组件进行了渲染**。在渲染完成后，将会对子组件执行变更检测。这一过程意味着它基本上会在子 view 上重复上述操作。最终，它调用**子组件**上的 `AfterViewChecked` 和 `AfterViewInit` 生命周期钩子，让它知道自身已被检查。
