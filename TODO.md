@@ -3,9 +3,9 @@
 - [Angular](#angular)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 Angular 标签下的文章
 - [RxJS](#rxjs)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 RxJS 标签下的文章
 - [NgRx](#ngrx)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 NgRx 标签下的文章
-- [Angular Related](#angular-related)：[Angular in Depth](https://blog.angularindepth.com/) 专栏下的其它文章
+- [Angular Related](#angular-related)：[Angular in Depth](https://blog.angularindepth.com/) 专栏下的其它文章
 - [Nrwl](#nrwl)：[Nrwl](https://blog.nrwl.io/) 专栏下的文章
-- [Others](#others)：其它文章
+- [Others](#others)：其它文章
 
 P.S. 进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
 
