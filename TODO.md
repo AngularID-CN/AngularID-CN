@@ -1,13 +1,23 @@
-# Angular in Depth
+# [Angular in Depth](https://blog.angularindepth.com/)
 
-进度表示为：翻译中 -> 校验中 -> 待发表 -> 已发表
+- [Angular](#angular)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 Angular 标签下的文章
+- [RxJS](#rxjs)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 RxJS 标签下的文章
+- [NgRx](#ngrx)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 NgRx 标签下的文章
+- [Angular Related](#angular-related)：[Angular in Depth](https://blog.angularindepth.com/) 专栏下的其它文章
+- [Nrwl](#nrwl)：[Nrwl](https://blog.nrwl.io/) 专栏下的文章
+- [Others](#others)：其它文章
 
-## Angular
+P.S. 进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
+
+## [Angular](https://blog.angularindepth.com/tagged/angular)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-145 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-145.[翻译]-监听-Angular-启动过程.md)
-144 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 |[Angular Ivy 与元编程,高阶组件和混入](articles/angular-144.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
+148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - |  |  |  |  |
+147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
+146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
+145 | [Improved UX with Ghost Elements + Angular 7 Animations](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba?source=---------3---------------------) | - |  |  |  |  |
+144 | [New in Angular v7.1: Updates to the Router](https://blog.angularindepth.com/new-in-angular-v7-1-updates-to-the-router-fd67d526ad05?source=---------4---------------------) | - |  |  |  |  |
 143 | [Tiny Angular pipe to make any function memoizable](https://blog.angularindepth.com/tiny-angular-pipe-to-make-any-function-memoizable-f6c8fa917f2f?source=---------0---------------------) | - |  |  |  |  |
 142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton | baishusama | 已发表 | [关于 Angular 变更检测不那么硬核的介绍](articles/angular-142.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
@@ -152,7 +162,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 2 | [This is how angular-cli/webpack delivers your CSS styles to the client](https://blog.angularindepth.com/this-is-how-angular-cli-webpack-delivers-your-css-styles-to-the-client-d4adf15c4975?source=---------132---------------------) | - |  |  |  |  
 1 | [How to manually bootstrap an Angular application](https://blog.angularindepth.com/how-to-manually-bootstrap-an-angular-application-9a36ccf86429?source=---------133---------------------) | - |  |  |  | [如何手动启动 Angular 程序](articles/angular-1.[翻译]-如何手动启动-Angular-程序.md)
 
-## RxJS
+## [RxJS](https://blog.angularindepth.com/tagged/rxjs)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
@@ -194,7 +204,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  
 
-## NGRX
+## [NgRx](https://blog.angularindepth.com/tagged/ngrx)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
@@ -208,3 +218,25 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 3 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------7---------------------) | - |  |  |  |  |
 2 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------8---------------------) | - |  |  |  |  |
 1 | [The Angular Model (ngx-model)](https://blog.angularindepth.com/model-pattern-for-angular-state-management-6cb4f0bfed87?source=---------9---------------------) | - |  |  |  |  |
+
+## Angular Related
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
+
+---
+
+## [Nrwl](https://blog.nrwl.io/)
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 | [Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
+
+---
+
+## Others
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 |  |  |  |  |  | 
