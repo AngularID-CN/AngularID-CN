@@ -1,8 +1,15 @@
-# Angular in Depth
+# [Angular in Depth](https://blog.angularindepth.com/)
 
-进度表示为：翻译中 -> 校验中 -> 待发表 -> 已发表
+- [Angular](#angular)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 Angular 标签下的文章
+- [RxJS](#rxjs)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 RxJS 标签下的文章
+- [NgRx](#ngrx)：[Angular in Depth](https://blog.angularindepth.com/) 专栏的 NgRx 标签下的文章
+- [Angular Related](#angular-related)：[Angular in Depth](https://blog.angularindepth.com/) 专栏下的其它文章
+- [Nrwl](#nrwl)：[Nrwl](https://blog.nrwl.io/) 专栏下的文章
+- [Others](#others)：其它文章
 
-## Angular
+P.S. 进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
+
+## [Angular](https://blog.angularindepth.com/tagged/angular)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
@@ -150,7 +157,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 2 | [This is how angular-cli/webpack delivers your CSS styles to the client](https://blog.angularindepth.com/this-is-how-angular-cli-webpack-delivers-your-css-styles-to-the-client-d4adf15c4975?source=---------132---------------------) | - |  |  |  |  
 1 | [How to manually bootstrap an Angular application](https://blog.angularindepth.com/how-to-manually-bootstrap-an-angular-application-9a36ccf86429?source=---------133---------------------) | - |  |  |  | [如何手动启动 Angular 程序](articles/angular-1.[翻译]-如何手动启动-Angular-程序.md)
 
-## RxJS
+## [RxJS](https://blog.angularindepth.com/tagged/rxjs)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
@@ -192,7 +199,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  
 
-## NGRX
+## [NgRx](https://blog.angularindepth.com/tagged/ngrx)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
@@ -215,8 +222,16 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 ---
 
-## NRWL
+## [Nrwl](https://blog.nrwl.io/)
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 | [Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
+
+---
+
+## Others
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :-
+1 |  |  |  |  |  | 
