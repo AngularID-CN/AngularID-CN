@@ -33,4 +33,6 @@
 
 ## Memeber 
 
-[sunny](https://segmentfault.com/u/lx1036/articles) , [秋天](http://www.github.com/jkhhuse) , [baishusama](https://github.com/baishusama) , [Ice Panpan](http://www.github.com/TanYiBing) , [strange]() , [sawyerbutton](https://github.com/sawyerbutton) , [Zack Chapple](https://twitter.com/ZChapple) , [vaanxy](https://github.com/vaanxy)  ( 以加入顺序 )
+> P.S. 以下成员按照**加入时间先后顺序**排列
+
+[sunny](https://segmentfault.com/u/lx1036/articles) , [秋天](http://www.github.com/jkhhuse) , [baishusama](https://github.com/baishusama) , [Ice Panpan](http://www.github.com/TanYiBing) , [strange]() , [sawyerbutton](https://github.com/sawyerbutton) , [Zack Chapple](https://twitter.com/ZChapple) , [vaanxy](https://github.com/vaanxy)
