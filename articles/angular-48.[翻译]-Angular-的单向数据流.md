@@ -101,23 +101,23 @@ Angular2 更新应用中model和解析model至view是位于两个不同的处理
 ### view和service层中的单向数据流
 大部分的web应用都使用了分层设计，视图(view)层和服务(service)层。  
 
-![service and view layer](https://github.com/AngularInDepth/angularindepth/image/1/1.png?raw=true)
+![service and view layer](../assets/angular-48/1.png?raw=true)
 
 在web环境下，view层中为使用DOM等技术来展示用户数据，在Angular中view层则由组件实现。service层则负责处理与存储业务相关的数据。像上图所示，service层包含了状态管理、REST调用、可重用的通用工具服务等。
 
 之前解释的单向数据流是与应用的view层相关，Angular中的view由组件呈现，所以单向数据流其实就可以表现为组件之间的数据流动。  
-![data flow](https://github.com/AngularInDepth/angularindepth/image/1/2.png?raw=true)
+![data flow](../assets/angular-48/2.png?raw=true)
 
 然而，当引入ngrx（实现了类似Redux的状态管理模式）之后，又会陷入另外一种困惑。Redux的文档中关于状态的描述：
 > Redux的架构围绕严格的单向数据流实现，这意味着应用程序中的所有数据都遵循着相同的生命周期，使你的应用程序逻辑更加可预测和可理解。
 
 所以，这里的单向数据流是与service层相关，而不是view层。在引入类Redux模式时，要注意区别这两者的区别。Redux主要关注的是service层中的状态管理模块，引入Redux后，Web应用的架构则由：
 
-![state_management](https://github.com/AngularInDepth/angularindepth/image/1/3.png?raw=true)
+![state_management](../assets/angular-48/3.png?raw=true)
 
 转变为：  
 
-![new state_management](https://github.com/AngularInDepth/angularindepth/image/1/4.png?raw=true)
+![new state_management](../assets/angular-48/4.png?raw=true)
 
 ### 译者备注
 这篇文章对Angualrjs与Angular的绑定机制做了对比，Angular的“双向绑定”通过指令`ngModel`实现（在表单中可以直接使用`ngModel`）或者由语法`[()]`来实现。

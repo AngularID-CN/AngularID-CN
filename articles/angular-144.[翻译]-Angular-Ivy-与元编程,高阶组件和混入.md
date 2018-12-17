@@ -1,5 +1,4 @@
-
-# Angular Ivy 与元编程，高阶组件和混入(mixins)
+# [翻译] Angular Ivy 与元编程，高阶组件和混入(mixins)
 
 > 原文链接：[Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310)
 
@@ -10,7 +9,7 @@
 > 为了行文方便，下文均以`我`指代原作者。
 
 <p align="center"> 
-    <img src="../assets/24/1.jpeg">
+    <img src="../assets/angular-144/1.jpeg">
 </p>
 
 Angular 社区中的每个开发者都对新一代 Angular 渲染引擎 `Ivy` 的即将发布感到十分激动。

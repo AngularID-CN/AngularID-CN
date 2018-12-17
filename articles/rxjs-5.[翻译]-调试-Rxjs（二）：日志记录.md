@@ -4,7 +4,7 @@
 >
 > 译者：[Ice Panpan](https://github.com/TanYiBing)；校验者：暂无
 
-![banner](../assets/17/banner_01.jpeg?raw=true)
+![banner](../assets/rxjs-5/banner_01.jpeg?raw=true)
 
 日志记录并不是一件让人兴奋的事。
 
@@ -35,7 +35,7 @@ users.subscribe();
 
 这个示例的控制台输出如下：
 
-![Console_01](../assets/17/console_01.png?raw=true)
+![Console_01](../assets/rxjs-5/console_01.png?raw=true)
 
 除了 `Observable` 的 `next` 和 `complete` 的通知之外，记录的输出还包括订阅和取消订阅的通知。它显示了发生的一切：
 
@@ -46,11 +46,11 @@ users.subscribe();
 
 每个记录的通知还包括有关接受通知的订阅者的信息——包括订阅者具有的订阅量以及 `subscribe` 调用的堆栈痕迹：
 
-![Console_02](../assets/17/console_02.png?raw=true)
+![Console_02](../assets/rxjs-5/console_02.png?raw=true)
 
 堆栈痕迹指的是 `subscribe` 调用的根——即影响订阅者对 `Observable` 订阅的显式调用。因此，用户请求的 `Observable` 的堆栈痕迹也参考了 `medium.js` 中的 `subscribe` 调用：
 
-![Console_03](../assets/17/console_03.png?raw=true)
+![Console_03](../assets/rxjs-5/console_03.png?raw=true)
 
 当我调试时，我发现知道调用 `subscribe` 的实际的根位置比知道组合 `Observable` 中某个 `subscribe` 的位置更有用。
 
@@ -77,7 +77,7 @@ const getRepos = action$ =>
 
 记录显示正在发生的事：
 
-![Console_04](../assets/17/console_04.png?raw=true)
+![Console_04](../assets/rxjs-5/console_04.png?raw=true)
 
 在错误的动作被发射出去之后，看到 `redux-observalbe`基础结构从epic中解除订阅的 `Observable` 完成了。该[文档](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-catch)的 `catch` 解释了为什么出现这种情况。
 
@@ -104,7 +104,7 @@ const getRepos = action$ =>
 
 这个epic将不再完成，并继续发送错误动作：
 
-![Console_05](../assets/17/console_05.png?raw=true)
+![Console_05](../assets/rxjs-5/console_05.png?raw=true)
 
 在这两个示例中，需要对正在调试的代码进行的唯一修改是添加了一些标记注释。
 
