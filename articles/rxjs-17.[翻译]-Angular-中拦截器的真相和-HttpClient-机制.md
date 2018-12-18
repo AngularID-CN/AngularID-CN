@@ -91,7 +91,7 @@ export class AppComponent {
 我们的任务是在不使用 `HttpClient` 提供的方法的情况下手动将拦截器集成到处理请求的逻辑中。同时，我们将构建一个处理程序链，就像 Angular 内部完成的一样。
 
 ### 处理请求
-在现代浏览器中，AJAX 功能是使用 [XmlHttpReques](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 或 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 实现的。此外，还有经常使用的会导致[与变更检测相关的意外结果](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef)的 [`JSONP`](http://schock.net/articles/2013/02/05/how-jsonp-really-works-examples/) 技术。Angular 需要一个使用上述方法之一的服务来向服务器发出请求。这种服务在 `HttpClient` 文档上被称为 **后端（backend）**，例如：
+在现代浏览器中，AJAX 功能是使用 [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 或 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 实现的。此外，还有经常使用的会导致[与变更检测相关的意外结果](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef)的 [`JSONP`](http://schock.net/articles/2013/02/05/how-jsonp-really-works-examples/) 技术。Angular 需要一个使用上述方法之一的服务来向服务器发出请求。这种服务在 `HttpClient` 文档上被称为 **后端（backend）**，例如：
 
 >*In an interceptor, next always represents the next interceptor in the chain, if any, or the final backend if there are no more interceptors*
 >*在拦截器中，`next` 始终表示链中的下一个拦截器（如果有的话），如果没有更多拦截器的话则表示最终后端*
