@@ -4,7 +4,7 @@
 >
 > 译者：[Ice Panpan](https://github.com/TanYiBing)；校验者：暂无
 
-![banner](../assets/16/banner.jpeg?raw=true)
+![banner](../assets/rxjs-2/banner.jpeg?raw=true)
 
 我是一个 `Rxjs` 的信仰者，我在我所有的项目中都使用 `Rxjs`。有了 `Rxjs`，我发现很多曾经觉得乏味的事都变得痛快。但是有一件事不是这样：调试。
 
@@ -75,15 +75,15 @@ const people = interval
 
 调用 `rxSpy.show()` 将显示所有已经被标记的 `Observable` 的列表，指示其状态（`incomplete`，`complete ` 或者 `errored`），订阅者（`subscribers `）的数量和最近发出的值（如果已经发出一个值）。控制台输出将如下所示：
 
-![Console_1](../assets/16/1.png?raw=true)
+![Console_1](../assets/rxjs-2/1.png?raw=true)
 
 要显示特定标记的 `Observable` 的信息，可以将标记名称或者正则表达式传递给 `show`：
 
-![Console_2](../assets/16/2.png?raw=true)
+![Console_2](../assets/rxjs-2/2.png?raw=true)
 
 可以通过调用 `rxSpy.log` 来显示被标记的 `Observable` 的日志信息：
 
-![Console_3](../assets/16/3.png?raw=true)
+![Console_3](../assets/rxjs-2/3.png?raw=true)
 
 `log` 不带参数调用将会显示所有标记的 `Observable` 的日志记录。
 
@@ -91,51 +91,51 @@ const people = interval
 
 调用 `rxSpy.undo()` 将显示已经调用的方法的列表：
 
-![Console_4](../assets/16/4.png?raw=true)
+![Console_4](../assets/rxjs-2/4.png?raw=true)
 
 调用 `rxSpy.undo` 并传递与方法调用关联的数字将看到该调用的撤销函数被执行。例如，调用 `rxSpy.undo(3)` 将看到被标记为 `interval` 的 `Observable` 的记录被撤销之后的结果：
 
-![Console_5](../assets/16/5.png?raw=true)
+![Console_5](../assets/rxjs-2/5.png?raw=true)
 
 有时，在调试时修改 `Observable` 或其值时，这个方法就很有用。控制台API包含一种 `let` 方法，其功能与 `RxJS` 中的 `let` 操作符大致相同。它的实现方式是通过调用 `let` 方法对标记的 `Observable` 的当前和未来的订阅者产生影响。例如。以下调用将看到 `people` `Observable` 发射 `mallory` 而不是 `alice` 或 `bob`:
 
-![Console_6](../assets/16/6.png?raw=true)
+![Console_6](../assets/rxjs-2/6.png?raw=true)
 
 与 `log` 方法一样，`let` 可以撤消对该方法的调用：
 
-![Console_7](../assets/16/7.png?raw=true)
+![Console_7](../assets/rxjs-2/7.png?raw=true)
 
 能够在调试时暂停一个 `Observable` 对我来说几乎是不可或缺的。调用 `rxSpy.pause` 将暂停一个标记的 `Observable`，并返回一个可用于控制和检查 `Observable` 的通知（`notifications`）的 `deck`：
 
-![Console_8](../assets/16/8.png?raw=true)
+![Console_8](../assets/rxjs-2/8.png?raw=true)
 
 在该 `deck` 上调用 `log` 将显示 `Observable` 是否暂停，并显示被暂停的通知（`notifications`）。（通知是 `Notification` 使用 `materialize` 操作符获得的rxjs实例）
 
-![Console_9](../assets/16/9.png?raw=true)
+![Console_9](../assets/rxjs-2/9.png?raw=true)
 
 在 `deck` 上调用 `step` 将发出一个被暂停住的通知（`notifications`）：
 
-![Console_10](../assets/16/10.png?raw=true)
+![Console_10](../assets/rxjs-2/10.png?raw=true)
 
 调用 `resume` 将发出所有被暂停的通知（`notifications`），并将恢复 `Observable`：
 
-![Console_11](../assets/16/11.png?raw=true)
+![Console_11](../assets/rxjs-2/11.png?raw=true)
 
 调用 `pause` 将看到 `Observable` 重新进入暂停状态：
 
-![Console_12](../assets/16/12.png?raw=true)
+![Console_12](../assets/rxjs-2/12.png?raw=true)
 
 很容易忘记将返回的 `deck` 分配给变量，因此控制台API包含一个 `deck` 方法，和 `undo` 方法行为相似。调用它将显示 `pause` 调用的列表：
 
-![Console_13](../assets/16/13.png?raw=true)
+![Console_13](../assets/rxjs-2/13.png?raw=true)
 
 调用它并传递与调用相关联的数字将返回相对应的 `deck` ：
 
-![Console_14](../assets/16/14.png?raw=true)
+![Console_14](../assets/rxjs-2/14.png?raw=true)
 
 像 `log` 和 `let` 的调用一样，`pause` 的调用也可以撤销。撤销 `pause` 的调用将看到标记的 `Observable` 恢复正常：
 
-![Console_15](../assets/16/15.png?raw=true)
+![Console_15](../assets/rxjs-2/15.png?raw=true)
 
 希望以上的例子可以对 `rxjs-spy` 的控制台API进行一个概述。`Debugging RxJS` 的后续部分将重点介绍 `rxjs-spy` 的具体功能以及如何使用它们来解决实际的调试问题。
 

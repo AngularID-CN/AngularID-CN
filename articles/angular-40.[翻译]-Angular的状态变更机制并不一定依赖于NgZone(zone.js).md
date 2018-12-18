@@ -7,7 +7,7 @@
 
 > 译者：**[秋天](https://github.com/jkhhuse)**；校对者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**
 
-![Zone.js](../assets/19/1.jpeg)
+![Zone.js](../assets/angular-19/1.jpeg)
 
 > 本篇文章的主题不是 `Zones`(`zone.js`)，而是关注 `Angular` 中的 `Zone` 实现：`NgZone` 以及他们在状态变更检测机制中的联系。有关于 `Zone`的相关解释请查看 **[翻阅源码后，我终于理解了Zone.js](15.[翻译]-翻阅源码后，我终于理解了Zone.js.md)**
 

@@ -11,7 +11,7 @@
 > 译者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**；校对者：**[尊重](https://github.com/sawyerbutton)**
 
 <p align="center"> 
-    <img src="../assets/14/1.png" alt="DOM Update">
+    <img src="../assets/angular-14/1.png" alt="DOM Update">
 </p>
 
 由模型变化触发的 DOM 更新是所有现代前端框架的重要特性，当然 Angular 也不例外。定义一个模板表达式如下：

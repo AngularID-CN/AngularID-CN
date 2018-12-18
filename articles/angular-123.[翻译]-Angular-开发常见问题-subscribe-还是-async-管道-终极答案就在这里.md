@@ -4,7 +4,7 @@
 
 # Angular开发常见问题：subscribe()  还是 | async 管道 ? 终极答案就在这里
 
-![img](../assets/22/1.png)
+![img](../assets/angular-123/1.png)
 
 Original 📷 by [louis amal](https://unsplash.com/photos/OLRriY0bQa0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -71,7 +71,7 @@ export class TodosComponent implements OnInit, OnDestroy {
 1. 被解包出来的属性可以在模版的多处使用，无需依赖一些变通的方法，我们会在例2中演示这些方法。
 2. 被解包出来的属性可在组件的任意一处被获取。这意味着这些属性能**够直接在组件的方法**中使用，而不需要从模板中将其传递进来。那样便能将所有的状态保留在组件之中。
 
-![img](../assets/22/2.png)
+![img](../assets/angular-123/2.png)
 
 模版只需负责触发该方法(如: 使用 **(click)="toggleAllTodosToDone()"** )
 
@@ -80,7 +80,7 @@ export class TodosComponent implements OnInit, OnDestroy {
 1. 使用 `subscribe()` 我们必须在组件的生命周期结束时取消订阅来防止内存泄露。开发者通常需要手动取消订阅。更RxJS式的做法(声明式的方法)是使用  `takeUntil(unsubscribe$)` 操作符来实现取消订阅，如下图所示。该解决方案十分冗余并且容易发生错误，因为我们很容易忘记去实现 `ngOnDestroy`  方法，不这么做并**不会**导致任何错误，但会产生一处不为人知的内存泄露。
 2. 在 `ngOnInit()` 中手动订阅observable会使得 `OnPush` change detection strategy 失效。我们可以在订阅中手动调用 `this.cd.markForCheck()` 方法以令其重新生效，但这仍然是一个易忘易错的方案。
 
-![img](../assets/22/3.png)
+![img](../assets/angular-123/3.png)
 
 > OnPush change detection strategy 的问题成为了压垮我继续使用我曾最爱的 "subscribe()" 方法来处理Angular组件中observable数据源的最后一根稻草。
 
@@ -124,7 +124,7 @@ export class TodosComponent implements OnInit {
 2. 在单个模板中多处要使用解包出来的对象会潜在的产生多次解包过程. 当然这可以通过在外套一层包装元素(a dedicated wrapper element)来避免该问题，但这也意味着将状态管理这件事交给了`DOM`结构来控制，这种做法也显得十分奇怪。
 3. 使用 `*ngIf` 或 `*ngFor` 解包出来的属性**无法**在组件方法中获取。这意味着我们必须从模板中将这些属性做为方法参数传递到方法之中，这么做将进一步切分模板和组件之间的逻辑。
 
-![img](../assets/22/4.png)
+![img](../assets/angular-123/4.png)
 
 使用 | async 管道进行多处订阅 vs 使用包装元素配合 ***ngIf "as"** 语法
 
@@ -132,7 +132,7 @@ export class TodosComponent implements OnInit {
 
 非常感谢 [Martin Javinez](https://medium.com/@matzecremer) 所提供的解决方案，以实现多个 `| async` 管道 resolved 至一个变量之中…
 
-![img](https://github.com/AngularInDepth/angularindepth/blob/master/assets/22/5.png?raw=true)
+![img](https://github.com/AngularInDepth/angularindepth/blob/master/assets/angular-123/5.png?raw=true)
 
 非常感谢 [Ward Bell](https://medium.com/@wardbell) 除了使用 `<ng-container></ng-container>` 包装元素外，还有另外一种方法可以避免由于在模板中使用了多个 | async 从而产生多个订阅的问题。
 
@@ -154,7 +154,7 @@ export class TodosComponent implements OnInit {
 
 之后，你便能像这样 `<dumb [prop]="value$ | async"></dumb>` 轻松地将未包装的属性传递至哑组件中。这样既能使得 `OnPush` 继续生效，同时还能享受 "在哑组件的潜在复杂模板中使用未包装的对象" 这一益处。
 
-![img](../assets/22/6.png)
+![img](../assets/angular-123/6.png)
 
 对于复杂的模板，将其部分内容提取拆分成多个独立的哑组件是有道理的。这样我们既能在哑组件中直接使用这些未包装的对象还能享受 **OnPush** change detection strategy 的益处。
 
