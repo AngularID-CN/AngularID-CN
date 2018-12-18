@@ -4,7 +4,7 @@
 > 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**
 > 译者：**[秋天](https://github.com/jkhhuse)**；校对者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**
 
-![Zone.js](../assets/15/8.jpeg?raw=true?raw=true)
+![Zone.js](../assets/angular-35/8.jpeg?raw=true?raw=true)
 
 > 注意本文的主题不是关于 NgZone，而是与 NgZone 底层依赖的 **[zone.js](https://github.com/angular/zone.js)** 相关，如果熟读本文的内容，你可以创建自己的 NgZone，或者至少知道 NgZone 内部机制，想要更多了解 NgZone，可查看 **[Do you still think that NgZone (zone.js) is required for change detection in Angular?](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef)**
 
@@ -87,13 +87,13 @@ at index.js:17
 
 调用栈使用图例表示如下：
 
-![zone-callstack](../assets/15/1.png?raw=true?raw=true)
+![zone-callstack](../assets/angular-35/1.png?raw=true?raw=true)
 
 在函数调用过程中，我们有3个栈帧，还有一个 global 上下文。
 
 在常规的 JavaScript 环境中，`c` 函数栈帧不会与 `a` 函数栈帧有任何关联。而 `Zone` 允许我们把每个栈帧关联到一个特殊的`zone`之中。例如，我们可以关联 `a` 和 `c` 栈帧到一个相同的`zone`中。如下图所示：
 
-![zone-assosiate1](../assets/15/2.png?raw=true?raw=true)
+![zone-assosiate1](../assets/angular-35/2.png?raw=true?raw=true)
 
 下面来快速了解下`zone`是如何做到这样的。
 
@@ -162,7 +162,7 @@ zoneAC.run(a);
 
 现在每个调用栈都关联了一个`zone`：
 
-![zone-assosiate2.png](../assets/15/3.png?raw=true?raw=true)
+![zone-assosiate2.png](../assets/angular-35/3.png?raw=true?raw=true)
 
 上面代码中，我们使用`run`方法执行了每个函数，并且直接为函数指定了`zone`。你可能会思考，如果我们不使用`run`方法，而仅仅是在`zone`中执行函数，会怎么样？
 
@@ -187,7 +187,7 @@ a();
 
 它的执行环境如下：
 
-![zone-assosiate3.png](../assets/15/4.png?raw=true?raw=true)
+![zone-assosiate3.png](../assets/angular-35/4.png?raw=true?raw=true)
 
 如果我们只在`a`函数中使用`zoneAB.run`，那么`b`和`c`函数将在`AB`的`zone`中执行：
 
@@ -211,7 +211,7 @@ function a() {
 a();
 ```
 
-![zone-assosiate4.png](../assets/15/5.png?raw=true?raw=true)
+![zone-assosiate4.png](../assets/angular-35/5.png?raw=true?raw=true)
 
 你可以看到我们在`AB zone`中调用`b`函数，`c`函数也在这个`zone`中执行了。
 
@@ -244,13 +244,13 @@ a();
 
 函数调用过程可以表示为：
 
-![zone-assosiate5.png](../assets/15/6.png?raw=true?raw=true)
+![zone-assosiate5.png](../assets/angular-35/6.png?raw=true?raw=true)
 
 这个图很清晰，但是这个图隐藏了一个重要的实现细节：`Zone`需要为每个要执行的任务指定正确的`zone`。因此，`Zone`需要记住当前要执行的任务将会在哪个`zone`中执行，它通过维护与任务关联`zone`的引用来实现。随后，这个`zone`被用来从`root zone`处理机(`root zone handler`)中调用一个任务。
 
 也就是说，每个异步任务的调用栈总是从`root zone`开始，并且恢复(`restore`)任务所需要的信息到与任务关联的`zone`中，随后执行任务。所以更正确的表示应该是这样：
 
-![zone-assosiate6.png](../assets/15/7.png?raw=true?raw=true)
+![zone-assosiate6.png](../assets/angular-35/7.png?raw=true?raw=true)
 (译者注：此处描述不容易理解，尤其是恢复的含义，对照图来说就是：b函数执行后，b函数里有一个异步任务c，其实这个c对应的`zone`及相关信息是由`zone task handler`准备的，而这个`zone task handler`就是属于root zone的，此处恢复的意思就是，提供给c函数的执行上下文信息从`root zone`恢复为`zoneAB`)
 
 

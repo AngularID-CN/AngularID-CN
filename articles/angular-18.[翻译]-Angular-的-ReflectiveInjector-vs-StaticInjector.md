@@ -8,7 +8,7 @@
 
 > 译者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**；校对者：
 
-![Injector](../assets/18/1.jpeg)
+![Injector](../assets/angular-18/1.jpeg)
 
 Angular 5.0.0 的 **[change log](https://github.com/angular/angular/blob/master/CHANGELOG.md#500-pentagonal-donut-2017-11-01)** 中提到了 breaking change，与平台和编译器提供商有关，并引入了 StaticInjector。StaticInjector 将会替换现有的 ReflectiveInjector，而 ReflectiveInjector 将会被废弃掉（注：ReflectiveInjector 被废弃掉并不是说明这个设计是残次品，只是它不适用于 Angular 框架内的设计，实际上它可以单独拿出来，作为依赖注入功能被其他框架或包使用，后文会涉及）。我们大多数开发者并不会直接使用 ReflectiveInjector，甚至都不了解其内部原理，所以这个 breaking change 不会立即对我们的代码产生什么影响。
 
