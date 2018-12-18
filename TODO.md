@@ -7,7 +7,10 @@
 - [Nrwl](#nrwl)：[Nrwl](https://blog.nrwl.io/) 专栏下的文章
 - [Others](#others)：其它文章
 
-P.S. 进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
+P.S. 关于进度：
+
+- 翻译进度为「翻译中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
+- 转载进度为「转载中 -> 校验中 -> 待发表 -> 已发表」中的任意一个。
 
 ## [Angular](https://blog.angularindepth.com/tagged/angular)
 
@@ -85,7 +88,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 79 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------55---------------------) | - |  |  |  |  
 78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - |  |  |  |  
 77 | [Use <ng-template>](https://blog.angularindepth.com/use-ng-template-c72852c37fba?source=---------57---------------------) | - |  |  |  |  
-76 | [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c?source=---------58---------------------) | - |  |  |  |  
+76 | [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c?source=---------58---------------------) | - | baishusama |  | [转载中](https://juejin.im/entry/5b1a96eaf265da6e4d5afdff) |  
 75 | [Ivy engine in Angular: first in-depth look at compilation, runtime and change detection](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd?source=---------59---------------------) | - |  |  |  |  
 74 | [A modern solution to lazy loading images using Intersection Observer](https://blog.angularindepth.com/a-modern-solution-to-lazy-loading-using-intersection-observer-9280c149bbc?source=---------60---------------------) | - |  |  |  |  
 73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - | 秋天 |  | 翻译中 |  
@@ -152,7 +155,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 12 | [What is `forwardRef` in Angular and why we need it](https://blog.angularindepth.com/what-is-forwardref-in-angular-and-why-we-need-it-6ecefb417d48?source=---------122---------------------) | - |  |  |  |  
 11 | [Would you buy a book on Angular internals?](https://blog.angularindepth.com/would-you-buy-a-book-on-angular-change-detection-8239a8ef64b7?source=---------123---------------------) | - |  |  |  |  
 10 | [This will make you more efficient at debugging Webpack unspecified build errors](https://blog.angularindepth.com/this-will-make-you-more-efficient-at-debugging-wepback-unspecified-build-errors-6392850caed9?source=---------124---------------------) | - |  |  |  |  
-9 | [Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f?source=---------125---------------------) | 白鼠 |  | 翻译中 |  |
+9 | [Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f?source=---------125---------------------) | - | baishusama |  | [转载中](https://juejin.im/post/5bf405f851882530d44b400a) |
 8 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------126---------------------) | - |  |  |  |  
 7 | [A Deep, Deep, Deep, Deep, Deep Dive into the Angular Compiler](https://blog.angularindepth.com/a-deep-deep-deep-deep-deep-dive-into-the-angular-compiler-5379171ffb7a?source=---------127---------------------) | - |  |  |  |  
 6 | [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e?source=---------128---------------------) | - |  |  |  | [关于 Angular 动态组件你需要知道的](articles/angular-6.[翻译]-关于-Angular-动态组件你需要知道的.md)
