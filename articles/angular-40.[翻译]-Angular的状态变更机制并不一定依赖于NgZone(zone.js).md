@@ -3,11 +3,12 @@
 > 原文：[Do you still think that NgZone (zone.js) is required for change detection in Angular?
 ](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef)
 > 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**
-> 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位
-
+> *原技术博文由 [`Max Koretskyi`](https://twitter.com/maxim_koretskyi) 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位。*
+>
+> 译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。
 > 译者：**[秋天](https://github.com/jkhhuse)**；校对者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**
 
-![Zone.js](../assets/angular-19/1.jpeg)
+![Zone.js](../assets/19/1.jpeg)
 
 > 本篇文章的主题不是 `Zones`(`zone.js`)，而是关注 `Angular` 中的 `Zone` 实现：`NgZone` 以及他们在状态变更检测机制中的联系。有关于 `Zone`的相关解释请查看 **[翻阅源码后，我终于理解了Zone.js](15.[翻译]-翻阅源码后，我终于理解了Zone.js.md)**
 
@@ -20,12 +21,14 @@
 想要证明 `Angular` 在没有依赖 `Zone` 的情况下也能够正常运行，起初我打算准备模拟 `zone` 对象，并且不让这个对象做任何事情，但是在 `Angular` v5 版本中，`Angular` 提供了类似的机制。`Angular` 现在提供了一个[方式](https://github.com/angular/angular/commit/344a5ca)，它使用配置 **[noop Zone](https://github.com/angular/angular/blob/30d5a2ca83c9cf44f602462597a58547b05b75dd/packages/core/src/zone/ng_zone.ts#L318)** 可以达到类似效果。
 
 首先，要做的事情是从依赖中移除 `zone.js`，我将以 stackbliz 来演示这段程序，并且从 `polyfils.ts` 文件中删除下面的 `import`：
+
 ```ts
 * Zone JS is required by Angular itself. */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 ```
 
 随后，配置 `Angular` 使用 `noop Zone` 实现：
+
 ```ts
 platformBrowserDynamic()
     .bootstrapModule(AppModule, {
@@ -36,6 +39,7 @@ platformBrowserDynamic()
 现在你运行这个[应用程序](https://stackblitz.com/edit/angular-jmlwb7)，你将会发现变更检测仍然正常运行，并且在 DOM 中渲染了 `HelloComponent` 的 `name` 属性。
  
 现在添加 `setTimeout` 事件来更新 `name` 属性：
+
 ```ts
 export class AppComponent  {
     name = 'Angular 5';
@@ -46,7 +50,8 @@ export class AppComponent  {
     }
 ```
 
-你会发现 `name` 属性在 1s 之后不会在 DOM 中更新，`NgZone` 没有被使用，变更检测也没有被自动触发。不过，我们可以通过手动触发变更检测，首先注入 [`ApplicatinoRef`](https://angular.io/api/core/ApplicationRef)，随后触发 `tick` 方法来启动变更检测：
+你会发现 `name` 属性在 1s 之后不会在 DOM 中更新，`NgZone` 没有被使用，变更检测也没有被自动触发。不过，我们可以通过手动触发变更检测，首先注入 [`ApplicatinoRef`](https://angular.cn/api/core/ApplicationRef)，随后触发 `tick` 方法来启动变更检测：
+
 ```ts
 export class AppComponent  {
     name = 'Angular 4';
@@ -70,6 +75,7 @@ export class AppComponent  {
 在那篇文章中，我还提到了 `Zone` 的两种能力：`content propagation`（传递上下文） 和 `outstanding asynchronous tasks tracking`（追踪未完成的任务）。`Angular` 实现了 [`NgZone`](https://github.com/angular/angular/blob/30d5a2ca83c9cf44f602462597a58547b05b75dd/packages/core/src/zone/ng_zone.ts#L86) 类，这个类深度依赖于任务追踪机制。
 
 `NgZone` 其实只是对 [`forked child zone`](https://github.com/angular/angular/blob/30d5a2ca83c9cf44f602462597a58547b05b75dd/packages/core/src/zone/ng_zone.ts#L252) 的一个包装：
+
 ```ts
 function forkInnerZoneWithAngularBehavior(zone: NgZonePrivate) {
     zone._inner = zone._inner.fork({
@@ -77,7 +83,8 @@ function forkInnerZoneWithAngularBehavior(zone: NgZonePrivate) {
         ...
 ```
 
-这个 `forked zone` 保存在 `_inner` 属性中，它通常被认为是 `Angular` 的 `zone`，这个 `zone` 是在执行 `NgZone.run()` 时用来运行一个回调的：
+这个 `forked zone` 保存在 `_inner` 属性中，它通常被认为是 `Angular` 的 `zone`，这个 `zone` 是在调用 `NgZone.run()` 方法时，用来执行回调：
+
 ```ts
 run(fn, applyThis, applyArgs) {
     return this._inner.run(fn, applyThis, applyArgs);
@@ -85,13 +92,14 @@ run(fn, applyThis, applyArgs) {
 ```
 
 继承于 `Angular zone` 的 `current zone` 被保存在 `_outer` 属性中，它被用来在执行 `NgZone.runOutsideAngular()` 时调用一个回调：
+
 ```ts
 runOutsideAngular(fn) {
     return this._outer.run(fn);
 }
 ```
 
-**这个方法常用来在 `Angular zone` 之外运行耗性能操作，以避免不断触发变更检测。**
+**这个方法常用来在 `Angular zone` 之外运行耗性能操作，以避免不断地触发变更检测。**
 
 `NgZone` 有一个 `isStable` 属性，用来表示当前是否存在未完成的宏任务(macro task)和微任务(micro task)。此外它还定义了四个事件：
 
@@ -104,6 +112,7 @@ runOutsideAngular(fn) {
 
 
 `Angular` 在 **[ApplicationRef](https://github.com/angular/angular/blob/30d5a2ca83c9cf44f602462597a58547b05b75dd/packages/core/src/application_ref.ts#L364)** 中使用 `onMicrotaskEmpty` 事件来自动地触发变更检测：
+
 ```ts
 constructor(...) {
   this._zone.onMicrotaskEmpty.subscribe(
@@ -114,6 +123,7 @@ constructor(...) {
 ## NgZone 是如何实现 onMicrotaskEmpty 事件的
 
 一起看看 NgZone 是如何实现 `onMicrotaskEmpty` 事件的。这个事件由 [checkStable](https://github.com/angular/angular/blob/30d5a2ca83c9cf44f602462597a58547b05b75dd/packages/core/src/zone/ng_zone.ts#L233) 函数发出：
+
 ```ts
 function checkStable(zone: NgZonePrivate) {
   if (zone._nesting == 0 && !zone.hasPendingMicrotasks && !zone.isStable) {
@@ -132,6 +142,7 @@ function checkStable(zone: NgZonePrivate) {
 ## 常见的陷阱
 
 在 stackoverflow 中最常见的问题之一是在使用某些第三方库的时候，变更检测机制失效。例如使用 [gapi(Google API Client Library)](https://developers.google.com/api-client-library/) 库时的[例子](https://stackoverflow.com/a/46286400/2545680)。通用的解决方案，是在 Angular 的 `zone` 中执行一个回调：
+
 ```ts
 gapi.load('auth2', () => {
     zone.run(() => {
@@ -143,6 +154,7 @@ gapi.load('auth2', () => {
 为了探求这个原因，我查看了 gapi 压缩后的源码，发现它使用了 `JSONP` 技术来发起网络请求，它并没有使用 AJAX API，例如 `XMLHttpRequest` 或者 `Fetch API`，而这些 API 已经被 `zone` 打补丁了。相反，它会创建一个带有源 URL 的脚本，并定义了一个全局回调，当从服务器获取数据时，会触发这个全局回调。这个行为 `zone` 并没有打补丁，因而也就无法被 `zone` 监听，因而 Angular 也无法得知这个请求，从而无法自动触发变更检测。
 
 下面就是从压缩后的 gapi 中截取的"奇怪"的处理代码：
+
 ```js
 Ja = function(a) {
     var b = L.createElement(Z);
@@ -157,12 +169,15 @@ Ja = function(a) {
 ```
 
 `z` 变量等同于 `script`，`a` 参数等同于 带有源的 URL地址：
+
 ```js
 https://apis.google.com/_.../cb=gapi.loaded_0
 ```
 
 URL 最后的 `gapi.loaded_0` 代码就是全局的回调：
+
 ```js
 typeof gapi.loaded_0 
-“function”
+"function"
 ```
+
