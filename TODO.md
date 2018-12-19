@@ -189,7 +189,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  
 19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - |  |  |  |  
 18 | [RxJS: Understanding Subjects](https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1?source=---------19---------------------) | - |  |  |  |  
-17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - | Ice Panpan |  | 翻译中 |  
+17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - | Ice Panpan |  | 待校验 |  
 16 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------21---------------------) | - |  |  |  |  
 15 | [How to Reduce Action Boilerplate](https://blog.angularindepth.com/how-to-reduce-action-boilerplate-90dc3d389e2b?source=---------22---------------------) | - |  |  |  |  
 14 | [RxJS: How to Use Lettable Operators with Promises](https://blog.angularindepth.com/rxjs-how-to-use-lettable-operators-and-promises-2e717313bf76?source=---------23---------------------) | - |  |  |  |  
