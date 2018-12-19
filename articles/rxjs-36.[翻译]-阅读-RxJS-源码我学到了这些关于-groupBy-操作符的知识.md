@@ -58,8 +58,6 @@ const result = [
 
 #### 数据管道
 
-I set out to create a *pipeline* that would take a series of data points, classify them based on some attributes, and then output the classified sets sequentially. While such functionality can easily be achieved using simple functional programming techniques or libraries, I chose RxJS because the data points were expected to arrive asynchronously.
-
 我打算创建一个*管道*，它将接受一系列数据点，根据一些属性对其进行分类，然后依次将分类结果的集合进行输出。虽然该功能使用一些函数式编程技巧和库能够非常容易的实现，而我选择 RxJS 是因为数据点的来源是异步的。
 
 我提出的解决方案应该是很简单的：将一个 observable 流通过管道输送至 `groupBy` 操作符，紧接着跟上一个 `concatMap` 操作符用于最后获取序列数据集合。我曾以为基于 [Reactivex.io](http://reactivex.io/) 文档给出的关于 `groupBy` 和 `concatMap` 操作符的相关信息，这应该是一个简单的解决方案。
@@ -140,7 +138,7 @@ const result = [
 
 #### 一些探查工作
 
-在 [ReactiveX.io](http://reactivex.io/) 上翻阅  [RxJS API 参考手册](https://rxjs-dev.firebaseapp.com/api) 一无所获后，我决定深入至RxJS源码，尝试去理解代其背后真正的工作原理。
+在 [ReactiveX.io](http://reactivex.io/) 上翻阅  [RxJS API 参考手册](https://rxjs-dev.firebaseapp.com/api) 一无所获后，我决定深入至RxJS源码，尝试去理解其背后真正的工作原理。
 
 通过阅读 `groupBy` [操作符](https://github.com/ReactiveX/rxjs/blob/master/src/internal/operators/groupBy.ts#L138)的[源码](https://github.com/ReactiveX/rxjs/blob/master/src/internal/operators/groupBy.ts#L138)，我得知 `groupBy` 其内部会为源流（source stream）中找到的每一个 *key* 创建一个新的 `Subject` 实例。所有属于这个 *key* 的值都会被 `Subject` 实例立刻发射出来。
 
@@ -150,15 +148,11 @@ const result = [
 
 #### 关于`RxJS Subject`的简短说明
 
-到了这个阶段，我们必须理解Subject实例可以被认为是*热启动*的Observable（*hot* Observables），也就是说，无论是否有订阅者他们都会生产通知。
+到了这个阶段，我们必须理解 Subject 实例可以被认为是*热启动*的 Observable（*hot* Observables），也就是说，无论是否有订阅者他们都会生产通知。
 
 因此，如果一个 observer 在一个 `Subject` 已经发射数据后对其进行订阅，那么这个 observer 会错过在这订阅前所有产生的值。
 
 #### 这意味着什么？
-
-The `groupBy` operator emits `Subject` instances for each *key*, and then uses that `Subject` instance to immediately emit the individual values as well. However, the `mergeMap` operator subscribes to only one of the `Subject`instances at any point in time, starting with the first one.
-
-A quick illustration of this can help make this clear:
 
 `groupBy` 操作符为每一个 *key* 发射一个  `Subject`  实例，并使用这些 `Subject` 立刻发射出独立的值。然而，`mergeMap` 操作符从第一个 `Subject` 实例开始，在任何时间点依次只订阅了其中一个实例。
 
@@ -166,21 +160,17 @@ A quick illustration of this can help make this clear:
 
 ![img](../assets/rxjs-36/2.png)
 
-属于第二第三组的值：b，c，d，e，f因此而丢失了，concatMap() 操作符也因此从来没有见到过他们。
+属于第二第三组的值：b，c，d，e，f 因此而丢失了，concatMap() 操作符也因此从来没有见到过他们。
 
 由上图可知，`mergeMap` 仅会在第一个 `Subject` 完成工作后（completed）才开始订阅第二个以及之后的 `Subject` 。然而，第二个以及之后的 `Subject` 从源流中一接受到值就立刻将他们发射出去了。
 
-
-
 由于 `mergeMap` 操作符直到整个源流耗尽后才会订阅任何后续的 `Subject` 实例，所以这些来自后续 `Subject` 实例的值都不能被它所看到，并且实际上都已经丢失。
-
-
 
 #### 如何修复这个问题？
 
-考虑到调研这个问题我所花费的时间，修复该问题则显得非常简单。我仅是强制 `groupBy` 操作符去使用 `ReplaySubject` 来替代 `Subject` 实例就解决了这个问题。`ReplaySubject` 与 `Subject` 非常相似，它们只有1个至关重要的不同点。`ReplaySubject` 总是会确保 任何新的 observers 将会接收到所有在其订阅前已经发出的值，以及订阅后未来将会被发射出来的值。因此，使用 `ReplaySubject` 能帮助我们保证在订阅过程中不会丢失任何值。
+考虑到调研这个问题我所花费的时间，修复该问题则显得非常简单。我仅是强制 `groupBy` 操作符去使用 `ReplaySubject` 来替代 `Subject` 实例就解决了这个问题。`ReplaySubject` 与 `Subject` 非常相似，它们只有1个至关重要的不同点。`ReplaySubject` 总是会确保任何新的 observers 将会接收到所有在其订阅前已经发出的值，以及订阅后未来将会被发射出来的值。因此，使用 `ReplaySubject` 能帮助我们保证在订阅过程中不会丢失任何值。
 
-`groupBy` 操作符结构一个 `subjectSelector` 参数，该参数允许我们将切换 `Subject` 实例切换成 `ReplaySubject` 实例。
+`groupBy` 操作符接收一个 `subjectSelector` 参数，该参数允许我们将切换 `Subject` 实例切换成 `ReplaySubject` 实例。
 
 以下代码能够如期运行：
 
@@ -203,8 +193,6 @@ const subscription = result.subscribe(x => console.log(x));
 records.forEach(x => pipedRecords.next(x));
 pipedRecords.complete();
 ```
-
-#### 
 
 #### OK，但为什么概念证明能够正常运行呢？
 
