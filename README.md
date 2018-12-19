@@ -30,7 +30,6 @@
 22. [[翻译] Angular 开发常见问题: subscribe 还是 async 管道?-终极答案就在这里](articles/angular-123.[翻译]-Angular-开发常见问题-subscribe-还是-async-管道-终极答案就在这里.md)
 23. [[翻译] OnPush 组件中 NgDoCheck 和 AsyncPipe 的区别](articles/rxjs-37.[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md)
 24. [[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
-25. [[翻译] Angular 中拦截器的真相和 HttpClient 内部机制](articles/rxjs-17.[翻译]-Angular-中拦截器的真相和-HttpClient-内部机制.md)
 
 ## Memeber 
 
