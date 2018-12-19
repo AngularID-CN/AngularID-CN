@@ -94,11 +94,12 @@ export class AppComponent {
 在现代浏览器中，AJAX 功能是使用 [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 或 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 实现的。此外，还有经常使用的会导致[与变更检测相关的意外结果](https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef)的 [`JSONP`](http://schock.net/articles/2013/02/05/how-jsonp-really-works-examples/) 技术。Angular 需要一个使用上述方法之一的服务来向服务器发出请求。这种服务在 `HttpClient` 文档上被称为 **后端（backend）**，例如：
 
 >*In an interceptor, next always represents the next interceptor in the chain, if any, or the final backend if there are no more interceptors*
+>
 >*在拦截器中，`next` 始终表示链中的下一个拦截器（如果有的话），如果没有更多拦截器的话则表示最终后端*
 
 在 Angular 提供的 `HttpClient` 模块中，这种服务有两种实现方法——使用 XmlHttpRequest API 实现的[HttpXhrBackend](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/xhr.ts#L69) 和使用 JSONP 技术实现的 [JsonpClientBackend](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/jsonp.ts#L49)。`HttpClient` 中默认使用 `HttpXhrBackend`。
 
-Angular 定义了一个名为 HTTP（请求）handler 的抽象概念，负责处理请求。处理请求的中间件链由 HTTP handlers 组成，这些处理程序将请求传递给链中的下一个处理程序，直到其中一个处理程序返回一个 Observable 流。处理程序的接口由抽象类 [HttpHandler](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/backend.ts#L25) 定义：
+Angular 定义了一个名为 HTTP（request）handler 的抽象概念，负责处理请求。处理请求的中间件链由 HTTP handlers 组成，这些处理程序将请求传递给链中的下一个处理程序，直到其中一个处理程序返回一个 observable 流。处理程序的接口由抽象类 [HttpHandler](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/backend.ts#L25) 定义：
 
 ```ts
 export abstract class HttpHandler {
@@ -106,7 +107,7 @@ export abstract class HttpHandler {
 }
 ```
 
-像 [HttpXhrBackend](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/xhr.ts#L69) 这样的可以通过自行处理网络请求来创建一个请求的 backend 服务就是 HTTP handler 的一个示例。通过 backend 服务来处理请求是最常见的处理形式，但却不是唯一的处理方式。还有一种方法是从本地缓存提供请求再向服务器发出请求。因此，任何可以处理请求的服务都应该实现 `handle` 方法，该方法根据函数签名返回一个 HTTP events Observable，如 `HttpProgressEvent`，`HttpHeaderResponse` 或`HttpResponse`。因此，如果我们想提供一些自定义请求处理逻辑，我们需要创建一个实现 `HttpHandler` 接口的服务。
+像 [HttpXhrBackend](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/xhr.ts#L69) 这样可以根据原始请求创建一个网络请求的 backend 就是一个 HTTP handler 的示例。通过和 backend 服务通信来处理请求是最常见的处理形式，但却不是唯一的处理方式。还有一种方法是从本地缓存获取请求而不是创建一个请求。因此，任何可以处理请求的服务都应该实现 `handle` 方法，该方法根据函数签名返回一个 HTTP events 类型的 observable，如 `HttpProgressEvent`，`HttpHeaderResponse` 或`HttpResponse`。因此，如果我们想提供一些自定义请求处理逻辑，我们需要创建一个实现了 `HttpHandler` 接口的服务。
 
 ### 使用 backend 作为 HTTP handler
 `HttpClient` 服务在 DI 容器中的 HttpHandler 令牌下注入了一个全局的 HTTP handler 。然后通过调用它的 `handle` 方法来发出请求：
@@ -183,11 +184,11 @@ export class AppComponent {
 [这是示例](https://stackblitz.com/edit/angular-http-backend)。在示例中需要注意一些事项。首先，我们需要手动构建 `HttpRequest`。其次，由于 backend 处理程序返回 HTTP events 流，你将在屏幕上看到不同的对象一闪而过，最终将呈现整个 http 响应对象。
 
 ### 添加拦截器
-我们已经设法直接使用 backend 实现，但由于我们没有运行拦截器，所以请求头尚未添加到请求中。一个拦截器包含处理请求的逻辑，但它要与 `HttpClient` 一起使用，需要将其封装到实现 `HttpHandler` 接口的服务中。我们可以通过执行一个拦截器并将对链中的下一个处理程序的引用传递给此拦截器的方式实现此服务。这将使拦截器可以触发下一个处理程序，后者通常是 backend。为此，每个自定义的处理程序将保存对链中下一个处理程序的引用，并将其与请求一起传递给拦截器。所以我们想要这样的东西：
+我们已经设法直接使用 backend，但由于我们没有运行拦截器，所以请求头尚未添加到请求中。一个拦截器包含处理请求的逻辑，但它要与 `HttpClient` 一起使用，需要将其封装到实现了 `HttpHandler` 接口的服务中。我们可以通过执行一个拦截器并将链中的下一个处理程序的引用传递给此拦截器的方式来实现此服务。这样拦截器就可以触发下一个处理程序，后者通常是 backend。为此，每个自定义的处理程序将保存链中下一个处理程序的引用，并将其与请求一起传递给下一个拦截器。下面就是我们想要的东西：
 
 ![console_2](../assets/rxjs-17/console_2.png)
 
-难怪在 Angular 中已经存在这种封装处理程序的实现并被称为 `HttpInterceptorHandler`。让我们用它来封装我们的一个拦截器。但是不幸的是，Angular 不会将其导出为公共 API，因此我们只能从[源代码](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/interceptor.ts#L52)中复制基本实现：
+在 Angular 中已经存在这种封装处理程序的方法了并被称为 `HttpInterceptorHandler`。让我们用它来封装我们的一个拦截器吧。但是不幸的是，Angular 没有将其导出为公共 API，因此我们只能从[源代码](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/interceptor.ts#L52)中复制基本实现：
 
 ```ts
 export class HttpInterceptorHandler implements HttpHandler {
@@ -215,7 +216,7 @@ export class AppComponent {
 }
 ```
 
-现在，一旦我们发出请求，我们就可以看到 `Custom-Header-1` 已添加到请求中。[这是示例](https://stackblitz.com/edit/angular-http-backend-with-one-interceptor?file=app%2Finterceptor-handler.ts)。通过上面的实现，我们有一个拦截器 `HttpInterceptorHandler`，它引用了下一个处理程序，即 XHR backend。而且这是一条处理程序链。
+现在，一旦我们发出请求，我们就可以看到 `Custom-Header-1` 已添加到请求中。[这是示例](https://stackblitz.com/edit/angular-http-backend-with-one-interceptor?file=app%2Finterceptor-handler.ts)。通过上面的实现，我们将一个拦截器和引用了下一个处理程序的 XHR backend 封装进了 `HttpInterceptorHandler`。现在，这就是这是一条处理程序链。
 
 让我们通过封装第二个拦截器来将另一个处理程序添加到链中：
 
@@ -233,7 +234,7 @@ export class AppComponent {
 }
 ```
 
-[在这可以看到演示](https://stackblitz.com/edit/angular-http-backend-with-one-interceptor)，现在一切正常，就像我们在最开始的示例中使用 `HttpClient` 的那样。我们刚刚所做的就是构建了处理程序的中间件链，其中每个处理程序执行一个拦截器并将引用传递给它的下一个处理程序。这是链的图表：
+[在这可以看到演示](https://stackblitz.com/edit/angular-http-backend-with-one-interceptor)，现在一切正常，就像我们在最开始的示例中使用 `HttpClient` 的那样。我们刚刚所做的就是构建了处理程序的中间件链，其中每个处理程序执行一个拦截器并将下一个处理程序的引用传递给它。这是链的图表：
 
 ![console_3](../assets/rxjs-17/console_3.png)
 
@@ -252,7 +253,7 @@ export class I1 implements HttpInterceptor {
 最终，控制权将被传递到最后一个 backend 处理程序，该处理程序将对服务器执行请求。
 
 ### 自动封装拦截器
-为了不用通过逐个链接拦截器来手动构建这条链，而是通过 `HTTP_INTERCEPTORS` 令牌注入所有已注册的拦截器并使用 [reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight) 来自动链接它们。我们这样做：
+为了不用通过逐个链接拦截器来手动构建这条链，而是通过在 `HTTP_INTERCEPTORS` 令牌下注入所有已注册的拦截器并使用 [reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight) 来自动链接它们。我们这样做：
 
 ```ts
 export class AppComponent {
@@ -280,7 +281,20 @@ export class AppComponent {
 >*构造一个 HttpHandler，在将请求传递给给定的 HttpBackend 之前，将一系列 HttpInterceptor 应用于请求。
 >可以在 HttpClientModule 中用作工厂函数。*
 
-现在我们知道当我们使用完全相同的代码来构造链时它是怎么工作的了。HTTP handler 中间件链的最后一点是该函数默认被注册为 `HttpHandler`：
+（下面顺便贴一下源码:）
+
+```ts
+export function interceptingHandler(
+    backend: HttpBackend, interceptors: HttpInterceptor[] | null = []): HttpHandler {
+  if (!interceptors) {
+    return backend;
+  }
+  return interceptors.reduceRight(
+      (next, interceptor) => new HttpInterceptorHandler(next, interceptor), backend);
+}
+```
+
+现在我们知道 `interceptingHandler` 是如何构造一条处理函数链的了。并且该函数默认为 `HttpHandler`：
 
 ```ts
 @NgModule({
@@ -295,10 +309,10 @@ export class AppComponent {
 export class HttpClientModule {}
 ```
 
-因此，执行此函数的结果是链中第一个处理程序的引用被 `HttpClient` 服务注入并使用。
+因此，执行此函数的结果是链中第一个处理程序的引用被注入 `HttpClient` 服务并被使用。
 
 ## 构建处理链的 observable 流
-好的，现在我们知道我们有一堆处理程序，每个处理程序执行一个关联的拦截器并调用链中的下一个处理程序。调用此链返回的值是一个 `HttpEvents` 的 observable 流。这个流通常（但不总是）由最后一个处理程序生成，这是 backend 的具体实现。其他处理程序通常只返回该流。这是大多数拦截器实现的最后一个状态：
+好的，现在我们知道我们有一堆处理程序，每个处理程序执行一个关联的拦截器并调用链中的下一个处理程序。调用此链返回的值是一个 `HttpEvents` 类型的 observable 流。这个流通常（但不总是）由最后一个处理程序生成，这跟 backend 的具体实现有关。其他的处理程序通常只返回该流。下面是大多数拦截器的最后一个步骤：
 
 ```ts
 intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -315,12 +329,12 @@ intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> 
 
 ![console_5](../assets/rxjs-17/console_5.png)
 
-此外，由于每个拦截器都可以访问下一个拦截器（通过调用 `next.handler()`）返回的 observable 流，因此拦截器可以通过 RxJs 操作符添加自定义的逻辑来修改返回的流。
+此外，由于每个拦截器都可以访问下一个拦截器（通过调用 `next.handler()`）返回的 observable 流，因此可以通过 RxJs 操作符添加自定义的逻辑来修改返回的流。
 
 ## 构建 HttpClient 的 observable 流
-如果您仔细阅读了前面的部分，那么您现在可能想知道处理链创建的 HTTP events 流是否与调用 `HttpClient` 方法像 `get` 或者 `post` 所返回的流完全相同。咦...不是！过程更有意思。
+如果您仔细阅读了前面的部分，那么您现在可能想知道处理链创建的 HTTP events 流是否与调用 `HttpClient` 方法，如 `get` 或者 `post` 所返回的流完全相同。咦...不是！实现的过程更有意思。
 
-`HttpClient` 通过使用 `of` 这种创造性的 `RxJs` 操作符来将请求对象作为 observable 流的起始数据，并在调用 `HttpClient` 的 HTTP 请求方法时返回它。**处理程序链作为此流的一部分被同步处理，并且链返回的 observable 使用 `concatMap` 操作符压平**。关键点就在 `request` 方法，因为所有的 API 方法像 `get`，`post` 和 `delete`只是包装了 `request` 方法：
+`HttpClient` 通过使用 `of` 这种创造性的 `RxJs` 操作符来将请求对象变为 observable 流，并在调用 `HttpClient` 的 HTTP `request` 方法时返回它。**处理程序链作为此流的一部分被同步处理，并且使用 `concatMap` 操作符压平链返回的 observable**。[实现的关键点](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/client.ts#L386)就在 `request` 方法，因为所有的 API 方法像 `get`，`post` 或 `delete`只是包装了 `request` 方法：
 
 ```ts
 const events$: Observable<HttpEvent<any>> = of(req).pipe(
@@ -331,7 +345,8 @@ const events$: Observable<HttpEvent<any>> = of(req).pipe(
 在上面的代码片段中，我用 `pipe` 替换了旧技术 `call`。如果您仍然对 `concatMap` 如何工作感到困惑，你可以阅读[学习将 RxJs 序列与超级直观的交互式图表相结合](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511)。有趣的是，为什么处理程序链在以 `of` 方法开始的 observable 流中被执行了呢？这里有一个解释：
 
 >*Start with an Observable.of() the initial request, and run the handler (which includes all interceptors) inside a concatMap(). This way, the handler runs inside an Observable chain, which causes interceptors to be re-run on every subscription (this also makes retries re-run the handler, including interceptors).*
->*通过 Observable.of() 初始请求，并在 concatMap() 中运行处理程序（包括所有拦截器）。这样，处理程序在一个 Observable 链中运行，这会导致拦截器会在每个订阅上重新运行（这也会重新运行处理程序，包括拦截器）。*
+>
+>*通过 Observable.of() 初始请求，并在 concatMap() 中运行处理程序（包括所有拦截器）。这样，处理程序就在一个 Observable 链中运行，这会使得拦截器会在每个订阅上重新运行（这样重试的时候也会重新运行处理程序，包括拦截器）。*
 
 ### 处理 ‘observe’ 请求选项
 通过 `HttpClient` 创建的初始 observable 流,发出了所有的 HTTP events，如 `HttpProgressEvent`，`HttpHeaderResponse` 或 `HttpResponse`。但是从文档中我们知道我们可以通过设置 observe 选项来指定我们感兴趣的事件：
@@ -343,9 +358,9 @@ request() {
 }
 ```
 
-使用 `{observe: 'body'}` 后，从 `get` 方法返回的 observable 流只会发出响应中 `body` 部分的内容。 `observe` 的其他选项还有 `events` 和 `response` 并且后者是默认选项。在探索处理程序链的实现的一开始，我指出调用处理链返回的流会发出**所有** HTTP events。根据 `observe` 的参数过滤这些 events 是 `HttpClient` 的责任。
+使用 `{observe: 'body'}` 后，从 `get` 方法返回的 observable 流只会发出响应中 `body` 部分的内容。 `observe` 的其他选项还有 `events` 和 `response` 并且 `response` 是默认选项。在探索处理程序链的实现的一开始，我就指出过调用处理程序链返回的流会发出**所有** HTTP events。根据 `observe` 的参数过滤这些 events 是 `HttpClient` 的责任。
 
-这意味着我在上一节中演示 `HttpClient` 返回流的实现需要稍微调整一下。我们可以做的是过滤这些 events 并根据 `observe` 参数值将它们映射到不同的值。接下来是一点简单的实现：
+这意味着我在上一节中演示 `HttpClient` 返回流的实现需要稍微调整一下。我们需要做的是过滤这些 events 并根据 `observe` 参数值将它们映射到不同的值。接下来简单实现下：
 
 ```ts
 
@@ -367,12 +382,13 @@ if (options.observe === 'body') {
 }
 ```
 
-[在这里](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/client.ts#L403)，您可以找到原始的实现。
+[在这里](https://github.com/angular/angular/blob/6353b77f891d4a74953b23afcf5dd6f64db09a09/packages/common/http/src/client.ts#L403)，您可以找到源码。
 
 ## 不可变性的需要
 [文档上关于不变性](https://angular.cn/guide/http#immutability)的一个有趣的段落是这样的：
 
 >*Interceptors exist to examine and mutate outgoing requests and incoming responses. However, it may be surprising to learn that the HttpRequest and HttpResponse classes are largely immutable. This is for a reason: because the app may retry requests, the interceptor chain may process an individual request multiple times. If requests were mutable, a retried request would be different than the original request. Immutability ensures the interceptors see the same request for each try.*
+>
 >*虽然拦截器有能力改变请求和响应，但 HttpRequest 和 HttpResponse 实例的属性却是只读（readonly）的，因此，它们在很大意义上说是不可变对象。有充足的理由把它们做成不可变对象：应用可能会重试发送很多次请求之后才能成功，这就意味着这个拦截器链表可能会多次重复处理同一个请求。 如果拦截器可以修改原始的请求对象，那么重试阶段的操作就会从修改过的请求开始，而不是原始请求。 而这种不可变性，可以确保这些拦截器在每次重试时看到的都是同样的原始请求。*
 
-让我详细说明一下。当您调用 `HttpClient` 的任何 HTTP 请求方法时，就会创建请求对象。正如我在前面部分中解释的那样，此请求用于开始一个 `events$` 的 observable 序列，并且在订阅时，它会在处理程序链中被传递。但是 `events$` 流可能会被重试，这意味着可以在序列外部创建原始请求对象的情况下多次触发序列。但拦截器应始终以原始请求开始。如果请求是可变的并且可以在拦截器运行期间进行修改，则对于下一次拦截器运行，情况会变得不可预测。由于同一请求对象的引用将多次用于开始 observable 序列，所以请求及其所有组成部分，如 `HttpHeaders` 和 `HttpParams` 应该是不可变的。
+让我详细说明一下。当您调用 `HttpClient` 的任何 HTTP 请求方法时，就会创建请求对象。正如我在前面部分中解释的那样，此请求用于生成一个 `events$` 的 observable 序列，并且在订阅时，它会在处理程序链中被传递。但是 `events$` 流可能会被重试，这意味着可以在序列外部创建原始请求对象的情况下多次触发序列。但拦截器应始终以原始请求开始。如果请求是可变的并且可以在拦截器运行期间进行修改，则对于下一次拦截器运行，情况会变得不可预测。由于同一请求对象的引用将多次用于开始 observable 序列，所以请求及其所有组成部分，如 `HttpHeaders` 和 `HttpParams` 应该是不可变的。
