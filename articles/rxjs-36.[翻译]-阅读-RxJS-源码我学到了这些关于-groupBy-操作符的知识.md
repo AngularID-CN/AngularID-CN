@@ -1,6 +1,6 @@
 > 原文：[Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------)
 > 作者：[Kiran Holla](https://blog.angularindepth.com/@kiranjholla?source=post_header_lockup)
-> 译者：[vaanxy](https://github.com/vaanxy)；校对者：暂无
+> 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
 
 
 
@@ -103,7 +103,7 @@ pipedRecords.complete();
 
 这是我所想出的最终代码的超级简化版：
 
-```
+```typescript
 const pipedRecords = new Subject();
 const result = pipedRecords.pipe(
   groupBy(
@@ -206,12 +206,10 @@ pipedRecords.complete();
 
 ------
 
-#### Conclusion
-
 ### 总结
 
 总之，这一次的经历在一开始令人非常沮丧，但很快就变成了一种美妙的学习经历。
 
-Reactive Extensions 以及 RxJS 是非常强大的工具，但在使用 Observable 有几个细微差别，很容易让尚未入门的人感到不快。然而一旦您克服了阅读任何新代码时的迷惑期，你会惊喜的发现使用 RxJS 库书写的代码非常容易阅读和理解
+Reactive Extensions 以及 RxJS 是非常强大的工具，但在使用 Observable 有几个细微差别，很容易让尚未入门的人感到不快。然而一旦您克服了阅读任何新代码时的迷惑期，你会惊喜的发现使用 RxJS 库书写的代码非常容易阅读和理解。
 
 尝试一下吧。你不会失望的；比起通过阅读他们的文档所可能获得的收获，尝试本文的内容后，最终你可能会学到更多关于 RxJS 的知识。
