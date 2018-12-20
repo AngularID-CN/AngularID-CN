@@ -76,3 +76,21 @@ RxJS已经成为了 Angular开发中的一个标准。组件通常以 Observable
 本文介绍了容器组建的概念。它解释了容器组建的意义以及其在 Angular 中的实现并展示了如何试用其进行状态管理以及与不可变数据的合作。
 
 不幸的事，当我从我们的贡献者中选出了十篇最棒的文章后，我发现我自己的文章在清单中没有位置了。 所以我决定稍微作弊一点，在最后掺杂一点‘私货’😁：
+
+> 以下文章均由[ Max Koretskyi, aka Wizard ](https://blog.angularindepth.com/@maxim.koretskyi?source=post_header_lockup) 撰写
+
+**[关于 Angular 变更检测不那么硬核的介绍](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10)** [中文翻译链接](https://zhuanlan.zhihu.com/p/51935121)
+
+本文给出了有关 Angular 变更检测机制的概述：用于展示组件的内部数据结构，绑定的角色以及作为流程的一部分所执行的操作。他同样涉及了 zones 的概念并准确说明其如何在 Angular 中启用自动变更检测。如果你希望成为 Angular 变更检测机制的专家，那本文将会是你的第一块垫脚石。
+
+**[操作 DOM：意外的行为和优化的技术](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866)**
+
+本文将会教你如何在 Angular 中操作 DOM。本文循序渐进，从使用模板和DOM查询等基础知识的简单例子到使用动态组件这样高端技巧用例，逐步深入介绍相关内容。通过一系列实践练习，你将能够更快地学习和巩固学到的新知识。
+
+**[Angular 中拦截器的真相和 HttpClient 内部机制](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf)** [中文翻译链接](https://zhuanlan.zhihu.com/p/52827695)
+
+本文是阅读次数最多的文章之一，其观看次数超过8万次。本文深入研究了 HttpClient 服务的内部机制特别是其拦截器相关内容。我将展示如何实现一个自定义实现有关 自定义中间件链 并注入一个自定义后端服务。我同样解释了为何绝大多数从 HttpClient 模块导出的类如 `HttpRequest`，`HttpResponse` 都是不可变类型的。
+
+> 假如，你同样对 React 感兴趣，我已经开启了 [React-In-Depth](https://medium.com/react-in-depth) 专栏。有兴趣的话去看看有关于 React 内部的第一篇文章 [内部纤维：深入介绍 React 中的新协调算法](https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e)
+
+> 写在最后的翻译组按：本文涉及的top系列文章将会在后续一个月至一个半月间逐渐放出，敬请期待。
