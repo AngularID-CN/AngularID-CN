@@ -183,7 +183,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
 25 | [RxJS: TSLint Rules for Version 6](https://blog.angularindepth.com/rxjs-tslint-rules-for-version-6-d10e2482292d?source=---------12---------------------) | - |  |  |  |  
 24 | [RxJS: When to Use switchMap](https://blog.angularindepth.com/when-to-use-switchmap-dfe84ac5a1ff?source=---------13---------------------) | - |  |  |  |  
-23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - |  |  |  |  
+23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - | vaanxy |  | 翻译中 |  
 22 | [RxJS: Understanding Expand](https://blog.angularindepth.com/rxjs-understanding-expand-a5f8b41a3602?source=---------15---------------------) | - |  |  |  |  
 21 | [Practical RxJS In The Wild 🦁— Requests with concatMap() vs mergeMap() vs forkJoin() 🥊](https://blog.angularindepth.com/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293?source=---------16---------------------) | - |  |  |  |  
 20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  
