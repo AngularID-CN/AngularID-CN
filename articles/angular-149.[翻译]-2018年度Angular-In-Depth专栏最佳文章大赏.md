@@ -19,33 +19,33 @@
     <img src="../assets/angular-149/1.jpeg">
 </p>
 
-本文标志着 Angular-In-Depth 栏目已经正式成立两周年了。[去年这个时候](https://blog.angularindepth.com/top-10-angular-articles-in-2017-from-angularindepth-you-really-want-to-read-153ae6e497d4)我们只有6千的粉丝，总观看次数超过50万次。但是今年的我们交出了难以置信的答卷，500k这个数字现在只是我们每个月的阅读量而已🤗。如果你对我们的年阅读总量感到好奇，我很自豪地宣布，这一数字是500万！是的，这个数字是5后面跟着6个0！而这样的成绩只是我们的热身而已。这里感谢所有读者对我们的支持，非常感谢😊！
+本文标志着 Angular-In-Depth 专栏已经正式成立两周年了。[去年这个时候](https://blog.angularindepth.com/top-10-angular-articles-in-2017-from-angularindepth-you-really-want-to-read-153ae6e497d4)我们只有6千个粉丝，总观看次数超过50万次。但是今年的我们交出了难以置信的答卷，50万次这个数字现在只是我们每个月的阅读量而已🤗。如果你对我们的年阅读总量感到好奇，我很自豪地宣布，这一数字是500万！是的，这个数字是5后面跟着6个0！而这样的成绩只是我们的热身而已。在这里特别感谢所有读者对我们的支持😊！
 
 <p align="center"> 
     <img src="../assets/angular-149/2.png">
 </p>
 
-我对于这样的成绩单的喜悦是难以描述的，任何的喜悦之词都不过是轻描淡写。但是除此之外，更让我高兴的是贡献了一半的文章浏览总量的文章们是由 Angular-in-Depth(AiD)的成员而不是我所贡献的。这意味着并不只有我努力让 AiD 变得成功。 AiD现在是一个拥有许多杰出的工程师的大型社区了。我非常感谢愿意向 AiD 投稿和合作的每个贡献者，但我特别感谢我们中最活跃的成员们 [Tim Deschryver](https://medium.com/@timdeschryver)，[Nate Lapinski](https://medium.com/@natelapinski), [Todd Palmer](https://medium.com/@palmer_todd), [Alex Okrushko](https://medium.com/@alex.okrushko), [Uri Shaked](https://medium.com/@urish) 和 [Nicholas Jamieson](https://medium.com/@cartant)。我非常确信如果没有他们的贡献和热情，AiD 绝难达成今日的成绩。
+我对于这样的成绩单的喜悦是难以描述的，任何的喜悦之词都不过是轻描淡写。但是除此之外，更让我高兴的是贡献了一半的文章浏览总量的文章们是由 Angular-in-Depth(AiD) 的成员而不是我所贡献的。这意味着并不只有我在努力让 AiD 变得成功。 AiD现在是一个拥有许多杰出的工程师的大型社区了。我非常感谢愿意向 AiD 投稿和合作的每个贡献者，但我特别感谢我们中最活跃的成员们 [Tim Deschryver](https://medium.com/@timdeschryver)，[Nate Lapinski](https://medium.com/@natelapinski)，[Todd Palmer](https://medium.com/@palmer_todd)，[Alex Okrushko](https://medium.com/@alex.okrushko)，[Uri Shaked](https://medium.com/@urish) 和 [Nicholas Jamieson](https://medium.com/@cartant)。我非常确信如果没有他们的贡献和热情，AiD 绝难达成今日的成绩。
 
-但是，我们还有许多事要做。明年我们的目标是每个月1百万的浏览量，年总计1千500万的浏览量。为了达成这样的目标，我们非常需要你的帮助。**我们正在积极寻找新的贡献者**。如果你有想要分享的经验，想要解释的功能，或者受到启发挖掘出的 Angular 内部知识，直接在 [twitter](https://twitter.com/maxim_koretskyi) 上给我发信息，或者给我的邮箱 **m.koretskyi@gmail.com** 发邮件。我们有专家可以帮助你完善你的想法并为您提供技术审核。帮助我们的同时也帮助你😉。
+但是，我们还有许多事要做。明年我们的目标是每个月1百万的浏览量，年总计1千500万的浏览量。为了达成这样的目标，我们非常需要你的帮助。**我们正在积极寻找新的贡献者**。如果你有想要分享的经验，想要解释的功能，或者受到启发挖掘出的 Angular 内部知识，请直接在 [twitter](https://twitter.com/maxim_koretskyi) 上给我发信息，或者发送邮件到 **m.koretskyi@gmail.com**。我们有专家可以帮助你完善你的想法并为你提供技术审核，在帮助我们的同时也帮助你😉。
 
-就像去年那样，我组织了一份的清单列出了2018年度十大最受欢迎文章。我建议你将每一篇文章都阅读一遍因为他们将会显著地帮助你拓宽 Angular 相关知识。去年的清单中主要是我的文章和几篇文章由 [Uri Shaked ](https://medium.com/@urish) 和 [Nicholas Jamieson](https://medium.com/@cartant) 撰写的文章组成。我非常高兴今年清单中的大部分文章由 AiD 的成员所贡献。祝大家读的开心😁。
+就像去年那样，我组织了一份的清单列出了2018年度十大最受欢迎文章。我建议你将每一篇文章都阅读一遍因为他们将会显著地帮助你拓宽 Angular 相关知识。去年的清单主要是我的文章和几篇由 [Uri Shaked ](https://medium.com/@urish) 和 [Nicholas Jamieson](https://medium.com/@cartant) 撰写的文章组成。我非常高兴今年清单中的大部分文章由 AiD 的成员所贡献。祝大家读的开心😁。
 
-> 我现在正以开发大使的身份在 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom)工作。如果你想要学习数据栅格 （data-grids）并且正在寻找最佳的 Angular 数据栅格方案，试试这篇指引 [五分钟了解 Angular 数据栅格](http://blog.ag-grid.com/index.php/2018/08/13/get-started-with-angular-grid-in-5-minutes/?utm_source=medium&utm_medium=blog&utm_campaign=getstartedangular)。我很乐意回答你的任何相关问题。关注[我](https://twitter.com/maxim_koretskyi)以获得第一时间的信息。
+> 我现在正以开发大使的身份在 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom)工作。如果你想要学习数据栅格 （data-grids）并正在寻找最佳的 Angular 数据栅格方案，试试这篇指引 [五分钟了解 Angular 数据栅格](http://blog.ag-grid.com/index.php/2018/08/13/get-started-with-angular-grid-in-5-minutes/?utm_source=medium&utm_medium=blog&utm_campaign=getstartedangular)。我很乐意回答你的任何相关问题。关注[我](https://twitter.com/maxim_koretskyi)以获得最新的信息。
 
-下面是今年的清单：
+以下是今年的文章清单：
 
 **[RxJS：避免 switchMap 相关 bug ](https://blog.angularindepth.com/switchmap-bugs-b6de69155524)** 撰写由 [Nicholas Jamieson](https://medium.com/@cartant)
 
-当需要展平/打平操作符时，通常建议将 RxJS 操作符 switchMap 作为首选，但是这个方案并不一定对所有应用场景都安全。本文演示了如何使用 switchMap 可能会引入竞争状况，并演示了可以使用其他更安全的选项轻松替换 switchMap 操作符的场景。
+当需要展平/打平操作符时，通常建议将 RxJS 操作符 switchMap 作为首选，但是这个方案并不一定在所有应用场景中都是安全的。本文演示了使用 switchMap 可能会引入竞争状况，并演示了在特定场景下如何使用其他更安全的选项轻松替换 switchMap 操作符。
 
 **[为此开始使用 ngrx/effects ](https://blog.angularindepth.com/start-using-ngrx-effects-for-this-e0b2bd9da165)** 撰写由 [Nate Lapinski](https://medium.com/@natelapinski)
 
-你可能只使用 ngrx/effects 去处理与外部资源的交互，通过触发一个 NgRx action 的 effect 的方式。但是 ngrx/effects 的作用并不仅仅如此。本文演示了 effects 的一些用例包括：控制一个对话框，控制一个通知机制，甚至是执行路由。
+你可能只是通过触发一个 NgRx action 的 effect 的方式使用 ngrx/effects 的功能去处理与外部资源的交互。但是 ngrx/effects 的作用并不仅仅如此。本文演示了 effects 的一些用例包括：控制一个对话框，控制一个通知机制，甚至是执行路由。
 
 **[理解路由的导航周期](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa)** 撰写由 [Nate Lapinski](https://medium.com/@natelapinski)
 
-本文解释了当你在一个 Angular 应用程序中点击一个链接后真正发生的事情。你将会从中学到在导航期间及其之后路由如何构建和使用以 `ActivatedRouteSnapshot` 对象构成的树 以及 如何使用<router-outlet>指令渲染内容。
+本文解释了当你在一个 Angular 应用程序中点击一个链接后真正发生的事情。你将会从中学到在导航期间及其之后路由如何构建和使用以 `ActivatedRouteSnapshot` 对象构成的树 以及 如何使用 `<router-outlet>` 指令渲染内容。
 
 **[指数规避场景下 RxJS 的妙用](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0)** 撰写由 [Alex Okrushko](https://medium.com/@alex.okrushko)
 
@@ -65,17 +65,17 @@ Ivy 是一个新的 Angular 渲染引擎，你可能已经听过不少关于它�
 
 **[有关 subscribe() 和 async pipe 的终极回答](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794)** 撰写由 [Tomas Trajan](https://medium.com/@tomastrajan)
 
-RxJS已经成为了 Angular开发中的一个标准。组件通常以 Observable 流的形式获取数据。本文解释了 最流行的两个 从流中读取数据的方式（订阅流和将流传递到异步管道）之间的优劣关系
+RxJS已经成为了 Angular开发中的一个标准。组件通常以 Observable 流的形式获取数据。本文解释了最流行的两个从流中读取数据的方式（订阅流和将流传递到异步管道）之间的优劣关系
 
 **[使用 Angular CDK 创建一个 toast 服务](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12)** 撰写由 [Adrian Fâciu](https://medium.com/@adrianfaciu)
 
-本文描述了如何实现一个自定义的 toast 讯息功能。该实现主要依赖于 **CDK** 的 `overlay` 包。当你跟随指示实现功能后，本文将会展示如何为了美妙的视觉效果增加动画。
+本文描述了如何实现一个自定义的 toast 讯息功能。该实现主要依赖于 **CDK** 的 `overlay` 包。当你跟随指示实现功能后，本文将会展示如何为其增加动画以实现美妙的视觉效果。
 
 **[Angular 中的容器组件概念](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df)** 撰写由 [Lars Gyrup Brink Nielsen](https://medium.com/@LayZeeDK)
 
-本文介绍了容器组建的概念。它解释了容器组建的意义以及其在 Angular 中的实现并展示了如何试用其进行状态管理以及与不可变数据的合作。
+本文介绍了容器组建的概念。它解释了容器组件的意义以及其在 Angular 中的实现并展示了如何使用其进行状态管理以及与不可变数据的合作。
 
-不幸的事，当我从我们的贡献者中选出了十篇最棒的文章后，我发现我自己的文章在清单中没有位置了。 所以我决定稍微作弊一点，在最后掺杂一点‘私货’😁：
+_不幸的是，当我从我们的贡献者中选出了十篇最棒的文章后，我发现我自己的文章在清单中没有位置了。 所以我决定稍微作弊一点，在最后掺杂一点‘私货’😁：_
 
 > 以下文章均由[ Max Koretskyi, aka Wizard ](https://blog.angularindepth.com/@maxim.koretskyi?source=post_header_lockup) 撰写
 
@@ -89,8 +89,8 @@ RxJS已经成为了 Angular开发中的一个标准。组件通常以 Observable
 
 **[Angular 中拦截器的真相和 HttpClient 内部机制](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf)** [中文翻译链接](https://zhuanlan.zhihu.com/p/52827695)
 
-本文是阅读次数最多的文章之一，其观看次数超过8万次。本文深入研究了 HttpClient 服务的内部机制特别是其拦截器相关内容。我将展示如何实现一个自定义实现有关 自定义中间件链 并注入一个自定义后端服务。我同样解释了为何绝大多数从 HttpClient 模块导出的类如 `HttpRequest`，`HttpResponse` 都是不可变类型的。
+本文是阅读次数最多的文章之一，其观看次数超过8万次。本文深入研究了 HttpClient 服务的内部机制特别是其拦截器相关内容。我将展示如何自定义实现 自定义中间件链 并注入一个自定义后端服务。我同样解释了为何绝大多数从 HttpClient 模块导出的类如 `HttpRequest`，`HttpResponse` 都是不可变类型的。
 
-> 假如，你同样对 React 感兴趣，我已经开启了 [React-In-Depth](https://medium.com/react-in-depth) 专栏。有兴趣的话去看看有关于 React 内部的第一篇文章 [内部纤维：深入介绍 React 中的新协调算法](https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e)
+> 假如，你同样对 React 感兴趣，我已经开启了 [React-In-Depth](https://medium.com/react-in-depth) 专栏。有兴趣的话去看看有关于 React 的第一篇文章 [内部纤维：深入介绍 React 中的新协调算法](https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e)
 
 > 写在最后的翻译组按：本文涉及的top系列文章将会在后续一个月至一个半月间逐渐放出，敬请期待。
