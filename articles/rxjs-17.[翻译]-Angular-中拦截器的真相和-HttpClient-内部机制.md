@@ -4,7 +4,7 @@
 > 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**</br>
 > 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发大使(Developer Advocate)</br>
 *译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。*</br>
->译者：**[Ice Panpan](https://github.com/TanYiBing)**；校对者：暂无
+>译者：**[Ice Panpan](https://github.com/TanYiBing)**；校对者：**[dreamdevil00](https://github.com/dreamdevil00)**
 
 ![async or ngdocheck](../assets/rxjs-17/1.png)
 
