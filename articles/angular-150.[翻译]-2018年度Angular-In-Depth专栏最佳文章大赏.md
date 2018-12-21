@@ -16,13 +16,13 @@
 > 译者按：为了行文方便，以下以**我**指代原作者，以**我们**指代 Angular In Depth 英文专栏
 
 <p align="center"> 
-    <img src="../assets/angular-149/1.jpeg">
+    <img src="../assets/angular-150/1.jpeg">
 </p>
 
 本文标志着 Angular-In-Depth 专栏已经正式成立两周年了。[去年这个时候](https://blog.angularindepth.com/top-10-angular-articles-in-2017-from-angularindepth-you-really-want-to-read-153ae6e497d4)我们只有6千个粉丝，总观看次数只有50万次左右。但是今年的我们交出了难以置信的答卷，50万次这个数字现在只是我们每个月的阅读量而已🤗。如果你对我们的年阅读总量感到好奇，我很自豪地宣布，这一数字是500万！是的，这个数字是5后面跟着6个0！而这只是我们的热身而已。在这里特别感谢所有读者对我们的支持😊！
 
 <p align="center"> 
-    <img src="../assets/angular-149/2.png">
+    <img src="../assets/angular-150/2.png">
 </p>
 
 我对于这样的成绩单的喜悦是难以描述的，任何的喜悦之词都不过是轻描淡写。但是除此之外，更让我高兴的是贡献了一半的文章浏览总量的文章们是由 Angular-in-Depth(AiD) 的成员而不是我所贡献的。这意味着并不只有我在努力让 AiD 变得成功。 AiD现在是一个拥有许多杰出的工程师的大型社区了。我非常感谢愿意向 AiD 投稿和合作的每个贡献者，但我特别感谢我们中最活跃的成员们 [Tim Deschryver](https://medium.com/@timdeschryver)，[Nate Lapinski](https://medium.com/@natelapinski)，[Todd Palmer](https://medium.com/@palmer_todd)，[Alex Okrushko](https://medium.com/@alex.okrushko)，[Uri Shaked](https://medium.com/@urish) 和 [Nicholas Jamieson](https://medium.com/@cartant)。我非常确信如果没有他们的贡献和热情，AiD 绝难达成今日的成绩。
