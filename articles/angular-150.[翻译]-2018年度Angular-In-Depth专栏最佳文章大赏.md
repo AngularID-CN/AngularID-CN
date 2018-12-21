@@ -9,7 +9,7 @@
 >
 > 译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。
 > 
-> 译者：[尊重](https://github.com/sawyerbutton)；校对者：[xx](https://github.com/xx)
+> 译者：[尊重](https://github.com/sawyerbutton)；校对者：[TanYiBing](https://github.com/TanYiBing)
 >
 > 本文为原 Angular In Depth 频道2018年度总结及年度文章大赏。
 >
