@@ -32,6 +32,7 @@
 24. [[翻译] Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
 25. [[翻译] Angular 中拦截器的真相和 HttpClient 内部机制](articles/rxjs-17.[翻译]-Angular-中拦截器的真相和-HttpClient-内部机制.md)
 26. [[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识](articles/rxjs-36.[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md)
+27. [[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
 
 ## Memeber 
 

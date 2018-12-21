@@ -16,6 +16,7 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
+150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)   
 149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 翻译中 |  |
 148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - |  |  |  |  |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
