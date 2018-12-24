@@ -51,7 +51,9 @@ const removeFromCart = actions$ => actions$.pipe(
 
 我们的购物车列出了用户想要购买的物品，并且每一项都包含了一个按钮可将物品从购物车中移除。点击该按钮会给 effect/epic 发送一个 `RemoveFromCart` 的 action，effect/epic 会和应用的后端进行通讯并且我们会看到物品从购物车中被移除了。
 
-大多数时候，这个函数的执行结果会和我们预期的一样。而然使用 `switchMap` 引入了一个争用条件（race condition）。
+大多数时候，这个函数的执行结果会和我们预期的一样。而然使用 `switchMap` 引入了竞争状况（race condition）。
+
+> 译者注: [race condition 释义 wiki 链接](https://en.wikipedia.org/wiki/Race_condition#Software)
 
 如果用户在购物车中点击了好几个物品的移除按钮，那么会发生什么情况将取决于按钮被点击的速度。
 
