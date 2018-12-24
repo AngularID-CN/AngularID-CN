@@ -1,6 +1,13 @@
 # [翻译] 有人认为变更检测是深度优先，有人认为是广度优先，通常两者都是对的
 
 > 原文: [He who thinks change detection is depth-first and he who thinks it’s breadth-first are both usually right](https://blog.angularindepth.com/he-who-thinks-change-detection-is-depth-first-and-he-who-thinks-its-breadth-first-are-both-usually-8b6bf24a63e6)
+>
+> 原文作者: [Max Koretskyi](https://blog.angularindepth.com/@maxim.koretskyi)
+>
+> 原技术博文由`Max Koretskyi`撰写发布，他目前于[ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom)担任开发大使
+> 译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。
+>
+> 译者: [dreamdevil00](https://github.com/dreamdevil00); 校对者: [sunny](https://segmentfault.com/u/lx1036/articles)
 
 > ![](../assets/angular-51/1.png)
 
@@ -36,6 +43,7 @@ export class RComponent {
 ```
 
 这次得出了不同的结果:
+
 ![](../assets/angular-51/3.gif)
 
 这是一个完全的深度优先图遍历算法。那么， 这里发生了什么? 事实上很简单， 我们来看一下。
@@ -53,6 +61,7 @@ export class RComponent {
 - **对子组件执行变更检测**
 
 我在上面强调了一个有趣的细节——当 Angular 检查当前组件时，调用了**子组件**的生命周期钩子，但是渲染**当前组件** 的 DOM。这是个很重要的区别。如果我们把日志放到 `NgDoCheck` 钩子里，这恰恰是使它看起来就像是算法执行深度优先的原因。当 Angular 检查当前组件时，它会调用所有同级的子组件的生命周期钩子。假设 Angular 现在检查 `K` 组件， 调用了 `L` 和 `C` 组件的 `NgDoCheck` 生命周期钩子。 那么， 我们会得到下图:
+
 ![](../assets/angular-51/4.gif)
 
 看起来像是 广度优先 算法。不过， 记住: Angular 仍然在检测 `K` 组件的过程中。因此，在完成了 `K` 组件的所有操作之后，并没有继续检查同级的 `V` 组件，若检查的话就是广度优先的实现。相反，它继续检查 `L` 组件，`L` 组件是 `K` 的子组件。这是变更检测算法的深度优先实现。就像我们现在知道的，它会调用 `J` and `O` 组件的 `ngDoCheck`，这正是所发生的事情:
