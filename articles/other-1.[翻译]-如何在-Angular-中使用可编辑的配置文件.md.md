@@ -4,13 +4,13 @@
 >
 > 原文作者： **[Pam Lahoud](https://social.msdn.microsoft.com/profile/Pam+Lahoud)**
 
-## _之前介绍过 Angular 提供了一些机制来监听框架初始化过程，本文主要介绍在 Angular 应用被构建，打包和部署后如何编辑其配置文件_
+_之前介绍过 Angular 提供了一些机制来监听框架初始化过程，本文主要介绍在 Angular 应用被构建，打包和部署后如何编辑其配置文件_
 
 在本篇博客中，首席开发顾问 [Laurie Atkinson](https://www.linkedin.com/in/atkinsonlaurie/) 将会带你领略如何对已构建打包和部署的 Angular应用程序 进行配置文件的编辑和修改。
 
 为了响应 Angular 的最新更新，本文已于2018年12月3日更新。
 
-Angular CLI 是构建产品级别应用的推荐工具，使用其生成的项目实现了打包，丑化（uglifying）和摇树优化的一体化。Angular CLI 生成的应用甚至拥有 用于创建特定环境的版本 的机制。然而那些配置文件都由typescript文件所编写并且并不允许 IT 人员 或 自动部署工具（如VSTS）进行编辑。本文提供了关于 可以针对多个环境进行自定义配置的 JSON 文件的食用方式和代码示例。
+Angular CLI 是构建产品级应用的推荐工具，使用其生成的项目实现了打包，丑化（uglifying）和摇树优化的一体化。Angular CLI 生成的应用甚至拥有 创建特定环境版本 的机制。然而那些配置文件都由typescript文件所编写并且并不允许 IT 人员 或 自动部署工具（如VSTS）进行编辑。本文提供了关于 可以针对多个环境进行自定义配置的 JSON 文件的食用方式和代码示例。
 
 ### 为配置设定定义TypeScript接口
 
@@ -101,7 +101,7 @@ export interface IAppConfig {
 
 ### 继续使用带有 Angular CLI 构建的 environment.ts 文件
 
-Angular CLI 文件在 environments 文件夹下创建了一些（数量不定但默认是两个）TypeScript环境文件。在本文的例子中他们仍然将被使用，但是文件中只包含环境的名称。
+Angular CLI 文件在 environments 文件夹下创建了一些（数量不定但默认是两个）TypeScript 环境文件。在本文的例子中他们仍然将被使用，但是文件中只包含环境的名称。
 
 **environments\environment.dev.json**
 
@@ -134,12 +134,10 @@ export const environment = {
                 "with": "src/environments/environment.deploy.ts"
               }
             ],
-            . . .
           }
         }
       },
       "serve": {
-        . . .
         "configurations": {
           "deploy": {
             "browserTarget": "my-app:build:deploy"
@@ -153,7 +151,7 @@ export const environment = {
 **app.config.ts** 注意对于上述接口定义的使用以及为了获取正确文件所配置的命名公约
 
 ```ts
-import { Injectable } from '@angular/core’;
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { IAppConfig } from './models/app-config.model';
@@ -177,7 +175,7 @@ export class AppConfig {
 
 ### 于应用创建前加载配置文件
 
-Angular包含一个名为 APP_INITIALIZER 的令牌，其允许我们在应用初始化的的过程中执行代码。在 app 模块中，使用该令牌以触发我们配置服务中的 load 方法。因为该方法返回了一个 promise，Angular将会中止初始化流程等待该 promise resolve。
+Angular包含一个名为 APP_INITIALIZER 的令牌，其允许在应用初始化的的过程中执行某些代码。在 app 模块中，使用该令牌以触发我们配置服务中的 load 方法。因为该方法返回了一个 promise，Angular将会中止初始化流程等待该 promise 完成（resolve）。
 
 **app.module.ts**
 
@@ -206,7 +204,7 @@ export class AppModule { }
 
 ### 在应用中进行具体的配置
 
-现在之前申明的配置设定可以在 Angular 应用中随意使用啦，并且配置包含了由接口所提供的类型检查
+现在之前申明的配置设定可以在 Angular 应用中随意使用啦，并且其包含了由接口所提供的类型检查
 
 ```ts
 export class DataService {

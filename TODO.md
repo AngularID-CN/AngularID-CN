@@ -229,7 +229,6 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
-2 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/angular-related-2.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
 ---
 
 ## [Nrwl](https://blog.nrwl.io/)
@@ -244,4 +243,4 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-1 |  |  |  |  |  |
+1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/other-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
