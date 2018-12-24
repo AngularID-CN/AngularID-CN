@@ -142,6 +142,11 @@ export const environment = {
           "deploy": {
             "browserTarget": "my-app:build:deploy"
           }
+        }
+      }
+    }
+  }
+}
 ```
 
 ### 创建一个服务以阅读配置文件
