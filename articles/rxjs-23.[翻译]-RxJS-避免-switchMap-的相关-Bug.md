@@ -4,7 +4,7 @@
 >
 >原文作者：[Nicholas Jamieson](https://blog.angularindepth.com/@cartant?source=post_header_lockup)
 >
->译者：[vaanxy](https://github.com/vaanxy)；校对者：暂无
+>译者：[vaanxy](https://github.com/vaanxy)；校对者： [sawyerbutton](https://github.com/sawyerbutton)， [dreamdevil00](https://github.com/dreamdevil00)
 
 ![img](../assets/rxjs-23/1.png)
 
