@@ -260,7 +260,244 @@ UPDATE tsconfig.json (471 bytes)
 Library 的 `src` 文件夹被包含在 `projects/example-ng6-lib` 文件夹中。在 Library 中，Angular CLI 创建了一个包含服务和组件的新模块。除此之外还包含了更多文件：
 
 `package.json`
+
 这是专门用于 Library 的 package.json 文件。这是 Library 作为 npm 包发布所使用的 package.json 文件。当用户通过 npm 安装 Library 时，该文件用于指定其依赖项。
+
 `public_api.ts`
 
+该文件作为入口文件存在，他用于描述 Library 中哪个部分是外部可见的。现在你可能会产生疑问：“这难道不是 `export` 在模块中所起到的作用吗？”。从表层上看是的，但是这比模块的导出要复杂一些。我们将在稍后更详细地观察它。
+
 `ng-package.json`
+
+这是 **ng-packagr** 的配置文件。在 CLI 和 ng-packagr 没有集成的时代我们需要尽可能地熟悉该文件的内容，但是现在，在拥有新版 Angular CLI 的情况下，我们只需要知道该文件是用于告知 ng-packagr 去哪找到入口文件以及去哪构建 Library 的内容。
+
+## 构建 Library
+
+在使用我们新生成的 Library 之前我们首先需要构建它：
+
+```bash
+ng build example-ng6-lib
+```
+
+该命令会将我们的Library构建于下述文件夹中：
+
+```bash
+example-ng6-lib-app\dist\example-ng6-lib
+```
+
+从6.1版本开始，Angular 总是对 Library 进行生产模式的构建。如果你仍在使用6.0.x的版本，则需要在构建Library 时使用 `--prod` 标志符。
+
+## 在应用中使用 Library
+
+在构建 Library 的理念中有一个很重要的点：我们通常有一个与 Library 一起构建的应用以便对 Library 进行测试。
+
+我们将会使用 **example-ng6-lib-app** 对刚刚构建的 Library 进行测试。
+
+让我们在 example-ng6-lib-app 应用中对 Library 进行简单的测试。我们将会引入 example-ng6-lib 的模块，然后再构造由 Angular CLI 为 Library 创建的默认组件。
+
+### 导入 example-ng6-lib 模块
+
+让我们修改 **src\app\app.module.ts** 文件中的 **AppModule** 模块。
+
+向 `imports` 数组中添加 **ExampleNg6LibModule** 模块。你的 IDE 可能会自以为是地帮助你通过文件路径引入该模块，但是你需要阻止这样的行为并使用如下方式通过 Library 的名字向应用中引入模块：
+
+```ts
+import { ExampleNg6LibModule } from 'example-ng6-lib';
+```
+
+这才是满足测试目的的导入方式，因为在按名称导入 Library 时，Angular CLI 首先在 **tsconfig.json** 路径中查找，然后在 node_modules 中查找。
+
+> 注意！永远在你的测试应用中遵循按名称而不是按单个文件的方式引入 Library
+
+现在的 **app.module.ts** 应该是如下的样子:
+
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { ExampleNg6LibModule } from 'example-ng6-lib';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ExampleNg6LibModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+### 展示 example-ng6-lib 组件
+
+为了直观简单地观察 Library 的使用，让我们将 Angular CLI 生成 Library 时生成的默认组件添加到于 **src\app\app.component.html** 的 AppComponent 模板中。
+
+你可以简单地替换 AppComponent 模板的下半部分为：
+
+```html
+<enl-example-ng6-lib></enl-example-ng6-lib>
+```
+
+ 此时 **src\app\app.component.html** 文件应该是如下这样：
+
+ ```html
+ <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Example</h2>
+<enl-example-ng6-lib></enl-example-ng6-lib>
+```
+
+## 运行应用
+
+就像寻常的那样使用如下方式运行应用：
+
+```bash
+ng serve
+```
+
+现在将浏览器指向 [http://localhost:4200/](http://localhost:4200/)，我们可以在页面的底端看到对于 Library 组件的测试。
+
+<p align="center"> 
+    <img src="../assets/angular-78/3.png">
+</p>
+
+## 扩展我们的 Library
+
+现在我们知道了如何构建 Library 并在应用中使用 Library 中的组件。让我们扩展我们的 Library 看看需要做些什么来添加另一个组件。
+
+以下是我们将要执行的步骤：
+
+1. 在 Library 中创造一个新的组件
+2. 将新添加的组件加入到 Library 模块的 exports 属性中
+3. 将新添加的组件加入到入口文件中
+4. 在执行完上述步骤后重新构建 Library
+5. 在应用中使用新的组件
+
+### 创建一个 Library 组件
+
+当需要为 Library 生成组件的时候我们需要使用 `--project` 标志位告诉 Angular CLI 在 Library 项目中生成组件。现在我们在 Library 里生成一个简单的组件并命名为 foo：
+
+```bash
+ng generate component foo --project=example-ng6-lib
+```
+
+我们可以在控制台里查看 Angular CLI 实际进行的操作
+
+```bash
+CREATE projects/example-ng6-lib/src/lib/foo/foo.component.html (22 bytes)
+CREATE projects/example-ng6-lib/src/lib/foo/foo.component.spec.ts (607 bytes)
+CREATE projects/example-ng6-lib/src/lib/foo/foo.component.ts (257 bytes)
+CREATE projects/example-ng6-lib/src/lib/foo/foo.component.css (0 bytes)
+UPDATE projects/example-ng6-lib/src/lib/example-ng6-lib.module.ts (347 bytes)
+```
+
+现在我们的 Library 拥有了一个新的组件而 Angular CLI 将其添加到了 Library 模块文件 `projects\example-ng6-lib\src\lib\example-ng6-lib.module.ts` 的模块中。
+
+### 将组件从 Library 的模块中导出
+
+我们需要将 **Foo Component** 组件添加到 Library 模块的导出中。如果不对组件进行正确的导出，当我们想向应用中添加新生成的组件时，就会生成一个模板解析错误 `"enl-foo" is not a known element`。
+
+所以我们需要将 `FooComponent` 添加到 **example-ng6-lib.module.ts** 的 `exports` 数组中。而添加后的 `ExampleNg6LibModule` 文件理应如下所示：
+
+```ts
+import { NgModule } from '@angular/core';
+import { ExampleNg6LibComponent } from './example-ng6-lib.component';
+import { FooComponent } from './foo/foo.component';
+
+@NgModule({
+  imports: [
+  ],
+  declarations: [
+    ExampleNg6LibComponent,
+    FooComponent
+  ],
+  exports: [
+    ExampleNg6LibComponent,
+    FooComponent
+  ]
+})
+export class ExampleNg6LibModule { }
+```
+
+### 将组件添加到入口文件中
+
+之前我们提到过有一个用于定义 Library API 的入口文件：
+
+```bash
+projects\example-ng6-lib\src\public_api.ts
+```
+
+我们需要在我们的入口文件中添加以内容以告知 ng-packagr 这个组件类应该暴露给使用 Library 的用户：
+
+```ts
+export * from './lib/foo/foo.component';
+```
+
+你可能觉得这样的操作是不是有些冗余，因为之前已经将新的组件添加到 Library 模块文件的导出属性中了。的确如果不将组件添加到入口文件中也可以在应用的模板中使用 `<enl-foo></enl-foo>`。然而这样的做法会导致 **FooComponent** 类本身没有被导出。
+
+我已经进行了如下的尝试这样你就可以不用在重蹈覆辙：在没有将 foo.component 文件添加到入口文件的条件下，我尝试将 FooComponent 组件类的引用以类似 `fooComponent: FooComponent;` 的方式添加到 **app.component.ts** 文件中。在重新构建 Library 后，我重新执行了 `ng serve` 并很快发现执行失败并报了一个错误 `Module has no exported member 'FooComponent'`。
+
+所以记住规则：
+
+> 对于组件：
+> 使用导出以保证元素可见。
+> 并将其添加进入口文件以保证类可见。
+
+所以进行正确的操作后，**public_api.ts** 入口文件应该像如下这样：
+
+```ts
+/*
+ * Public API Surface of example-ng6-lib
+ */
+
+export * from './lib/example-ng6-lib.service';
+export * from './lib/example-ng6-lib.component';
+export * from './lib/example-ng6-lib.module';
+export * from './lib/foo/foo.component';
+```
+
+### 重新构建 Library
+
+在对 Library 进行修改之后，我们需要重新构建 Library：
+
+```bash
+ng build example-ng6-lib
+```
+
+迄今维持我们所有的操作都是纯手动的，这一点也不酷。事实上，**Angular CLI** 在 `6.2` 版本中增加了一个增量构建的功能。每当有文件发生了修改，**Angular CLI** 将会进行部分构建并抛出修改后的文件。使用这个新的观察功能你只需要执行如下指令：
+
+```bash
+ng build example-ng6-lib --watch
+```
+
+### 使用新构建的组件
+
+最后，在 **app.component.html** 的最后一行添加自定义元素 `<enl-foo></enl-foo>`。最后的文件如下所示：
+
+```html
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Example</h2>
+<enl-example-ng6-lib></enl-example-ng6-lib>
+<enl-foo></enl-foo>
+```
+
+最后打开浏览器定位到 [http://localhost:4200/](http://localhost:4200/):
+
+<p align="center"> 
+    <img src="../assets/angular-78/4.png">
+</p>
+
+我们就看到新定义的 Library 组件。
