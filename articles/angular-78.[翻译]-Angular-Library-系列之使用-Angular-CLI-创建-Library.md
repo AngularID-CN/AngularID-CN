@@ -18,9 +18,9 @@
 
 > 更新：本文最初是为 Angular 第六版所写。因为 Angular 第七版已经发布有一段时间了，我特意检查了本文中所有的示例确保他们在 Angular 第七版中可以正常执行。
 
-Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是新特性是 Angular CLI 与 [ng-packagr](https://github.com/ng-packagr/ng-packagr) 的集成用以更方便地生成和构建 Angular 库。ng-packagr 是由 [David Herges](https://medium.com/@davidh_23) 创造的用于将自制的库转化为 [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview)的优秀工具。
+Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是新特性是 Angular CLI 与 [ng-packagr](https://github.com/ng-packagr/ng-packagr) 的集成用以更方便地生成和构建 Angular 库。ng-packagr 是由 [David Herges](https://medium.com/@davidh_23) 创造的用于将自制的库转化为 [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview) 的优秀工具。
 
-在本文中，我们将详细地介绍创造 Angular 库的每个细节。此外，我将重点介绍一些对于库开发的有益的规则和经验以避免在开发过程中再继续踩不必要的坑。
+在本文中，我们将详细地介绍创造 Angular 库的每个细节。此外，我将重点介绍一些对于库开发有益的规则和经验以避免在开发过程中再踩不必要的坑。
 
 为了方便，我在 Github 上创建了一个包含全部代码的仓库 [t-palmer/example-ng6-lib](https://github.com/t-palmer/example-ng6-lib)，希望可以帮助你更好地理解 Angular 库的构建。
 
@@ -50,7 +50,7 @@ Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是
 
 - 在我们的 example-ng6-lib 工作区中生成一个名为 example-ng6-lib 的 Angular 库。
 
-- 我们的 Angular Library 将使用 enl 的前缀以提醒其为 Ng6 库的示例。
+- 我们的 Angular 库将使用 enl 的前缀以提醒其为 Ng6 库的示例。
   
 - 我们会通过将 **example-ng6-lib** 库引入到 **example-ng6-lib-app** 应用中的方式来测试库的功能。
 
@@ -110,9 +110,9 @@ ng serve
 
 记得我们使用 Angular CLI 创建了名为 **example-ng6-lib-app** 的工作区。
 
-然后 CLI 为我们创建了名为 **example-ng6-lib-app** 的默认应用。这样的操作为我们将库命名为 **example-ng6-lib** 留下了操作空间。当我们创建了 Library 之后就会看到另外一个项目被添加到了 angular.json 文件下的 projects 对象中。
+然后 CLI 为我们创建了名为 **example-ng6-lib-app** 的默认应用。这样的操作为我们将库命名为 **example-ng6-lib** 留下了操作空间。当我们创建了库之后就会看到另外一个项目被添加到了 angular.json 文件下的 projects 对象中。
 
-> 注意！永远使用 Library-app (如 example-ng6-lib-app) 为名创造工作区并将其重命名为你的 Library 的名字。
+> 注意！永远使用 Library-app (如 example-ng6-lib-app) 为名创造工作区并将其重命名为你的库的名字。
 
 ## 创建一个库模块
 
@@ -157,7 +157,7 @@ UPDATE tsconfig.json (471 bytes)
 
 - 在 tsconfig.json 文件中添加对 example-ng6-lib 构建路径的引用
 
-- 在 projects/example-ng6-lib 文件夹下创建 Library 的初始源代码。
+- 在 projects/example-ng6-lib 文件夹下创建库的初始源代码。
 
 因为这个专栏名称叫做 Angular In Depth，所以让我们深入每一项去仔细了解一下。
 
@@ -263,7 +263,7 @@ UPDATE tsconfig.json (471 bytes)
 
 `package.json`
 
-这是专门用于库的 package.json 文件。这是库作为 npm 包发布所使用的 package.json 文件。当用户通过 npm 安装库时，该文件用于指定其依赖项。
+这是专门用于库的 package.json 文件，也是库作为 npm 包发布所使用的 package.json 文件。当用户通过 npm 安装库时，该文件用于指定其依赖项。
 
 `public_api.ts`
 
@@ -271,7 +271,7 @@ UPDATE tsconfig.json (471 bytes)
 
 `ng-package.json`
 
-这是 **ng-packagr** 的配置文件。在 CLI 和 ng-packagr 没有集成的时代我们需要尽可能地熟悉该文件的内容，但是现在，在拥有新版 Angular CLI 的情况下，我们只需要知道该文件是用于告知 ng-packagr 去哪找到入口文件以及去哪构建库的内容。
+这是 **ng-packagr** 的配置文件。在 CLI 和 ng-packagr 没有集成的时代我们需要尽可能地熟悉该文件的内容，但是现在，在拥有新版 Angular CLI 的情况下，我们只需要知道该文件是用于告知 ng-packagr 去哪找到入口文件以及去哪构建库的内容即可。
 
 ## 构建库
 
@@ -287,7 +287,7 @@ ng build example-ng6-lib
 example-ng6-lib-app\dist\example-ng6-lib
 ```
 
-从6.1版本开始，Angular 总是对库进行生产模式的构建。如果你仍在使用6.0.x的版本，则需要在构建库时使用 `--prod` 标志符。
+从6.1版本开始，Angular 总是对库进行产品模式的构建。如果你仍在使用6.0.x的版本，则需要在构建库时使用 `--prod` 标志符。
 
 ## 在应用中使用库
 
@@ -301,7 +301,7 @@ example-ng6-lib-app\dist\example-ng6-lib
 
 让我们修改 **src\app\app.module.ts** 文件中的 **AppModule** 模块。
 
-向 `imports` 数组中添加 **ExampleNg6LibModule** 模块。你的 IDE 可能会自以为是地帮助你通过文件路径引入该模块，但是你需要阻止这样的行为并使用如下方式通过库的名字向应用中引入模块：
+向 `imports` 数组中添加 **ExampleNg6LibModule** 模块。你的 IDE 可能会自以为是地帮助你通过文件路径引入该模块，但是你需要阻止这样的行为并使用如下方式通过库的名称向应用中引入模块：
 
 ```ts
 import { ExampleNg6LibModule } from 'example-ng6-lib';
@@ -445,7 +445,7 @@ export * from './lib/foo/foo.component';
 
 你可能觉得这样的操作是不是有些冗余，因为之前已经将新的组件添加到 Library 模块文件的导出属性中了。的确如果不将组件添加到入口文件中也可以在应用的模板中使用 `<enl-foo></enl-foo>`。然而这样的做法会导致 **FooComponent** 类本身并没有被导出。
 
-我已经进行了如下的尝试这样你就可以不用在重蹈覆辙：在没有将 foo.component 文件添加到入口文件的条件下，我尝试将 FooComponent 组件类的引用以类似 `fooComponent: FooComponent;` 的方式添加到 **app.component.ts** 文件中。在重新构建库后，我重新执行了 `ng serve` 并很快发现执行失败并报了一个错误 `Module has no exported member 'FooComponent'`。
+我已经进行了如下的尝试这样你就可以不用再重蹈覆辙：在没有将 foo.component 文件添加到入口文件的条件下，我尝试将 FooComponent 组件类的引用以类似 `fooComponent: FooComponent;` 的方式添加到 **app.component.ts** 文件中。在重新构建库后，我重新执行了 `ng serve` 并很快发现执行失败并报了一个错误 `Module has no exported member 'FooComponent'`。
 
 所以记住规则：
 
@@ -503,3 +503,7 @@ ng build example-ng6-lib --watch
 </p>
 
 我们就看到新定义的库组件。
+
+## 展望未来
+
+在本系列的[第2部分](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121)中，我们将会讨论构建，打包和在另一个应用中使用生成的库。
