@@ -17,7 +17,7 @@ P.S. 关于进度：
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | TanYiBing | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
-149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 翻译中 |  |
+149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
 148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
 146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
@@ -58,7 +58,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 111 | [Angular Routing Series: Pillar 1 — Router States and Url Matching](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc?source=---------23---------------------) | - | sunny |  | 翻译中 |  
 110 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------24---------------------) | - |  |  |  |  
 109 | [Lessons learned while upgrading from AngularJS UI-Router to Angular Router](https://blog.angularindepth.com/lessons-learned-while-upgrading-from-angularjs-ui-router-to-angular-router-13c7cb76938c?source=---------25---------------------) | - |  |  |  |  
-108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 翻译中 |  
+108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 待校验 |  
 107 | [Modify User Provided UI with Content Directives](https://blog.angularindepth.com/modify-user-provided-ui-with-content-directives-a3fc0c88058e?source=---------27---------------------) | - |  |  |  |  
 106 | [Practical application of reverse-engineering guidelines and principles](https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657?source=---------28---------------------) | - |  |  |  |  
 105 | [Level Up Your Reverse Engineering Skills](https://blog.angularindepth.com/level-up-your-reverse-engineering-skills-8f910ae10630?source=---------29---------------------) | - |  |  |  |  
