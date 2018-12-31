@@ -88,7 +88,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 81 | [A curious case of the @Host decorator and Element Injectors in Angular](https://blog.angularindepth.com/a-curios-case-of-the-host-decorator-and-element-injectors-in-angular-582562abcf0a?source=---------53---------------------) | - | sunny |  |  | [Angular 的 @Host 装饰器和元素注入器](articles/angular-81.[翻译]-Angular-的-@Host-装饰器和元素注入器.md)
 80 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------54---------------------) | - |  |  |  |  
 79 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------55---------------------) | - |  |  |  |  
-78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - |  |  |  |  
+78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - | saywerbutton |  | 翻译中 | [Angular Library 系列之使用Angular CLI 创建 Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
 77 | [Use <ng-template>](https://blog.angularindepth.com/use-ng-template-c72852c37fba?source=---------57---------------------) | - |  |  |  |  
 76 | [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c?source=---------58---------------------) | [文](https://juejin.im/entry/5b1a96eaf265da6e4d5afdff) | tc9011 | baishusama | 校对中 |  
 75 | [Ivy engine in Angular: first in-depth look at compilation, runtime and change detection](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd?source=---------59---------------------) | - |  |  |  |  
@@ -229,7 +229,6 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
-
 ---
 
 ## [Nrwl](https://blog.nrwl.io/)
@@ -244,4 +243,4 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-1 |  |  |  |  |  | 
+1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
