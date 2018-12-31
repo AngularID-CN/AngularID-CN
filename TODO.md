@@ -62,7 +62,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 107 | [Modify User Provided UI with Content Directives](https://blog.angularindepth.com/modify-user-provided-ui-with-content-directives-a3fc0c88058e?source=---------27---------------------) | - |  |  |  |  
 106 | [Practical application of reverse-engineering guidelines and principles](https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657?source=---------28---------------------) | - |  |  |  |  
 105 | [Level Up Your Reverse Engineering Skills](https://blog.angularindepth.com/level-up-your-reverse-engineering-skills-8f910ae10630?source=---------29---------------------) | - |  |  |  |  
-104 | [The Angular Library Series — Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275?source=---------30---------------------) | - |  |  |  |  
+104 | [The Angular Library Series — Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275?source=---------30---------------------) | - | sawyerbutton |  |  | [Angular Library 系列之发布](articles/angular-104.[翻译]-Angular-Library-系列之发布.md)
 103 | [Plan Your Next Party with an Angular Invite App Using Akita!](https://blog.angularindepth.com/plan-your-next-party-with-an-angular-invite-app-using-akita-422495351767?source=---------31---------------------) | - |  |  |  |  
 102 | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------32---------------------) | - |  |  |  |  
 101 | [Changing the behavior of a 3rd party Angular Component](https://blog.angularindepth.com/changing-the-behavior-of-a-3rd-party-angular-component-91f84fb9af28?source=---------33---------------------) | - |  |  |  |  
@@ -83,7 +83,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 86 | [How I test my NgRx selectors](https://blog.angularindepth.com/how-i-test-my-ngrx-selectors-c50b1dc556bc?source=---------48---------------------) | - |  |  |  |  
 85 | [Angular 5 or Angular 6 (or even 7)? Yes please!](https://blog.angularindepth.com/angular-5-or-angular-6-yes-please-d71b08b5e59b?source=---------49---------------------) | - |  |  |  |  
 84 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------50---------------------) | - |  |  |  |  
-83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - |  |  |  |  
+83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - | sawyerbutton |  |  |  
 82 | [ag-Grid becomes an official sponsor of Angular-In-Depth publication](https://blog.angularindepth.com/ag-grid-becomes-an-official-sponsor-of-angular-in-depth-publication-89fb294db1bc?source=---------52---------------------) | - |  |  |  |  
 81 | [A curious case of the @Host decorator and Element Injectors in Angular](https://blog.angularindepth.com/a-curios-case-of-the-host-decorator-and-element-injectors-in-angular-582562abcf0a?source=---------53---------------------) | - | sunny |  |  | [Angular 的 @Host 装饰器和元素注入器](articles/angular-81.[翻译]-Angular-的-@Host-装饰器和元素注入器.md)
 80 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------54---------------------) | - |  |  |  |  
