@@ -36,9 +36,9 @@
 
 ## 给你的 Angular 库命名
 
-为了将你的 Angular 库发布到 npm 上你需要给你库起一个**独一无二的**名字。在你使用 Angular CLI 创建新的库之前，最好现在 npm 上检查一下。因为如果你已经在 Angular 工作区之中创建并命名了一个库，但是之后你发现 npm 上已经有了同名的 npm 包而你必须修改自己的库的名字时，你的表情肯定会是这样😭。
+为了将你的 Angular 库发布到 npm 上你需要给你库起一个**独一无二的**名字。在你使用 Angular CLI 创建新的库之前，最好先在 npm 上检查一下。因为如果你已经在 Angular 工作区之中创建并命名了一个库，但是之后你发现 npm 上已经有了同名的 npm 包而你必须修改自己的库的名字时，你的表情肯定会是这样😭。
 
-为了检查你想给库起的名字是否已经被使用，你需要前往 npm 的 package 页面。举例来说，如果你想给你的库气的名字是 **ng-library-x**，你需要检查这个 url 链接：
+为了检查你想给库起的名字是否已经被使用，你需要前往 npm 的 package 页面。举例来说，如果你想给你的库起个名字 **ng-library-x**，你需要检查这个 url 链接：
 
 [https://www.npmjs.com/package/ng-library-x](https://www.npmjs.com/package/ng-library-x)
 
@@ -93,7 +93,7 @@
 
 > 推荐：根据 SemVer 的准则对你的库进行版本更新。
 
-当你构建你的库时，你会在 **dist** 文件夹下对应的 库文件夹 中 **对应的 package.json** 文件中看到版本的更新。注意，这个 package.json 文件将与你的库一起打包并且对公众可见。在构建库之后，对外发布的库的相关 **package.json** 文件如下所示：
+当你构建你的库时，你会在 **dist** 文件夹下对应的 库文件夹 中 **对应的 package.json** 文件中看到版本号被更新。注意，这个 package.json 文件将与你的库一起打包并且对公众可见。在构建库之后，对外发布的库的相关 **package.json** 文件如下所示：
 
 ```json
 {
@@ -152,7 +152,7 @@
 
 3. npm 打包
 
-   将 **dist\ng-example-library** 文件夹打包到 **tgz** 文件中。
+   将 **dist\ng-example-library** 文件夹打包为 **.tgz** 文件。
 
 ## package.json 文件中的更多信息
 
@@ -211,9 +211,9 @@
 
 ## 登录 npm
 
-npm 提供了 [全套完整的指引](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) 帮助你发布你的包/库。为了你自己考虑你应当去好好读一读这篇指引。为了你的方便考虑，我将关键的步骤抽出来在这里展示给你：
+npm 提供了 [完整的指引](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) 帮助你发布你的包/库。为了你自己考虑你应当去好好读一读这篇指引。为了你的方便考虑，我将关键的步骤抽出来在这里展示给你：
 
-在发布到 npm 之前你需要先通过如下方式登录 npm：
+在发布到 npm 之前你需要先通过命令行的方式登录 npm：
 
 ```bash
 npm login
@@ -233,7 +233,7 @@ npm whoami
 npm publish ./dist/ng-example-library/ng-example-library-1.2.0.tgz
 ```
 
-然后我们就可以在 npm 的这个 URL 上查看已发布的包：[https://www.npmjs.com/package/ng-example-library](https://www.npmjs.com/package/ng-example-library)
+然后我们就可以在 npm 的[这个 URL 上查看已发布的包](https://www.npmjs.com/package/ng-example-library)。
 
 <p align="center"> 
     <img src="../assets/angular-104/4.png">
@@ -241,4 +241,4 @@ npm publish ./dist/ng-example-library/ng-example-library-1.2.0.tgz
 
 ## 即将到来的内容
 
-我希望很快放出 **Angular 库系列**的第四篇文章，其中我们将会讨论 `Dependencies`。
+我希望很快放出 **Angular 库系列**的第四篇文章，其中我们将会讨论 `Dependencies` 的相关内容。
