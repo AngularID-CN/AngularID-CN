@@ -1,9 +1,9 @@
 # [翻译] 在Angular中使用DOM：新认知以及优化技术
 
-> 原文：[Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866)
-> 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**
-> 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位
-> 译者：**[秋天](https://github.com/jkhhuse)**；校对者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**
+> 原文：[Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866)  
+> 作者：**[Max Koretskyi](http://twitter.com/maxim_koretskyi)**  
+> 原技术博文由 `Max Koretskyi` 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位  
+> 译者：**[秋天](https://github.com/jkhhuse)**；校对者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**  
 
 ![DOM & Angular](../assets/angular-73/1.png)
 
