@@ -13,7 +13,7 @@
 > 为了行文方便，以下均以我/我们指代原作者。
 
 <p align="center"> 
-    <img src="../assets/angular-83/1.jpeg">
+    <img src="../assets/angular-104/1.jpeg">
 </p>
 
 迄今为止，如果按部就班你应该已经创建并构建了属于你自己的 Angular 库。在我们开讲包的依赖这一部分之前我想说点轻松的让大家在这个系列中喘口气，我将会在本篇中教你如何通过 [npm](https://www.npmjs.com/) 向世界分享你的 Angular 库。
@@ -45,7 +45,7 @@
 比较理想的情况是 该链接展示如下页面：
 
 <p align="center"> 
-    <img src="../assets/angular-83/2.png">
+    <img src="../assets/angular-104/2.png">
 </p>
 
 这代表着这个名字还没有在 npm 上被使用。
@@ -204,7 +204,7 @@
 你可以从 npm 上安装任何你想安装的内容。但是如果你想要向 npm 上发布你自己的库/包，你需要创建一个 npm 账户。注册只需提供你的名字，一个用户名和密码以及一个可用的 email 地址。
 
 <p align="center"> 
-    <img src="../assets/angular-83/3.png">
+    <img src="../assets/angular-104/3.png">
 </p>
 
 在注册完成后，记得检查你的邮件进行相关的邮箱验证。
@@ -236,7 +236,7 @@ npm publish ./dist/ng-example-library/ng-example-library-1.2.0.tgz
 然后我们就可以在 npm 的这个 URL 上查看已发布的包：[https://www.npmjs.com/package/ng-example-library](https://www.npmjs.com/package/ng-example-library)
 
 <p align="center"> 
-    <img src="../assets/angular-83/4.png">
+    <img src="../assets/angular-104/4.png">
 </p>
 
 ## 即将到来的内容
