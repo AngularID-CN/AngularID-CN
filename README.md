@@ -33,6 +33,10 @@
 25. [[翻译] Angular 中拦截器的真相和 HttpClient 内部机制](articles/rxjs-17.[翻译]-Angular-中拦截器的真相和-HttpClient-内部机制.md)
 26. [[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识](articles/rxjs-36.[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md)
 27. [[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
+28. [[翻译]-在Angular中使用DOM：新认知以及优化技术](articles/angular-73.[翻译]-在Angular中使用DOM：新认知以及优化技术.md)
+29. [[翻译]-如何在-Angular-中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
+30. [[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
+
 
 ## Memeber 
 

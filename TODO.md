@@ -17,7 +17,7 @@ P.S. 关于进度：
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | TanYiBing | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
-149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 翻译中 |  |
+149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
 148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
 146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
@@ -58,7 +58,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 111 | [Angular Routing Series: Pillar 1 — Router States and Url Matching](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc?source=---------23---------------------) | - | sunny |  | 翻译中 |  
 110 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------24---------------------) | - |  |  |  |  
 109 | [Lessons learned while upgrading from AngularJS UI-Router to Angular Router](https://blog.angularindepth.com/lessons-learned-while-upgrading-from-angularjs-ui-router-to-angular-router-13c7cb76938c?source=---------25---------------------) | - |  |  |  |  
-108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 翻译中 |  
+108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 待校验 |  
 107 | [Modify User Provided UI with Content Directives](https://blog.angularindepth.com/modify-user-provided-ui-with-content-directives-a3fc0c88058e?source=---------27---------------------) | - |  |  |  |  
 106 | [Practical application of reverse-engineering guidelines and principles](https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657?source=---------28---------------------) | - |  |  |  |  
 105 | [Level Up Your Reverse Engineering Skills](https://blog.angularindepth.com/level-up-your-reverse-engineering-skills-8f910ae10630?source=---------29---------------------) | - |  |  |  |  
@@ -88,12 +88,12 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 81 | [A curious case of the @Host decorator and Element Injectors in Angular](https://blog.angularindepth.com/a-curios-case-of-the-host-decorator-and-element-injectors-in-angular-582562abcf0a?source=---------53---------------------) | - | sunny |  |  | [Angular 的 @Host 装饰器和元素注入器](articles/angular-81.[翻译]-Angular-的-@Host-装饰器和元素注入器.md)
 80 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------54---------------------) | - |  |  |  |  
 79 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------55---------------------) | - |  |  |  |  
-78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - |  |  |  |  
+78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - | saywerbutton |  | 翻译中 | [Angular Library 系列之使用Angular CLI 创建 Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
 77 | [Use <ng-template>](https://blog.angularindepth.com/use-ng-template-c72852c37fba?source=---------57---------------------) | - |  |  |  |  
 76 | [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c?source=---------58---------------------) | [文](https://juejin.im/entry/5b1a96eaf265da6e4d5afdff) | tc9011 | baishusama | 校对中 |  
 75 | [Ivy engine in Angular: first in-depth look at compilation, runtime and change detection](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd?source=---------59---------------------) | - |  |  |  |  
 74 | [A modern solution to lazy loading images using Intersection Observer](https://blog.angularindepth.com/a-modern-solution-to-lazy-loading-using-intersection-observer-9280c149bbc?source=---------60---------------------) | - |  |  |  |  
-73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - | 秋天 |  | 翻译中 |  
+73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - | 秋天 |  | 校对中 |  
 72 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------62---------------------) | - |  |  |  |  
 71 | [Angular Unit Testing performance](https://blog.angularindepth.com/angular-unit-testing-performance-34363b7345ba?source=---------63---------------------) | - | sunny | strange | 校对中 |  
 70 | [Angular 5 Universal + Firebase](https://blog.angularindepth.com/angular-5-universal-firebase-4c85a7d00862?source=---------64---------------------) | - |  |  |  |  
@@ -160,7 +160,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 9 | [Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f?source=---------125---------------------) | - | baishusama |  | [转载中](https://juejin.im/post/5bf405f851882530d44b400a) |
 8 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------126---------------------) | - |  |  |  |  
 7 | [A Deep, Deep, Deep, Deep, Deep Dive into the Angular Compiler](https://blog.angularindepth.com/a-deep-deep-deep-deep-deep-dive-into-the-angular-compiler-5379171ffb7a?source=---------127---------------------) | - |  |  |  |  
-6 | [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e?source=---------128---------------------) | - |  |  |  | [关于 Angular 动态组件你需要知道的](articles/angular-6.[翻译]-关于-Angular-动态组件你需要知道的.md)
+6 | [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e?source=---------128---------------------) | - | sunny | 秋天 | 校对中 | [关于 Angular 动态组件你需要知道的](articles/angular-6.[翻译]-关于-Angular-动态组件你需要知道的.md)
 5 | [Angular’s $digest is reborn in the newer version of Angular](https://blog.angularindepth.com/angulars-digest-is-reborn-in-the-newer-version-of-angular-718a961ebd3e?source=---------129---------------------) | - | sunny | 秋天 | 已发表 | [`$digest` 在 Angular 中重生](articles/angular-5.[翻译]-$digest-在-Angular-中重生.md)
 4 | [Everything you need to know about the `ExpressionChangedAfterItHasBeenCheckedError` error](https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4?source=---------130---------------------) | - | sunny |  | 校验中 | [关于 ExpressionChangedAfterItHasBeenCheckedError 错误你所需要知道的事情](articles/angular-4.[翻译]-关于-ExpressionChangedAfterItHasBeenCheckedError-错误你所需要知道的事情.md)
 3 | [Exploring Angular DOM manipulation techniques using ViewContainerRef](https://blog.angularindepth.com/exploring-angular-dom-abstractions-80b3ebcfc02?source=---------131---------------------) | - | sunny | 秋天 | 正在校验 | [探索 Angular 使用 ViewContainerRef 技术操作 DOM](articles/angular-3.[翻译]-探索-Angular-使用-ViewContainerRef-技术操作-DOM.md)
@@ -229,7 +229,6 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
-
 ---
 
 ## [Nrwl](https://blog.nrwl.io/)
@@ -244,4 +243,4 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-1 |  |  |  |  |  | 
+1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
