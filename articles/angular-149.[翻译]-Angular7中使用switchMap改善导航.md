@@ -67,14 +67,14 @@ PR **[#25740](https://github.com/angular/angular/commit/b7baf632c0161692f15d13f7
 
 ### 自定义操作符
 
-RxJS 的优美之处在于你可以组合已有的操作符（如 map 和 filter），构成新的操作符。自从有了 PR **[#25740](https://github.com/angular/angular/commit/b7baf632c0161692f15d13f718329ab54a0f938a)**，导航周期的不同部分被重构成自定义 RxJS 操作符，代码位于 `[/packages/router/src/operators](https://github.com/angular/angular/tree/master/packages/router/src/operators)`。你可以看到之前提到的导航周期的每一个阶段都是由自定义 RxJS 操作符来表示：
+RxJS 的优美之处在于你可以组合已有的操作符（如 map 和 filter），构成新的操作符。自从有了 PR **[#25740](https://github.com/angular/angular/commit/b7baf632c0161692f15d13f718329ab54a0f938a)**，导航周期的不同部分被重构成自定义 RxJS 操作符，代码位于 [/packages/router/src/operators](https://github.com/angular/angular/tree/master/packages/router/src/operators)。你可以看到之前提到的导航周期的每一个阶段都是由自定义 RxJS 操作符来表示：
 
 * apply_redirects.ts
 * recognize.ts
 * check_guards.ts and resolve_data.ts
 * activate_routes.ts
 
-从内部而言，导航间的转换是由 `[NavigationTransition](https://github.com/angular/angular/blob/7.1.4/packages/router/src/router.ts#L172-L191)` 类型来表示。一个名为 `router.transitions` 的 `NavigationTransition` 类型的可观察对象与主 `router.navigations` 一起使用用来处理新的导航。这里则是利用 `switchMap` 操作符使得新的导航发生时自动取消当前导航的过程：
+从内部而言，导航间的转换是由 [NavigationTransition](https://github.com/angular/angular/blob/7.1.4/packages/router/src/router.ts#L172-L191) 类型来表示。一个名为 `router.transitions` 的 `NavigationTransition` 类型的可观察对象与主 `router.navigations` 一起使用用来处理新的导航。这里则是利用 `switchMap` 操作符使得新的导航发生时自动取消当前导航的过程：
 
 ```ts
 private setupNavigations(transitions: Observable<NavigationTransition>): Observable<NavigationTransition> {
