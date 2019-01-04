@@ -83,7 +83,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 86 | [How I test my NgRx selectors](https://blog.angularindepth.com/how-i-test-my-ngrx-selectors-c50b1dc556bc?source=---------48---------------------) | - |  |  |  |  
 85 | [Angular 5 or Angular 6 (or even 7)? Yes please!](https://blog.angularindepth.com/angular-5-or-angular-6-yes-please-d71b08b5e59b?source=---------49---------------------) | - |  |  |  |  
 84 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------50---------------------) | - |  |  |  |  
-83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - | sawyerbutton |  |  |  
+83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - | sawyerbutton | Ice Panpan | 待发表 |  
 82 | [ag-Grid becomes an official sponsor of Angular-In-Depth publication](https://blog.angularindepth.com/ag-grid-becomes-an-official-sponsor-of-angular-in-depth-publication-89fb294db1bc?source=---------52---------------------) | - |  |  |  |  
 81 | [A curious case of the @Host decorator and Element Injectors in Angular](https://blog.angularindepth.com/a-curios-case-of-the-host-decorator-and-element-injectors-in-angular-582562abcf0a?source=---------53---------------------) | - | sunny |  |  | [Angular 的 @Host 装饰器和元素注入器](articles/angular-81.[翻译]-Angular-的-@Host-装饰器和元素注入器.md)
 80 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------54---------------------) | - |  |  |  |  
@@ -203,10 +203,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 8 | [The new Angular HttpClient API](https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361?source=---------29---------------------) | - |  |  |  |  
 7 | [RxJS: multicast’s Secret](https://blog.angularindepth.com/rxjs-multicasts-secret-760e1a2b176e?source=---------30---------------------) | - |  |  |  |  
 6 | [3 reasons why you should follow Angular-In-Depth publication](https://blog.angularindepth.com/3-reasons-why-you-should-follow-angular-in-depth-publication-6e37a7d7f988?source=---------31---------------------) | - |  |  |  |  
-5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（二）：日志记录](articles/rxjs-5.[翻译]-调试-Rxjs（二）：日志记录.md) 
+5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | Ice Panpan |  | 待校验 | [调试 Rxjs（二）：日志记录](articles/rxjs-5.[翻译]-调试-Rxjs（二）：日志记录.md) 
 4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  
 3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  
-2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
+2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待校验 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  
 
 ## [NgRx](https://blog.angularindepth.com/tagged/ngrx)
