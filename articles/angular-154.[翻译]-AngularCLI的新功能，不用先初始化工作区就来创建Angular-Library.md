@@ -8,7 +8,7 @@
 >
 > 译者按：本文使用 库 指代 Angular Library 的概念。
 
-> 用法及为什么使用 Angular CLI 提供的 -- createApplication 选项来创建一个工作区（**workspace**），并且不用再先初始化应用。
+> 用法及为什么使用 Angular CLI 提供的 -- createApplication 选项在不创建默认应用的前提下创建一个 angular 工作区（**workspace**）。
 
 <p align="center"> 
     <img src="../assets/angular-154/1.jpeg">
@@ -20,7 +20,7 @@ Angular CLI 7.0.0 中增加了一个非常好的选项：`--createApplication`�
 
 ## 在 --createApplication 诞生之前的故事
 
-到目前为止，你可能已经使用 Angular CLI 创建了一些甚至许多 Angular 应用程序。典型的创建应用的命令是：
+到目前为止，你可能已经使用 Angular CLI 创建了一些甚至许多 Angular 应用程序。通常我们会使用如下命令：
 
 ```bash
 ng new foo
@@ -32,7 +32,7 @@ ng new foo
 
 通常情况下，这样的工程结构就是我们所想要的那样。然而，这个初始化的应用程序会在我们想要生成 Angular 库时，产生一些问题。
 
-你可能还记得我之前写的文章 [Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5) 介绍了创建一个工作区并随后重命名工作区的方式。我们这样做，是为了保证我们生成的应用不会与我们的库重名。不过，这里有个好消息，我们在 Angular 7.0 不用再使用这个令人费解的策略来生成库了。
+你可能还记得我之前写的文章 [Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5) 介绍了创建一个工作区并随后重命名工作区的方式。我们这样做，是为了保证我们生成的应用不会与我们的库之间产生重名冲突。不过，这里有个好消息，我们在 Angular 7.0 不用再使用这个令人费解的策略来生成库了。
 
 ## 使用 --createApplication
 
@@ -60,9 +60,11 @@ ng new foo --createApplication=false
 
 - README.md, tsconfig.json, tslint.json 以及 node_modules 文件都与以前保持一致。
 
-![createApplication doc](../assets/angular-154/4.gif?raw=true)
+<p align="center"> 
+    <img src="../assets/angular-154/4.gif?raw=true">
+</p>
 
-你可能会主要到，这里没有 **src** 文件夹，之后 **projects** 文件夹将会在生成库项目或者测试应用项目时被添加。
+你可能会注意到，这里没有 **src** 文件夹，之后 **projects** 文件夹将会在生成库项目或者测试应用项目时被添加。
 
 自从我们设置 `--createApplication` 选项为 **false** 后，我们的工程就不是一个初始化的应用。因此，如果你试着去运行一些命令，例如：`ng build` 或者 `ng serve` 时，我们会看到下面错误：`Could not determine a single project for the ‘build’ target`。
 
@@ -72,11 +74,11 @@ ng new foo --createApplication=false
 
 使用 `--createApplication=false` 的一个重要原因是我们能够使用 `ng generate` 来创建一个 Angualr 库。
 
-例如，当我们创建 Angular 库存在于以下典型的场景下：
+例如，通常在创建 Angular 库时，需要以下内容：：
 
-- 当你的工程目录中需要存在一个 Angular 库时
-- Angular 库与你的 Angular 工作区重名时
-- 需要提供一个测试应用，用来作为 Angular 库的示例时
+- 你的工程目录下有一个 Angular 库。
+- 一个与库重名的 Angular 工作区。
+- 一个用来作为 Angular 库的示例的测试应用
 
 就像我文章开头提到的那样：以前使用我们库的名称创建工作区时，会导致初始应用程序被使用相同的名称创建。这阻止了我们的 Angular 库使用该名称，这是我们首先创建工作区的主要原因。
 
@@ -92,7 +94,7 @@ ng new foo --createApplication=false
 ng new foo-lib --createApplication=false
 ```
 
-当你被询问 `router` 或者 `css` 等选择时，选择默认。
+当你被询问 `router` 或者 `css` 等选择时，选择默认即可。
 
 ## 库项目
 
