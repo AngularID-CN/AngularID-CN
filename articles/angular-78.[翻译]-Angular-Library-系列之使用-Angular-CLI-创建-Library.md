@@ -11,12 +11,14 @@
 > 本文是 Angular Libaray 系列的第一篇文章，本系列共有三篇文章，涵盖从创建到打包再到发布的全套流程。
 > 
 > 为了行文方便，以下均以我/我们指代原作者。
+> 
+> 译者：[尊重](https://github.com/sawyerbutton)，校对者：[秋天](https://github.com/jkhhuse)
 
 <p align="center"> 
     <img src="../assets/angular-78/1.jpeg">
 </p>
 
-> 更新：本文最初是为 Angular 第六版所写。因为 Angular 第七版已经发布有一段时间了，我特意检查了本文中所有的示例确保他们在 Angular 第七版中可以正常执行。
+> 更新：本文最初是为 Angular v6 所写。因为 Angular v7 已经发布有一段时间了，我特意检查了本文中所有的示例，他们在 Angular v7 中仍然有效。
 
 Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是新特性是 Angular CLI 与 [ng-packagr](https://github.com/ng-packagr/ng-packagr) 的集成用以更方便地生成和构建 Angular 库。ng-packagr 是由 [David Herges](https://medium.com/@davidh_23) 创造的用于将自制的库转化为 [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview) 的优秀工具。
 
@@ -26,25 +28,25 @@ Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是
 
 ## 介绍
 
-当我们使用`ng new`指令时，Angular CLI 将为我们生成一个新的工作区（**workspace**）。
+当我们使用 `ng new` 命令时，Angular CLI 将为我们生成一个新的工作区（**workspace**）。
 
 在 Angular **工作区**中我们将拥有两个项目：
 
-- 一个库项目
+- 一个库项目（projects 目录）
 
 这是由组件和服务组成的库。其包含了我们将会上传到 npm 的代码。
 
-- 一个应用项目
+- 一个应用项目（src 目录）
 
-该项目作为 Library 的测试工具存在。有的时候这个库被用作文档和 Library 的使用用例。
+该项目作为 Library 的测试工具存在。有的时候这个应用项目也会被用作文档和库的使用用例。
 
-默认情况下，Angular CLI 还会为我们生成第三个用于 e2e 测试的项目，但是在本文中我们并不会谈及到它。
+默认情况下，Angular CLI 还会为我们生成第三个用于 e2e 测试的项目（e2e 目录），但是在本文中我们并不会谈及它。
 
 现在我们已经知晓了所创建的的 Angular **工作区**项目结构，让我们为本教程设定一些目标：
 
 ### 目标
 
-- 使用 Angular CLI 创建一个 与预期的 Angular 库同名的**工作区**， 即 **example-ng6-lib**。
+- 使用 Angular CLI 创建一个与预期的 Angular 库同名的**工作区**， 即 **example-ng6-lib**。
 
 - 我们将会拥有一个用于测试 example-ng6-lib 库的应用并将其命名为：**example-ng6-lib-app**。
 
@@ -58,15 +60,24 @@ Angular 6 中针对 Angular CLI 进行了许多改进。其中我最期待的是
 
 在写这篇技术博客的时候，Angular 6 还是非常新鲜的东西，因此有一些更改会影响本教程的内容。
 
-Angular CLI 的版本号已与 Angular 主版本号进行了同步：从1.7版直接跳转到了6.0.0版。
+Angular CLI 的版本号已与 Angular 主版本号进行了同步：从 v1.7 直接跳转到了 v6.0.0。
 
 Angular CLI 的配置文件已经由 angular-cli.json 替换为了 angular.json。
 
-Angular CLI 现在生成的**工作区**直接支持多项目架构。
+Angular CLI 现在生成的**工作区**直接支持多项目结构。
 
 ## 创建一个 Angular 工作区
 
-我们的第一个目标是创建一个名为 **example-ng6-lib** 的 **Angular 工作区**。应对于本工作区内项目的运作，我们需要用一点拐弯抹角的方式创建工作区。我们需要创建一个名为 **example-ng6-lib-app** 的工作区再将其重命名为 **example-ng6-lib**。
+我们的第一个目标是创建一个名为 **example-ng6-lib** 的 **Angular 工作区**。
+
+### 针对 Angular 7
+
+Angular 7 增加了一个非常有用的命令选项 `--createApplication` ，如果你正在使用 Angular 7，你应当遵从下面这篇文章描述的方式:
+[Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba)，不要使用下文介绍的针对 Angular 6 使用的重命名工作区方式。
+
+### 针对 Angular 6
+
+应对于本工作区内项目的运作，我们需要用一点拐弯抹角的方式创建工作区。我们需要创建一个名为 **example-ng6-lib-app** 的工作区再将其重命名为 **example-ng6-lib**。
 
 ```bash
 ng new example-ng6-lib-app
@@ -89,7 +100,7 @@ ng serve
 
 老版的配置文件 angular-cli.json 已经由 angular.json 文件替换，其内容也有所改变。
 
-这里需要注意的是 **projects**对象。对象中的每个项目都有一个专门的条目。
+这里需要注意的是 **projects** 对象。对象中的每个项目都有一个专门的条目。
 
 ```json
 "projects": {
@@ -106,13 +117,13 @@ ng serve
 
 - **example-ng6-lib-app**：这是我们用于测试库的应用。
 
-- example-ng6-lib-app-e2e：这是用于 e2e 测试的默认项目。在本文中，你可以毫无副作用地忽视这个项目。
+- **example-ng6-lib-app-e2e**：这是用于 e2e 测试的默认项目。在本文中，你可以毫无副作用地忽视这个项目。
 
 记得我们使用 Angular CLI 创建了名为 **example-ng6-lib-app** 的工作区。
 
 然后 CLI 为我们创建了名为 **example-ng6-lib-app** 的默认应用。这样的操作为我们将库命名为 **example-ng6-lib** 留下了操作空间。当我们创建了库之后就会看到另外一个项目被添加到了 angular.json 文件下的 projects 对象中。
 
-> 注意！永远使用 Library-app (如 example-ng6-lib-app) 为名创造工作区并将其重命名为你的库的名字。
+> 注意！一定要使用 Library-app (如 example-ng6-lib-app) 这样格式的名称来创建工作区，随后将其重命名为你的库的名字。
 
 ## 创建一个库模块
 
@@ -122,7 +133,7 @@ ng serve
 ng generate library example-ng6-lib --prefix=enl
 ```
 
-注意到我们在命令中使用了 `--prefix` 标签，其目的是让库组件变得更加有辨识度（就像 ng-zorro 所做的 nz-xxx 一样）。如果我们不对其进行配置，Angular CLI 将使用 `lib` 作为默认前缀标签。
+注意到我们在命令中使用了 `--prefix` 标签，其目的是让库组件变得更加有辨识度（注：就像 ng-zorro 所做的 nz-xxx 一样）。如果我们不对其进行配置，Angular CLI 将使用 `lib` 作为默认前缀标签。
 
 > 注意！在创建 Library 时总是显示地使用 prefix 标签进行配置。
 
@@ -218,16 +229,16 @@ UPDATE tsconfig.json (471 bytes)
 
 这里需要注意一些关键元素:
 
-`root`
+`root`  
 其指向我们的库项目的根文件夹。
 
-`sourceRoot`
+`sourceRoot`  
 其指向我们的库项目的源代码位置。
 
-`projectType`
+`projectType`  
 其特别指出了这是一个 `library` 项目，而不像是其他两个类型名称为 `application` 的应用项目。
 
-`prefix`
+`prefix`  
 这是将会用于我们的组件选择器的前缀标识符。记得我们在创建库时制定了 **enl** 作为指定前缀。你可能熟悉 **app** 的前缀，其标识出哪些组件属于主应用程序。
 
 `architect`
@@ -243,10 +254,9 @@ UPDATE tsconfig.json (471 bytes)
 
 ### 在 tsconfig.json 文件中的构建路径
 
-当测试 **example-ng6-lib** 时,我们希望能够像日常使用的方式那样引入他，而不是以应用中的既存文件的方式引用。通常，当我们使用第三方库时，我们使用 npm install 指令安装，并将其安装到我们的 node-modules 文件夹中。
+当测试 **example-ng6-lib** 时,我们希望能够像日常使用的方式那样引入他，而不是仅仅作为整个应用中的一组文件。通常，当我们使用第三方库时，我们使用 npm install 指令安装，并将其安装到我们的 **node_modules** 文件夹中。
 
-即使在当前的情况下，example-ng6-lib 不会安装到 node-modules 文件夹中，但是他会被构建到工作区的 `dist` 文件夹下的某个子文件夹中。Angular CLI 将这个文件夹添加到 tsconfig.json 文件中，这样 example-ng6-lib 就可以像一个 Library 一样以常见的方式被测试应用所引用了。
-
+即使在当前的情况下，example-ng6-lib 不会安装到 **node_modules** 文件夹中，但是他会被构建到工作区的 `dist` 文件夹下的某个子文件夹中。Angular CLI 将这个文件夹添加到 tsconfig.json 文件中，这样 example-ng6-lib 就可以像一个 Library 一样以常见的方式被测试应用所引用了。
 下述是在 tsconfig.json 文件中添加的路径：
 
 ```json
@@ -287,7 +297,7 @@ ng build example-ng6-lib
 example-ng6-lib-app\dist\example-ng6-lib
 ```
 
-从6.1版本开始，Angular 总是对库进行产品模式的构建。如果你仍在使用6.0.x的版本，则需要在构建库时使用 `--prod` 标志符。
+从 Angular v6.1 开始，Angular 总是以生产模式构建我们建立的库。如果你仍在使用 v6.0.x 版本，则需要在构建库时增加 `--prod` 标识。
 
 ## 在应用中使用库
 
@@ -301,7 +311,7 @@ example-ng6-lib-app\dist\example-ng6-lib
 
 让我们修改 **src\app\app.module.ts** 文件中的 **AppModule** 模块。
 
-向 `imports` 数组中添加 **ExampleNg6LibModule** 模块。你的 IDE 可能会自以为是地帮助你通过文件路径引入该模块，但是你需要阻止这样的行为并使用如下方式通过库的名称向应用中引入模块：
+向 `imports` 数组中添加 **ExampleNg6LibModule** 模块。你的 IDE 可能会自动地帮你以文件路径方式引入该模块，但是你需要阻止这样的行为，并使用库的名称向应用中引入模块：
 
 ```ts
 import { ExampleNg6LibModule } from 'example-ng6-lib';
@@ -309,7 +319,7 @@ import { ExampleNg6LibModule } from 'example-ng6-lib';
 
 这才是满足测试目的的导入方式，因为在按名称导入库时，Angular CLI 会首先在 **tsconfig.json** 路径中查找，再在 node_modules 中查找库文件。
 
-> 注意！永远在你的测试应用中遵循按名称而不是按单个文件的方式引入库
+> 注意！你的测试应用中遵循按名称的方式引入库，而不是以文件路径的方式去引入
 
 现在的 **app.module.ts** 应该是如下的样子:
 
@@ -385,7 +395,7 @@ ng serve
 
 ### 创建一个库组件
 
-当需要为库生成组件的时候我们需要使用 `--project` 标志位告诉 Angular CLI 在库项目中生成组件。现在我们在库里生成一个简单的组件并命名为 foo：
+当需要为库生成组件的时候我们需要使用 `--project` 标识来告诉 Angular CLI 在库项目中生成组件。现在我们在库里生成一个简单的组件并命名为 foo：
 
 ```bash
 ng generate component foo --project=example-ng6-lib
@@ -401,7 +411,7 @@ CREATE projects/example-ng6-lib/src/lib/foo/foo.component.css (0 bytes)
 UPDATE projects/example-ng6-lib/src/lib/example-ng6-lib.module.ts (347 bytes)
 ```
 
-现在我们的库拥有了一个新的组件而 Angular CLI 将其添加到了库模块文件 `projects\example-ng6-lib\src\lib\example-ng6-lib.module.ts` 的模块中。
+现在我们的库拥有了一个新的组件，并且 Angular CLI 将其添加到了库模块文件`projects\example-ng6-lib\src\lib\example-ng6-lib.module.ts` 的 `declarations` 属性中。
 
 ### 将组件从库的模块中导出
 
@@ -449,9 +459,9 @@ export * from './lib/foo/foo.component';
 
 所以记住规则：
 
-> 对于组件：
-> 使用导出以保证元素可见。
-> 并将其添加进入口文件以保证类可见。
+> 对于组件：  
+> 使用导出以保证元素可见。  
+> 并将其添加进入口文件以保证类可见。  
 
 所以进行正确的操作后，**public_api.ts** 入口文件应该像如下这样：
 
