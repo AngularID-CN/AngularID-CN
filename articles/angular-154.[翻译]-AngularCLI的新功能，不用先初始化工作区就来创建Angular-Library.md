@@ -28,7 +28,9 @@ ng new foo
 
 当我们执行这个命令时，Angular CLI 创建了初始化的程序，即我们熟知的 Angular 工作区的 `src/app` 目录。
 
-![angular cli init project](../assets/angular-154/2.png?raw=true)
+<p align="center"> 
+    <img src="../assets/angular-154/2.png?raw=true">
+</p>
 
 通常情况下，这样的工程结构就是我们所想要的那样。然而，这个初始化的应用程序会在我们想要生成 Angular 库时，产生一些问题。
 
@@ -40,7 +42,9 @@ ng new foo
 
 下面是[官方文档](https://angular.cn/cli/new)中的介绍：
 
-![createApplication doc](../assets/angular-154/3.png?raw=true)
+<p align="center"> 
+    <img src="../assets/angular-154/3.png?raw=true">
+</p>
 
 为了创建一个不包含初始化应用的 Angular 工作区，我们使用下面方法：
 
