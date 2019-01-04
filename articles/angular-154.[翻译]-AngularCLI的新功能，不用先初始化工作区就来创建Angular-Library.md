@@ -4,7 +4,7 @@
 
 > 原文作者：[Todd Palmer](https://blog.angularindepth.com/@palmer_todd?source=post_header_lockup)
 > 
-> 译者：[秋天](https://github.com/jkhhuse)；
+> 译者：[秋天](https://github.com/jkhhuse)；校对者：[尊重](https://github.com/sawyerbutton)
 >
 > 译者按：本文使用 库 指代 Angular Library 的概念。
 
