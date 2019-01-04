@@ -47,7 +47,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 122 | [Improve Angular’s performance through memoization and TypeScript decorators](https://blog.angularindepth.com/how-to-improve-angular-performance-by-just-adding-just-8-characters-877bde708ddd?source=---------12---------------------) | - |  |  |  |  
 121 | [Test for accessibility and help millions of people](https://blog.angularindepth.com/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4?source=---------13---------------------) | - |  |  |  |  
 120 | [Angular Flex Layout: The Masquerade](https://blog.angularindepth.com/angular-flex-layout-the-masquerade-58fb58d0ab45?source=---------14---------------------) | - |  |  |  |  
-119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - |  |  |  |  
+119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - | dreamdevil00 |  | 翻译中 |  
 118 | [Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290?source=---------16---------------------) | - |  |  |  |  
 117 | [Angular Flex-Layout: Flexbox and Grid Layout for Angular Component](https://blog.angularindepth.com/angular-flex-layout-flexbox-and-grid-layout-for-angular-component-6e7c24457b63?source=---------17---------------------) | - |  |  |  |  
 116 | [Policy-Based Client-Side Encryption in Angular](https://blog.angularindepth.com/policy-based-client-side-encryption-in-angular-b47068b26d50?source=---------18---------------------) | - |  |  |  |  
