@@ -16,6 +16,12 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
+156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - |  |  |  |  |
+155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
+154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 |  | 校对中 |  |
+153 | [Creating Reusable Angular Components — How To Avoid the Painful Trap Most Go In](https://blog.angularindepth.com/creating-reusable-angular-components-how-to-avoid-the-painful-trap-most-go-in-d531761d6c7a?source=---------3---------------------) | - |  |  |  |  |
+152 | [New in Angular 7: Better Navigations](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0?source=---------4---------------------) | - |  |  |  |  |
+151 | [Debug Angular apps in production without revealing source maps](https://blog.angularindepth.com/debug-angular-apps-in-production-without-revealing-source-maps-ab4a235edd85?source=---------5---------------------) | - |  |  |  |  |
 150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | TanYiBing | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
 149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
 148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |

@@ -36,7 +36,7 @@
 28. [[翻译]-在Angular中使用DOM：新认知以及优化技术](articles/angular-73.[翻译]-在Angular中使用DOM：新认知以及优化技术.md)
 29. [[翻译]-如何在-Angular-中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
 30. [[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
-
+31. [[翻译]-Angular CLI的新功能，不用先初始化工作区就来创建Angular Library](articles/angular-154.[翻译]-AngularCLI的新功能，不用先初始化工作区就来创建Angular-Library.md)
 
 ## Memeber 
 
