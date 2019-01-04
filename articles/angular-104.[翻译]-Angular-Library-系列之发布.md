@@ -93,7 +93,7 @@
 
 > 推荐：根据 SemVer 的准则对你的库进行版本更新。
 
-当你构建你的库时，你会在 **dist** 文件夹下对应的 库文件夹 中 **对应的 package.json** 文件中看到版本号被更新。注意，这个 package.json 文件将与你的库一起打包并且对公众可见。在构建库之后，对外发布的库的相关 **package.json** 文件如下所示：
+当你构建你的库时，你会在 **dist** 文件夹下对应的 库文件夹 中 **对应的发布版本的 package.json** 文件中看到版本号被更新。注意，这个 package.json 文件将与你的库一起打包并且对公众可见。在构建库之后，对外发布的库的相关 **package.json** 文件如下所示：
 
 ```json
 {
@@ -121,9 +121,9 @@
 
 ## README 和 License 文件
 
-将你将库发布到 npm 时，npm 会在库的根目录中查找 README 文件。如果 npm 找到了 README 文件，那么它将会使用该文件作为库在 npm 上的首页展示。
+在你将库发布到 npm 时，npm 会在库的根目录中查找 README 文件。如果 npm 找到了 README 文件，那么它将会使用该文件作为库在 npm 上的首页展示。
 
-记得在上一篇文章[构建和打包](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121)中我们在**工作区的 package.json** 创建了一个 npm 脚本 `package`。这个脚本命令用于构建和打包我们的库。但是在执行这个命令之前，我们希望将 **README.md** 文件和 **LICENSE** 复制到 **dist 包** 中。
+记得在上一篇文章[构建和打包](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121)中我们在**工作区的 package.json** 中创建了一个 npm 脚本 `package`。这个脚本命令用于构建和打包我们的库。但是在执行这个命令之前，我们希望将 **README.md** 文件和 **LICENSE** 复制到 **dist 包** 中。
 
 所以我创建了另一个名为 **copy-files** 的 npm 脚本用于在真正构建之前将上述文件拷贝到相应的文件目录下。这些脚本命令是基于 windows 平台设计的，所以你可能需要根据你的平台对命令进行修改。我的命令如下所示：
 
@@ -211,7 +211,7 @@
 
 ## 登录 npm
 
-npm 提供了 [完整的指引](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) 帮助你发布你的包/库。为了你自己考虑你应当去好好读一读这篇指引。为了你的方便考虑，我将关键的步骤抽出来在这里展示给你：
+npm 提供了 [完整的指引](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) 帮助你发布你的包/库。为了你的方便考虑，我将关键的步骤抽出来在这里展示给你：
 
 在发布到 npm 之前你需要先通过命令行的方式登录 npm：
 
