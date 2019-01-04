@@ -18,7 +18,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - |  |  |  |  |
 155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
-154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 |  | 校对中 |  |
+154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 | sawyerbutton | 校对中 |  |
 153 | [Creating Reusable Angular Components — How To Avoid the Painful Trap Most Go In](https://blog.angularindepth.com/creating-reusable-angular-components-how-to-avoid-the-painful-trap-most-go-in-d531761d6c7a?source=---------3---------------------) | - |  |  |  |  |
 152 | [New in Angular 7: Better Navigations](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0?source=---------4---------------------) | - |  |  |  |  |
 151 | [Debug Angular apps in production without revealing source maps](https://blog.angularindepth.com/debug-angular-apps-in-production-without-revealing-source-maps-ab4a235edd85?source=---------5---------------------) | - |  |  |  |  |
