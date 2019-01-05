@@ -5,7 +5,9 @@
 > 原文链接： [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5)
 
 > 原文作者： [Todd Palmer](https://blog.angularindepth.com/@palmer_todd?source=post_header_lockup)
-
+> 
+> 译者：[尊重](https://www.zhihu.com/people/yiji-yiben-ming/activities)；校对者：[秋天](https://github.com/jkhhuse)
+>
 > 译者按： 本文使用 库 指代 Angular Library 的概念。
 > 
 > 本文是 Angular Libaray 系列的第一篇文章，本系列共有三篇文章，涵盖从创建到打包再到发布的全套流程。
@@ -241,7 +243,7 @@ UPDATE tsconfig.json (471 bytes)
 `prefix`  
 这是将会用于我们的组件选择器的前缀标识符。记得我们在创建库时制定了 **enl** 作为指定前缀。你可能熟悉 **app** 的前缀，其标识出哪些组件属于主应用程序。
 
-`architect`
+`architect`  
 此对象的内容用于指定 Angular CLI 如何处理项目的构建，测试和 lint。值得注意的是，构建部分中的构建器使用了 **ng-packagr**。
 
 ### package.json 文件中的 ng-packagr 依赖项
