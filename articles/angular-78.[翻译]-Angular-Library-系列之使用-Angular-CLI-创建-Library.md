@@ -13,6 +13,8 @@
 > 本文是 Angular Libaray 系列的第一篇文章，本系列共有三篇文章，涵盖从创建到打包再到发布的全套流程。
 > 
 > 为了行文方便，以下均以我/我们指代原作者。
+> 
+> 译者：[尊重](https://github.com/sawyerbutton)，校对者：[秋天](https://github.com/jkhhuse)
 
 <p align="center"> 
     <img src="../assets/angular-78/1.jpeg">
@@ -257,7 +259,6 @@ UPDATE tsconfig.json (471 bytes)
 当测试 **example-ng6-lib** 时,我们希望能够像日常使用的方式那样引入他，而不是仅仅作为整个应用中的一组文件。通常，当我们使用第三方库时，我们使用 npm install 指令安装，并将其安装到我们的 **node_modules** 文件夹中。
 
 即使在当前的情况下，example-ng6-lib 不会安装到 **node_modules** 文件夹中，但是他会被构建到工作区的 `dist` 文件夹下的某个子文件夹中。Angular CLI 将这个文件夹添加到 tsconfig.json 文件中，这样 example-ng6-lib 就可以像一个 Library 一样以常见的方式被测试应用所引用了。
-
 下述是在 tsconfig.json 文件中添加的路径：
 
 ```json
