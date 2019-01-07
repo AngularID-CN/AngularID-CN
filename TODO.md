@@ -248,7 +248,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
-1 | [Schematics — An Introduction](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2?source=---------16---------------------) | - | ssrivers |  | 待校验 | [Schematics的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md) |
+1 | [Schematics — An Introduction](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2?source=---------16---------------------) | - | ssrivers |  | 待校验 | [Schematics 的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md) |
 2 | [Angular Schematics: Unit Testing](https://blog.angular.io/angular-schematics-unit-testing-3a0a9aaab186?source=---------2---------------------) | - |  |  |  |  |
 
 ## Others

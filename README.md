@@ -37,7 +37,7 @@
 29. [[翻译]-如何在-Angular-中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
 30. [[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
 31. [[翻译]-Angular CLI的新功能，不用先初始化工作区就来创建Angular Library](articles/angular-154.[翻译]-AngularCLI的新功能，不用先初始化工作区就来创建Angular-Library.md)
-32. [[翻译]Schematics的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md)
+32. [[翻译] Schematics 的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md)
 ## Memeber 
 
 > P.S. 以下成员按照**加入时间先后顺序**排列
