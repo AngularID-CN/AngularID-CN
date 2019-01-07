@@ -11,6 +11,8 @@
 > 本文是 Angular Libaray 系列的第三篇文章，本系列共有三篇文章，涵盖从创建到打包再到发布的全套流程。
 > 
 > 为了行文方便，以下均以我/我们指代原作者。
+>
+> 译者：[尊重](https://github.com/sawyerbutton)，校对者：[Ice Panpan](https://github.com/TanYiBing)
 
 <p align="center"> 
     <img src="../assets/angular-104/1.jpeg">
