@@ -18,7 +18,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | TanYiBing | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
 149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
-148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 待校验 | [使用 NgRx 改善用户体验的 5 个技巧](articles/angular-148.[翻译]-使用-NgRx-改善用户体验的-5-个技巧.md) |
+148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 | sawyerbutton | 校验中 | [使用 NgRx 改善用户体验的 5 个技巧](articles/angular-148.[翻译]-使用-NgRx-改善用户体验的-5-个技巧.md) |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
 146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
 145 | [Improved UX with Ghost Elements + Angular 7 Animations](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba?source=---------3---------------------) | - |  |  |  |  |
