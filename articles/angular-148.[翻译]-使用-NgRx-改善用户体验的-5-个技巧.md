@@ -4,25 +4,27 @@
 >
 > 原文作者: [Alex Okrushko](https://blog.angularindepth.com/@alex.okrushko)
 >
-> 译者: [dreamdevil00](https://github.com/dreamdevil00); 校对者:
+> 译者: [dreamdevil00](https://github.com/dreamdevil00); 校对者: [sawyerbutton](https://github.com/sawyerbutton)
 
-Web 应用的性能很重要。 当公司的财务状况依赖于这些让用户和网站互动并留住用户的应用时，这会更加重要。 [大量研究](https://www.thinkwithgoogle.com/marketing-resources/the-google-gospel-of-speed-urs-hoelzle/) 表明， 加载时间久和整体缓慢会导致跳出率(bounce rate) 增加， 降低用户的总体满意度。
+![](../assets/angular-148/1.jpg)
 
-众所周知， Angular 的 `OnPush` 变更检测策略(ChangeDetectionStrategy) 可以显著提高应用的性能， 而 NgRx 的不可变状态(immutable state) 真的非常适合它。 因此， 在本文中， 我会向你展示 **NgRx 如何帮助改善用户体验，主要关注于 API 调用所带来的缓慢和错误**。 特别是:
+Web 应用的性能很重要。 当公司的财务状况依赖于这些让用户和网站互动并留住用户的应用时，这会更加重要。 [研究A](https://www.thinkwithgoogle.com/marketing-resources/the-google-gospel-of-speed-urs-hoelzle/), [研究B](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) 表明， 糟糕的加载时间和应用的整体响应缓慢状况会导致用户流失率增加并降低用户的整体满意度。
+
+众所周知， Angular 的 `OnPush` 变更检测策略(ChangeDetectionStrategy) 可以显著提高应用的性能， 而 NgRx 的不可变状态(immutable state)特性和 `OnPush` 相得益彰。 因此， 在本文中，我会**针对有关 API 调用所引入的应用缓慢和错误场景展示 NgRx 如何帮助改善用户体验**。 特别是:
 
 - 错误处理
 
-- 提供缓存的临时数据(页面间或者返回 app 的时候)
+- 提供缓存的临时数据(页面间场景/返回应用场景)
 
 - 乐观更新或删除(与按钮以及对话框或者表单互动)
 
 ## 技巧 #1 错误处理
 
-当你提交表单或者是导航到页面内的某个位置时， 你经历了多少次 “加载中”, 却发现旋转器(spinner)并没有到任何地方❓ 打开控制台， 你看到的是请求失败的日志。 **作为开发者， 我们经常忘记处理这样的错误情况—— 他们不在我们功能(feature) 开发的当前(immediate)或者乐观(happy) 路径中。**
+当你提交表单或者是导航到页面内的某个位置时， 你经历了多少次 “加载中”, 却发现显示 `加载中` 旋转器(spinner) 一直显示并不会消失。 打开控制台， 你看到的是请求失败的日志。 **作为开发者， 我们经常忘记处理这样的错误情况—— 我们在开发过程中时常乐观地认为程序可以正常运行，然而这些错误场景发生后才会意识到。**
 
-NgRx 也不能避免未处理的错误; 但是， 它有很多**确定的模式(established patterns)**， 可以帮助你克服这些容易出错的场景。此外， 由于所有的 API 调用都是在 **Effects** 中完成的， 未处理错误的代价更高—— effects 将停止侦听之后的任何 Actions。
+NgRx 也不能避免未处理的错误; 但是， 它有很多**既定的模式(established patterns)**， 可以帮助你克服这些容易出错的场景。此外， 由于所有的 API 调用都是在 **Effects** 中完成的， 未处理错误的代价更高—— effects 将停止侦听之后的任何 Actions。
 
-这里有个在 Effect 里的基础 API 调用的例子:
+这里有个在 Effect 中进行 API 调用的简单例子:
 
 ```typescript
 @Effect()
@@ -37,9 +39,9 @@ fetchProducts: Observable<Action> = this.actions$.pipe(
 );
 ```
 
-`catchError` 操作符不仅是这个 Effect 的一部分，而且其位置也非常重要——它应该位于 `switchMap` 管道中(或[又一个 *Map 扁平操作符](https://blog.angularindepth.com/switchmap-bugs-b6de69155524))。此外，这和 NgRx 本身没有什么关系; RxJS 是这样运行的： 一旦产生错误，`catchError` 就会处理掉并关闭流。
+`catchError` 操作符不仅是这个 Effect 的一部分，而且其位置也非常重要——它应该位于 `switchMap` 管道中(或[另一个 *Map 扁平操作符](https://blog.angularindepth.com/switchmap-bugs-b6de69155524))。而且这样的使用方式其实和 NgRx 的内容并无关系，其只是遵循着 RxJS 的工作方式： 一旦产生错误，`catchError` 就会处理掉并关闭流。
 
-任何 Effects 都必须生成 Action, 除非明确告知不要这样做。 这意味着即使是 `catchError` 也必须生成 `Action`。 这就引出了一个模式，该模式中任何API调用都需要三个Actions:
+任何 Effects 都必须生成 Action, 除非明确告知不要这样做。 这意味着即使是 `catchError` 也必须生成 `Action`。 这就引出了一个模式，该模式中任何API调用都需要三种 Actions:
 
 - 触发 Effect 的 Action
 
@@ -55,11 +57,11 @@ fetchProducts: Observable<Action> = this.actions$.pipe(
 
 ### 技巧 #2. 存储(Store) 作为缓存
 
-让我们使用 “商店” 应用程序作为示例。它有三个页面：包含产品列表的 “主页(home)” 页面、包含特定产品更多详情的 “产品详情(product details)” 页面和将其添加到购物车的按钮，以及提供添加到购物车的所有产品概览的 “购物车(cart)” 页面。这里提供的大多数示例都是仔细查看 “主页” 和 “产品详情” 页面及其交互。
+让我们使用 “商店” 应用程序作为示例。它有三个页面：包含产品列表的 “主页(home)” 页面、包含具体产品信息及将具体产品添加到购物车的的 “产品详情(product details)” 页面，以及提供添加到购物车的所有产品概览的 “购物车(cart)” 页面。这里的示例大多与 “主页” 和 “产品详情页”及其交互有关。
 
 考虑以下场景：用户打开 “主页” 页面，该页面调用 API 来获取产品列表。然后，用户单击其中一个产品并进入到 “产品详情” 页面。稍后，他们单击 back 返回到产品列表。
 
-下面是最后一步显示不同实现的两个并排动画：右边的动画使用 NgRx store 作为缓存，**在我们等待新的 fetch API 调用完成时， 显示之前的产品列表**, 同时使用不确定的进度条显示数据仍可能改变。
+下述对比动画是上文所提及的返回操作在不同实现下的最后一个动画场景：右边的动画使用 NgRx store 作为缓存，**在我们等待新的 fetch API 调用完成时， 显示之前的产品列表**, 同时使用不确定的进度条显示数据仍可能改变。
 
 ![当导航到之前的页面时， 没用缓存(左边) vs 缓存(右边)](../assets/angular-148/1.gif)
 
@@ -69,13 +71,13 @@ fetchProducts: Observable<Action> = this.actions$.pipe(
 
 有人可能会说，要实现这种改进，并不需要 NgRx ——实际上，有状态服务(stateful service)也可以实现。然而，我们随后又回到了应用状态分布在许多这种有状态服务中的情况。而这正是我们从一开始就试图避免的。无状态服务更易使用。
 
-另一种仅使用服务更难实现的场景是：用户打开包含产品列表的相同的 “主页”，然后单击其中一个。`FetchProducts` API 调用的响应只包含显示 “主页” 所需的**最少信息**。例如，每个产品信息都没有 “产品描述” 来保存响应负载(response payload)的大小。另一方面，`GetProduct(id)` 调用返回关于产品的所有信息，包括 “产品描述”。
+另一种仅使用服务更难实现的场景是：用户打开用于显示产品列表的 “主页” 并选择其中一个产品。`FetchProducts` API 调用的响应只包含 “主页” 显示所需的**最少信息**。例如，每个产品信息都没有 “产品描述” 来减少响应负载(response payload)的大小。另一方面，`GetProduct(id)` 调用返回关于产品的所有信息，包括 “产品描述”。
 
 看起来是这样子:
 
 ![当导航到 "产品详细信息" 页面时， 没用缓存(左边) vs 缓存(右边)](../assets/angular-148/2.gif)
 
-在左边, 我们正等待 `GetProduct(id)` 返回信息, 而在右侧, 已经显示了保存在 Store 中关于此产品的部分信息， 此信息来自于`FetchProducts` 调用，一旦 `GetProduct(id)` 返回新的数据(包括“产品描述”), 我们将其合并。
+在左边, 我们正等待 `GetProduct(id)` API 的调用返回信息, 而在右侧, 已经显示了保存在 Store 中关于此产品的部分信息， 此信息来自于`FetchProducts` API 的调用，一旦 `GetProduct(id)` API 的调用返回新的数据(包括“产品描述”), 我们将这两部分信息进行合并。
 
 令人兴奋的部分是不需要更改 `ProductDetailsComponent`。它只是用相同的选择器从 Store 中选择数据。
 
@@ -92,7 +94,7 @@ export class ProductDetailsComponent {
 }
 ```
 
-处理 `FetchCurrentProduct` Actions 的 Effect 或多或少是标准的： 它以当前的产品 id 为参数(由 [router-store](https://ngrx.io/guide/router-store) 提供), 调用 `productService.getProduct(id)`。
+处理 `FetchCurrentProduct` Actions 的 Effect 大体上是符合 Effect 标准的： 它以当前的产品 id 为参数(由 [router-store](https://ngrx.io/guide/router-store) 提供), 调用 `productService.getProduct(id)` API。
 
 ```typescript
 @Effect()
@@ -110,7 +112,7 @@ export class ProductDetailsComponent {
   );
 ```
 
-使其生效的代码在 reducer 中。当我们处理 `FetchProductsSuccess`(包含产品列表的响应到达时产生的 Action)时，我们更新包含它们的整个状态。然而，当 `FetchProductSuccess` 被分派(dispatched) 时，我们只更新特定的产品。
+使上述内容生效的核心在 reducer 中。当我们处理 `FetchProductsSuccess`(包含产品列表的响应到达时产生的 Action)时，我们更新包含它们的整个状态。然而，当 `FetchProductSuccess` 被派发(dispatched) 时，我们只更新特定的产品。
 
 这是使用 [ngrx/entity](https://ngrx.io/guide/entity) 封装产品列表完成上述操作的 reducer。
 
