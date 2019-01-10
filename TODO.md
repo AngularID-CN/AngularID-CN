@@ -16,8 +16,14 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | TanYiBing | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
-149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 翻译中 |  |
+156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - |  |  |  |  |
+155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
+154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 | sawyerbutton | 校对中 |  |
+153 | [Creating Reusable Angular Components — How To Avoid the Painful Trap Most Go In](https://blog.angularindepth.com/creating-reusable-angular-components-how-to-avoid-the-painful-trap-most-go-in-d531761d6c7a?source=---------3---------------------) | - |  |  |  |  |
+152 | [New in Angular 7: Better Navigations](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0?source=---------4---------------------) | - |  |  |  |  |
+151 | [Debug Angular apps in production without revealing source maps](https://blog.angularindepth.com/debug-angular-apps-in-production-without-revealing-source-maps-ab4a235edd85?source=---------5---------------------) | - |  |  |  |  |
+150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | Ice Panpan | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
+149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
 148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
 146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
@@ -28,7 +34,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
 140 | [My Adventures Running Angular Ivy inside StackBlitz: Yes, It Is Possible!](https://blog.angularindepth.com/my-adventures-running-angular-ivy-inside-stackblitz-yes-it-is-possible-f4984fafd7d4?source=---------3---------------------) | - |  |  |  |  |
 139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - | 秋天 |  | 翻译中 |  |
-138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - |  |  |  |  |
+138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - |  |  |  |  |
 136 | [Angular Routing — Reusing common layout for pages from different modules](https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57?source=---------7---------------------) | - |  |  |  |  |
 135 | [How to Read the RxJS 6 Sources Part 1: Understanding of() and Subscriptions](https://blog.angularindepth.com/how-to-read-the-rxjs-6-sources-part-1-understanding-of-and-subscriptions-694e7d9def6b?source=---------8---------------------) | - |  |  |  |  |
@@ -47,7 +53,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 122 | [Improve Angular’s performance through memoization and TypeScript decorators](https://blog.angularindepth.com/how-to-improve-angular-performance-by-just-adding-just-8-characters-877bde708ddd?source=---------12---------------------) | - |  |  |  |  
 121 | [Test for accessibility and help millions of people](https://blog.angularindepth.com/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4?source=---------13---------------------) | - |  |  |  |  
 120 | [Angular Flex Layout: The Masquerade](https://blog.angularindepth.com/angular-flex-layout-the-masquerade-58fb58d0ab45?source=---------14---------------------) | - |  |  |  |  
-119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - |  |  |  |  
+119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - | dreamdevil00 |  | 翻译中 |  
 118 | [Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290?source=---------16---------------------) | - |  |  |  |  
 117 | [Angular Flex-Layout: Flexbox and Grid Layout for Angular Component](https://blog.angularindepth.com/angular-flex-layout-flexbox-and-grid-layout-for-angular-component-6e7c24457b63?source=---------17---------------------) | - |  |  |  |  
 116 | [Policy-Based Client-Side Encryption in Angular](https://blog.angularindepth.com/policy-based-client-side-encryption-in-angular-b47068b26d50?source=---------18---------------------) | - |  |  |  |  
@@ -58,17 +64,17 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 111 | [Angular Routing Series: Pillar 1 — Router States and Url Matching](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc?source=---------23---------------------) | - | sunny |  | 翻译中 |  
 110 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------24---------------------) | - |  |  |  |  
 109 | [Lessons learned while upgrading from AngularJS UI-Router to Angular Router](https://blog.angularindepth.com/lessons-learned-while-upgrading-from-angularjs-ui-router-to-angular-router-13c7cb76938c?source=---------25---------------------) | - |  |  |  |  
-108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 翻译中 |  
+108 | [The Three Pillars of Angular Routing. Angular Router Series Introduction.](https://blog.angularindepth.com/the-three-pillars-of-angular-routing-angular-router-series-introduction-fb34e4e8758e?source=---------26---------------------) | - | sunny |  | 待校验 |  
 107 | [Modify User Provided UI with Content Directives](https://blog.angularindepth.com/modify-user-provided-ui-with-content-directives-a3fc0c88058e?source=---------27---------------------) | - |  |  |  |  
 106 | [Practical application of reverse-engineering guidelines and principles](https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657?source=---------28---------------------) | - |  |  |  |  
 105 | [Level Up Your Reverse Engineering Skills](https://blog.angularindepth.com/level-up-your-reverse-engineering-skills-8f910ae10630?source=---------29---------------------) | - |  |  |  |  
-104 | [The Angular Library Series — Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275?source=---------30---------------------) | - |  |  |  |  
+104 | [The Angular Library Series — Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275?source=---------30---------------------) | - | sawyerbutton | Ice Panpan | 已发表 | [Angular Library 系列之发布](articles/angular-104.[翻译]-Angular-Library-系列之发布.md)
 103 | [Plan Your Next Party with an Angular Invite App Using Akita!](https://blog.angularindepth.com/plan-your-next-party-with-an-angular-invite-app-using-akita-422495351767?source=---------31---------------------) | - |  |  |  |  
 102 | [NgRx: Parameterized selectors](https://blog.angularindepth.com/ngrx-parameterized-selector-e3f610529f8?source=---------32---------------------) | - |  |  |  |  
 101 | [Changing the behavior of a 3rd party Angular Component](https://blog.angularindepth.com/changing-the-behavior-of-a-3rd-party-angular-component-91f84fb9af28?source=---------33---------------------) | - |  |  |  |  
 100 | [Integrate Jest into an Angular application and library](https://blog.angularindepth.com/integrate-jest-into-an-angular-application-and-library-163b01d977ce?source=---------34---------------------) | - |  |  |  |  
 99 | [~~Angular Testing with Headless Chrome~~](https://blog.angularindepth.com/angular-testing-with-headless-chrome-d1343b349699?source=---------35---------------------) | - | 删除 |  |  |  
-98 | [Inside Ivy: Exploring the New Angular Compiler](https://blog.angularindepth.com/inside-ivy-exploring-the-new-angular-compiler-ebf85141cee1?source=---------36---------------------) | - |  |  |  |  
+98 | [Inside Ivy: Exploring the New Angular Compiler](https://blog.angularindepth.com/inside-ivy-exploring-the-new-angular-compiler-ebf85141cee1?source=---------36---------------------) | - | baishusama |  | 翻译中 |  
 97 | [NgRx: tips & tricks](https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7?source=---------37---------------------) | - |  |  |  |  
 96 | [Let’s have a chat about Actions and Action Creators within NgRx](https://blog.angularindepth.com/lets-have-a-chat-about-actions-and-action-creators-within-ngrx-41277ecc739d?source=---------38---------------------) | - |  |  |  |  
 95 | [How To Unit Test Angular Components With Fake NgRx TestStore](https://blog.angularindepth.com/how-to-unit-test-angular-components-with-fake-ngrx-teststore-f0500cc5fc26?source=---------39---------------------) | - |  |  |  |  
@@ -83,17 +89,17 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 86 | [How I test my NgRx selectors](https://blog.angularindepth.com/how-i-test-my-ngrx-selectors-c50b1dc556bc?source=---------48---------------------) | - |  |  |  |  
 85 | [Angular 5 or Angular 6 (or even 7)? Yes please!](https://blog.angularindepth.com/angular-5-or-angular-6-yes-please-d71b08b5e59b?source=---------49---------------------) | - |  |  |  |  
 84 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------50---------------------) | - |  |  |  |  
-83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - |  |  |  |  
+83 | [The Angular Library Series - Building and Packaging](https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121?source=---------51---------------------) | - | sawyerbutton | Ice Panpan | 已发表 |  
 82 | [ag-Grid becomes an official sponsor of Angular-In-Depth publication](https://blog.angularindepth.com/ag-grid-becomes-an-official-sponsor-of-angular-in-depth-publication-89fb294db1bc?source=---------52---------------------) | - |  |  |  |  
 81 | [A curious case of the @Host decorator and Element Injectors in Angular](https://blog.angularindepth.com/a-curios-case-of-the-host-decorator-and-element-injectors-in-angular-582562abcf0a?source=---------53---------------------) | - | sunny |  |  | [Angular 的 @Host 装饰器和元素注入器](articles/angular-81.[翻译]-Angular-的-@Host-装饰器和元素注入器.md)
 80 | [Simple state mutations in NGXS with Immer](https://blog.angularindepth.com/simple-state-mutations-in-ngxs-with-immer-48b908874a5e?source=---------54---------------------) | - |  |  |  |  
 79 | [Clean NgRx reducers using Immer](https://blog.angularindepth.com/clean-ngrx-reducers-using-immer-7fe4a0d43508?source=---------55---------------------) | - |  |  |  |  
-78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - |  |  |  |  
+78 | [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5?source=---------56---------------------) | - | saywerbutton | 秋天 | 待发表 | [Angular Library 系列之使用Angular CLI 创建 Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
 77 | [Use <ng-template>](https://blog.angularindepth.com/use-ng-template-c72852c37fba?source=---------57---------------------) | - |  |  |  |  
 76 | [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c?source=---------58---------------------) | [文](https://juejin.im/entry/5b1a96eaf265da6e4d5afdff) | tc9011 | baishusama | 校对中 |  
 75 | [Ivy engine in Angular: first in-depth look at compilation, runtime and change detection](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd?source=---------59---------------------) | - |  |  |  |  
 74 | [A modern solution to lazy loading images using Intersection Observer](https://blog.angularindepth.com/a-modern-solution-to-lazy-loading-using-intersection-observer-9280c149bbc?source=---------60---------------------) | - |  |  |  |  
-73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - | 秋天 |  | 翻译中 |  
+73 | [Working with DOM in Angular: unexpected consequences and optimization techniques](https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866?source=---------61---------------------) | - | 秋天 |  | 校对中 |  
 72 | [The benefits of application state normalization in Angular](https://blog.angularindepth.com/the-benefits-of-application-state-normalization-in-angular-f93392ca9f44?source=---------62---------------------) | - |  |  |  |  
 71 | [Angular Unit Testing performance](https://blog.angularindepth.com/angular-unit-testing-performance-34363b7345ba?source=---------63---------------------) | - | sunny | strange | 校对中 |  
 70 | [Angular 5 Universal + Firebase](https://blog.angularindepth.com/angular-5-universal-firebase-4c85a7d00862?source=---------64---------------------) | - |  |  |  |  
@@ -118,7 +124,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 51 | [He who thinks change detection is depth-first and he who thinks it’s breadth-first are both usually right](https://blog.angularindepth.com/he-who-thinks-change-detection-is-depth-first-and-he-who-thinks-its-breadth-first-are-both-usually-8b6bf24a63e6?source=---------83---------------------) | - | [dreamdevil00](https://github.com/dreamdevil00) | sunny  | 待发表 |  [有人认为变更检测是深度优先，有人认为是广度优先，通常两者都是对的](articles/angular-51.[翻译]-有人认为变更检测是深度优先-有人认为是广度优先-两者都对.md)
 50 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------84---------------------) | - |  |  |  |  
 49 | [React Call Return in Angular](https://blog.angularindepth.com/react-call-return-in-angular-32a1c9751d6?source=---------85---------------------) | - |  |  |  |  
-48 | [Do you really know what unidirectional data flow means in Angular](https://blog.angularindepth.com/do-you-really-know-what-unidirectional-data-flow-means-in-angular-a6f55cefdc63?source=---------86---------------------) | - | 秋天/sunny |  | 校验中 | [Angular 的单向数据流](articles/angular-48.[翻译]-Angular-的单向数据流.md)
+48 | [Do you really know what unidirectional data flow means in Angular](https://blog.angularindepth.com/do-you-really-know-what-unidirectional-data-flow-means-in-angular-a6f55cefdc63?source=---------86---------------------) | - | 秋天/sunny | Ice Panpan | 待发表 | [Angular 的单向数据流](articles/angular-48.[翻译]-Angular-的单向数据流.md)
 47 | [How to Reduce Action Boilerplate](https://blog.angularindepth.com/how-to-reduce-action-boilerplate-90dc3d389e2b?source=---------87---------------------) | - |  |  |  |  
 46 | [These 5 articles will make you an Angular Change Detection expert](https://blog.angularindepth.com/these-5-articles-will-make-you-an-angular-change-detection-expert-ed530d28930?source=---------88---------------------) | - | baishusama |  | 翻译中 |  
 45 | [Angular CDK Portals](https://blog.angularindepth.com/angular-cdk-portals-b02f66dd020c?source=---------89---------------------) | - |  |  |  |  
@@ -160,7 +166,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 9 | [Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f?source=---------125---------------------) | - | baishusama |  | [转载中](https://juejin.im/post/5bf405f851882530d44b400a) |
 8 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------126---------------------) | - |  |  |  |  
 7 | [A Deep, Deep, Deep, Deep, Deep Dive into the Angular Compiler](https://blog.angularindepth.com/a-deep-deep-deep-deep-deep-dive-into-the-angular-compiler-5379171ffb7a?source=---------127---------------------) | - |  |  |  |  
-6 | [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e?source=---------128---------------------) | - |  |  |  | [关于 Angular 动态组件你需要知道的](articles/angular-6.[翻译]-关于-Angular-动态组件你需要知道的.md)
+6 | [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e?source=---------128---------------------) | - | sunny | 秋天 | 校对中 | [关于 Angular 动态组件你需要知道的](articles/angular-6.[翻译]-关于-Angular-动态组件你需要知道的.md)
 5 | [Angular’s $digest is reborn in the newer version of Angular](https://blog.angularindepth.com/angulars-digest-is-reborn-in-the-newer-version-of-angular-718a961ebd3e?source=---------129---------------------) | - | sunny | 秋天 | 已发表 | [`$digest` 在 Angular 中重生](articles/angular-5.[翻译]-$digest-在-Angular-中重生.md)
 4 | [Everything you need to know about the `ExpressionChangedAfterItHasBeenCheckedError` error](https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4?source=---------130---------------------) | - | sunny |  | 校验中 | [关于 ExpressionChangedAfterItHasBeenCheckedError 错误你所需要知道的事情](articles/angular-4.[翻译]-关于-ExpressionChangedAfterItHasBeenCheckedError-错误你所需要知道的事情.md)
 3 | [Exploring Angular DOM manipulation techniques using ViewContainerRef](https://blog.angularindepth.com/exploring-angular-dom-abstractions-80b3ebcfc02?source=---------131---------------------) | - | sunny | 秋天 | 正在校验 | [探索 Angular 使用 ViewContainerRef 技术操作 DOM](articles/angular-3.[翻译]-探索-Angular-使用-ViewContainerRef-技术操作-DOM.md)
@@ -175,11 +181,11 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md](articles/rxjs-36.[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md) 
 35 | ~~[The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------2---------------------)~~ | - | 与 angular-123 重复 |  |  |  
 34 | [Angular CDK Tables](https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99?source=---------3---------------------) | - |  |  |  |  
-33 | [The Extensive Guide to Creating Streams in RxJS](https://blog.angularindepth.com/the-extensive-guide-to-creating-streams-in-rxjs-aaa02baaff9a?source=---------4---------------------) | - |  |  |  |  
+33 | [The Extensive Guide to Creating Streams in RxJS](https://blog.angularindepth.com/the-extensive-guide-to-creating-streams-in-rxjs-aaa02baaff9a?source=---------4---------------------) | - | Ice Panpan |  | 翻译中 |  
 32 | [RxJS: Avoiding Unbound Methods](https://blog.angularindepth.com/rxjs-avoiding-unbound-methods-fcf2648a805?source=---------5---------------------) | - |  |  |  |  
 31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  
 30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  
-29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy |  | 翻译中 |  
+29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用](articles/rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用.md) 
 28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  
 27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  
 26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
@@ -203,10 +209,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 8 | [The new Angular HttpClient API](https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361?source=---------29---------------------) | - |  |  |  |  
 7 | [RxJS: multicast’s Secret](https://blog.angularindepth.com/rxjs-multicasts-secret-760e1a2b176e?source=---------30---------------------) | - |  |  |  |  
 6 | [3 reasons why you should follow Angular-In-Depth publication](https://blog.angularindepth.com/3-reasons-why-you-should-follow-angular-in-depth-publication-6e37a7d7f988?source=---------31---------------------) | - |  |  |  |  
-5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（二）：日志记录](articles/rxjs-5.[翻译]-调试-Rxjs（二）：日志记录.md) 
+5 | [Debugging RxJS, Part 2: Logging](https://blog.angularindepth.com/debugging-rxjs-part-2-logging-56904459f144?source=---------32---------------------) | - | Ice Panpan |  | 待校验 | [调试 Rxjs（二）：日志记录](articles/rxjs-5.[翻译]-调试-Rxjs（二）：日志记录.md) 
 4 | [RxJS Marble Testing: RTFM](https://blog.angularindepth.com/rxjs-marble-testing-rtfm-a9a6cd3db758?source=---------33---------------------) | - |  |  |  |  
 3 | [Managing RxJS Imports with TSLint](https://blog.angularindepth.com/managing-rxjs-imports-with-tslint-828cdc66b5ee?source=---------34---------------------) | - |  |  |  |  
-2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待发表 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
+2 | [Debugging RxJS, Part 1: Tooling](https://blog.angularindepth.com/debugging-rxjs-4f0340286dd3?source=---------35---------------------) | - | Ice Panpan |  | 待校验 | [调试 Rxjs（一）：工具](articles/rxjs-2.[翻译]-调试-Rxjs（一）：工具.md) 
 1 | [Connecting Components with Reactive Forms](https://blog.angularindepth.com/connecting-components-with-reactive-forms-55f56fce2aad?source=---------36---------------------) | - |  |  |  |  
 
 ## [NgRx](https://blog.angularindepth.com/tagged/ngrx)
@@ -229,7 +235,6 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8?source=---------0---------------------) | - | sunny |  | 待校验 | [监听 Angular 启动过程](articles/angular-related-1.[翻译]-监听-Angular-启动过程.md)
-
 ---
 
 ## [Nrwl](https://blog.nrwl.io/)
@@ -244,4 +249,4 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-1 |  |  |  |  |  | 
+1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
