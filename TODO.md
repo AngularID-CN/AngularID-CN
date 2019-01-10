@@ -185,7 +185,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 32 | [RxJS: Avoiding Unbound Methods](https://blog.angularindepth.com/rxjs-avoiding-unbound-methods-fcf2648a805?source=---------5---------------------) | - |  |  |  |  
 31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  
 30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  
-29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy |  | 翻译中 |  
+29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用](articles/rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用.md) 
 28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  
 27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  
 26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
@@ -195,7 +195,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 22 | [RxJS: Understanding Expand](https://blog.angularindepth.com/rxjs-understanding-expand-a5f8b41a3602?source=---------15---------------------) | - |  |  |  |  
 21 | [Practical RxJS In The Wild 🦁— Requests with concatMap() vs mergeMap() vs forkJoin() 🥊](https://blog.angularindepth.com/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293?source=---------16---------------------) | - |  |  |  |  
 20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  
-19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - |  |  |  |  
+19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - | Vaanxy |  | 翻译中 |  
 18 | [RxJS: Understanding Subjects](https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1?source=---------19---------------------) | - |  |  |  |  
 17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - | Ice Panpan | dreamdevil00 | 已发表 |  [[翻译] Angular 中拦截器的真相和 HttpClient 内部机制](articles/rxjs-17.[翻译]-Angular-中拦截器的真相和-HttpClient-内部机制)
 16 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------21---------------------) | - |  |  |  |  
