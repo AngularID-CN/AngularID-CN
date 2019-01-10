@@ -4,20 +4,20 @@
 >
 > 原文作者：[Alex Okrushko](https://blog.angularindepth.com/@alex.okrushko?source=post_header_lockup)
 >
-> 译者：[vaanxy](https://github.com/vaanxy)；校对者：暂无
+> 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
 
 ![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/1.png)
 
 大多数现代化的 Angular 网页应用与后台服务通讯时均采用 Ajax 请求。这些请求涉及到多个网络组件（例如路由，交换器等）同时还与服务器状态有关，并且任何一步都不能出错才能保证这些请求发送成功。然而，有些时候并不是这样子。
 
-来处理这些情况下的网页应用通常会实现重试逻辑，重新发送这些请求直到请求发送成功或者达到了请求最大尝试次数。在大多数场景下，简单的重试操作足够达到我们的目的，但是有些时候我们需要更高级的方法。
+为了处理这些情况， 网页应用通常会实现重试逻辑，重新发送这些请求直到请求发送成功或者达到了请求最大尝试次数。在大多数场景下，简单的重试操作足够达到我们的目的，但是有些时候我们需要更高级的方法。
 
 ### 什么是指数退避？
 
 指数退避是一种算法，该算法每次指数级增长重试的推迟时长。本文将深入探讨两个使用了指数退避的自定义 RxJS操作符（两者皆是  `backoff-rxjs` [包](https://www.npmjs.com/package/backoff-rxjs)中的一部分）并且还会涵盖两者的用例：
 
 - `**retryBackoff**`, 操作符在发生错误时进行重试
-- `**intervalBackoff**`, 操作符发出数列数字
+- `**intervalBackoff**`, 操作符发出连续数字（sequential numbers）
 
 #### 指数函数
 
@@ -33,9 +33,9 @@ function calculateDelay(iteration, initialInterval) {
 }
 ~~~
 
-如果迭代从0开始，初始间隔为1000毫秒，则发射值将为1000，2000，4000，8000…
+如果迭代从 0 开始，初始间隔为 1000 毫秒，则发射值将为 1000 ，2000 ，4000 ，8000 …
 
-如果这超出了我们的范围，让我们进入第一个用例。
+既然指数的含义明白了， 就进入第一个用例吧。
 
 ------
 
@@ -45,9 +45,7 @@ function calculateDelay(iteration, initialInterval) {
 
 在编写 `backoff-rxjs` 之前我找到一些指数退避进行重试的例子，如[这个 gist](https://gist.github.com/hzsweers/7902e3a0286774630f4f) 或者是[这个 stackoverflow 的回答](https://stackoverflow.com/a/41873022/1167879)，但是没有一个足够灵活以满足我的需求；因此我创造了`retryBackoff`。
 
-`retryBackoff` takes either a number as initial delay or a`RetryBackoffConfig`for more configurations. RxJS uses [marble diagrams](http://reactivex.io/rxjs/manual/overview.html#marble-diagrams) to visualize how operator works, so here is one for our operator.
-
-`retryBackoff` 接收一个数字作为初始延迟时长，它亦可接收一个 `RetryBackoffConfig` 来对其进行更多配置。 RxJS 使用弹珠图（[marble diagrams](http://reactivex.io/rxjs/manual/overview.html#marble-diagrams)）来可视化操作符是如何工作的，以下便是该操作符的 marble diagram。
+`retryBackoff` 接收一个数字作为初始延迟时长，它亦可接收一个 `RetryBackoffConfig` 来对其进行更多配置。 RxJS 使用弹珠图（[marble diagrams](http://reactivex.io/rxjs/manual/overview.html#marble-diagrams)）来可视化操作符是如何工作的，以下便是该操作符的弹珠图。
 
 ![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/3.png)
 
@@ -74,7 +72,7 @@ export interface RetryBackoffConfig {
 }
 ~~~
 
-举个例子，如果我们想要将 最大重试次数设置为12，我们可以按照以下形式进行调用：
+举个例子，如果我们想要将 最大重试次数设置为 12 ，我们可以按照以下形式进行调用：
 
 ~~~typescript
 message$ = of('Call me!').pipe(
@@ -134,11 +132,10 @@ message$ = of('Call me!').pipe(
 
 默认情况下，每个间隔之间的延迟时长将增加一倍，但有时需要更平滑的退避。通过 `backoffdelay` 属性，我们可以提供自定义延迟时长的计算函数，例如：
 
-```typescript
-backoffDelay: (iteration, initialInterval) => Math.pow(**1.5**, iteration) * initialInterval` ,
-or even slower increase of the delays
-`backoffDelay: (iteration, initialInterval) => Math.pow(**1.1**, iteration) * initialInterval
-```
+`backoffDelay: (iteration, initialInterval) => Math.pow(**1.5**, iteration) * initialInterval` ,
+或者我们可以降低延时的增长速率。
+`backoffDelay: (iteration, initialInterval) => Math.pow(**1.1**, iteration) * initialInterval`
+
 
 
 
@@ -194,7 +191,7 @@ const newData$ = fromEvent(document, 'mousemove').pipe(
 
 注意，每次检测到 *mousemove* 事件后将会重置 `intervalBackoff`。
 
-下面是 `intervalBackoff` 的弹珠图（marble diagram）：
+下面是 `intervalBackoff` 的弹珠图：
 
 ![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/5.png)
 
