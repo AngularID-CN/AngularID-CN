@@ -6,7 +6,7 @@
 >
 > 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
 
-![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/1.png)
+![img](../assets/rxjs-29/1.png)
 
 大多数现代化的 Angular 网页应用与后台服务通讯时均采用 Ajax 请求。这些请求涉及到多个网络组件（例如路由，交换器等）同时还与服务器状态有关，并且任何一步都不能出错才能保证这些请求发送成功。然而，有些时候并不是这样子。
 
@@ -23,7 +23,7 @@
 
 在本文中，我已经多次使用了 *指数* 这个字眼，但是它意味着什么呢？从数学角度来说，它是一个函数，其形式如下所示：
 
-![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/2.png)
+![img](../assets/rxjs-29/2.png)
 
 在我们的案例中，随着新的值不断被发射出来（上述函数中的x）它们之间的延迟时间也将越来越长。将其翻译成代码中的函数，其形式如下所示：
 
@@ -47,7 +47,7 @@ function calculateDelay(iteration, initialInterval) {
 
 `retryBackoff` 接收一个数字作为初始延迟时长，它亦可接收一个 `RetryBackoffConfig` 来对其进行更多配置。 RxJS 使用弹珠图（[marble diagrams](http://reactivex.io/rxjs/manual/overview.html#marble-diagrams)）来可视化操作符是如何工作的，以下便是该操作符的弹珠图。
 
-![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/3.png)
+![img](../assets/rxjs-29/3.png)
 
 注意到 `retryBackoff` 操作符的行为和 `retry` 操作符很相似并且可以简化成如下形式：
 
@@ -139,7 +139,7 @@ message$ = of('Call me!').pipe(
 
 
 
-![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/4.png)
+![img](../assets/rxjs-29/4.png)
 
 蓝线: y = 2^x, 红线: y = 1.5^x, 绿线: y = 1.1^x
 
@@ -193,7 +193,7 @@ const newData$ = fromEvent(document, 'mousemove').pipe(
 
 下面是 `intervalBackoff` 的弹珠图：
 
-![img](/Users/vaan/workspace/angularindepth-vaanxy/assets/rxjs-29/5.png)
+![img](../assets/rxjs-29/5.png)
 
 与 `retryBackoff` 类似， `intervalBackoff` 同样也是可配置的，它可接收一个配置对象而不仅仅是一个初始的延迟时长。
 
