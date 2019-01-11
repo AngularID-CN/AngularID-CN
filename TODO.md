@@ -250,3 +250,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
+
+
+## 宣传语模板
+https://zhuanlan.zhihu.com/p/{{id}}
+Angular In Depth系列的再一篇技术博客翻译发布了，这次的主题是 {{主题}}。
+
+现在有一个热爱Angular相关领域的翻译小组正持续翻译Angular相关英文文档及博客。翻译组旨在帮助国内的Angular开发者了解硬核和一手的Angular相关技术，希望大家可以关注下专栏给与我们鼓励 https://zhuanlan.zhihu.com/DepthInAngular
