@@ -4,25 +4,25 @@
 >
 > 原文作者: **[Nate Lapinski](https://blog.angularindepth.com/@natelapinski)**
 >
-> 译者: **[dreamdevil00](https://github.com/dreamdevil00)**；校对者：
+> 译者: **[dreamdevil00](https://github.com/dreamdevil00)**；校对者：[sawyerbutton](https://github.com/sawyerbutton)
 
 ![A Rainy Night in Tokyo Bay](../assets/angular-119/1.jpeg)
 
-**路由对于任何前端框架或库来说都是必不可少的**。它允许我们只加载应用程序一次，即可通过客户端路由向用户显示不同的内容，从而使单页应用成为可能。
+**路由对于任何前端框架或库来说都是必不可少的**。只加载一次应用，即可通过客户端路由向用户显示不同的内容，从而使单页应用成为可能。
 
-开始使用 Angular 的路由器(router)很容易，但是你有没有想过，当你在 Angular 应用中点击一个链接时，到底发生了什么? 在本文中，我们将回答这个问题和更多内容。**通过了解路由器的导航循环(cycle)，可以对 Angular 有很多深入的了解**。
+开始使用 Angular 的路由器(router)很容易，但是你有没有想过，当你在 Angular 应用中点击一个链接时，到底发生了什么? 在本文中，我们将回答这个问题并向你展示更多相关内容。**通过了解路由器的导航循环(cycle)，可以增进对于 Angular 的认知**。
 
-在本文结束时，你将明白路由器在导航时必须问自己的三个问题:
+在本文结束时，你将会明白在导航过程中，路由器将会询问自身的三个问题:
 
-1. **对于给定的 URL，我应该导航到哪一组组件?**
+1. **对于给定的 URL，路由应该导航到哪一组组件?**
 
-2. **我可以导航到这些组件么?**
+2. **路由可以导航到响应的组件么?**
 
-3. **我应该为这些组件预取数据么?**
+3. **路由是否应该为相应的组件预取数据?**
 
 在此过程中，我们将详细了解以下内容。
 
-- 整个路由过程， 从开始到结束
+- 从开始到结束的整个路由过程
 
 - 在导航期间和之后, 路由器如何构建和使用 ActivatedRouteSnapshot 对象树
 
@@ -30,7 +30,7 @@
 
 ![路由器的导航循环](../assets/angular-119/2.png)
 
-我们来个小旅行，看看在 Angular 应用中路由时会发生什么
+我们来个小旅行，仔细研究下 Angular 应用中的路由过程。
 
 ## 导航
 
@@ -47,7 +47,7 @@
 
 对于每次导航，在路由器在屏幕上渲染新组件之前，会执行一系列步骤。这就是路由器导航生命周期。
 
-成功导航的输出是: 使用 `<router-outlet>` 渲染新组件，创建 ActivatedRoute 数据结构树并作为导航的可查询记录。[如果你想知道更多关于激活路由和路由器状态的信息，我已经在这里写过了](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc#2670)。出于我们的目的，只要知道路由器和开发人员都使用激活的路由来提取关于导航的信息，例如查询参数和组件。
+成功导航的输出是: 由 `<router-outlet>` 渲染的新组件以及一个被用作可查询的导航记录的树形 ActivatedRoute 数据结构。[如果你想知道更多关于激活路由和路由器状态的信息，我已经在这里写过了](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc#2670)。出于我们的目的，只需要理解开发者和路由器(router)都用 ActivatedRoute 获取导航的相关信息，例如查询参数(query parameters)和组件内容。
 
 ## 示例应用
 
@@ -82,7 +82,7 @@ constructor(private router: Router) {
 }
 ```
 
-在开发期间， 你可以在路由器配置中传入选项 `enableTracing: true`.
+在开发期间， 你也可以在路由器配置中传入选项 `enableTracing: true` 以观察导航循环.
 
 ```typescript
 RouterModule.forRoot(ROUTES, {
@@ -120,16 +120,16 @@ ngOnInit() {
 
 导航到 /users, 传入查询参数 login=1(详情请看路由守卫一节)
 
-每当路由器检测到对路由器链接指令的点击时，它就会启动导航循环。启动导航也有必要的方法，例如路由器服务的 `navigate` 和 `navigateByUrl` 方法。
+每当路由器检测到对路由器链接指令的点击时，它就会启动导航循环。启动导航也有其他的方式，例如路由服务的 `navigate` 和 `navigateByUrl` 方法。
 
-以前，可以同时运行多个导航(因此需要导航 id)，[但是由于此更改，一次只能有一个导航](https://github.com/angular/angular/commit/b7baf632c0161692f15d13f718329ab54a0f938a)。
+以前，Angular 应用中可能同时运行多个导航(因此需要导航 id)，[但是由于此更改，一次只能有一个导航](https://github.com/angular/angular/commit/b7baf632c0161692f15d13f718329ab54a0f938a)。
 
 ## URL 匹配以及重定向
 *events: RoutesRecognized*
 
 ![重定向和匹配是循环中的步骤一和二](../assets/angular-119/4.png)
 
-路由器首先通过路由器配置数组(我们的示例中的 `ROUTES`)进行深度优先搜索，并尝试将 URL `/users` 和路由器配置中的 `path` 属性相匹配，同时在此过程中应用重定向。[如果你想知道此过程的细节，我在这里写了](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc#3284)。
+首先，路由器会对路由器配置数组(我们的示例中的 `ROUTES`)进行深度优先搜索，并尝试将 URL `/users` 和众多路由配置项的 `path` 属性相匹配，同时在此过程中应用重定向。[如果你想知道此过程的细节，我在这里写了](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc#3284)。
 
 在我们的例子中，无需担心重定向，URL `/users` 将匹配到 `ROUTES` 中的以下配置:
 
@@ -137,7 +137,7 @@ ngOnInit() {
 
 如果匹配到的路径需要一个懒加载的模块， 那么它将在此时加载。
 
-路由器发出 `RoutesRecognized` 事件，以表明它找到了与 URL 匹配的项，以及一个将要导航到的组件(UsersComponent)。这回答了路由器的第一个问题，“我应该导航到什么?”。 但是没有那么快，路由器必须确保它被允许导航到这个新组件。
+路由器发出 `RoutesRecognized` 事件，以表明它找到了与 URL 匹配的项，以及一个将要导航到的组件(UsersComponent)。这回答了路由器的第一个问题，“路由应该导航到哪个组件?”。 但是没有那么快，路由器必须确保它被允许导航到这个新组件。
 
 进入路由守卫。
 
@@ -146,7 +146,7 @@ ngOnInit() {
 
 ![](../assets/angular-119/5.png)
 
-路由守卫是布尔函数，路由器使用它来确定是否可以执行导航操作。**作为开发人员，我们使用守卫(guards)来控制导航是否可以发生**。在我们的示例应用中，我们在路由配置中指定 [canActivate](https://angular.io/api/router/CanActivate) 守卫来检查用户是否已登录。
+路由守卫是布尔函数，路由器使用它来确定是否可以执行导航操作。**作为开发人员，我们使用守卫(guards)来控制导航是否可以发生**。在我们的示例应用中，通过在路由配置中指定 [canActivate](https://angular.io/api/router/CanActivate) 守卫来检查用户的登陆状态。
 
 ```typescript
 { path: 'users', ..., canActivate: [CanActivateGuard] }
@@ -163,9 +163,9 @@ canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean 
  
  此守卫传递 `login` 查询参数到 `auth` 服务中(本例中为 `auth.service.ts`)
  
- 如果对 `isAuthorized(route.queryParams.login)` 的调用返回了 `true`, 那么守卫传参成功。 否则， 守卫传参失败， 路由器会发出 `NavigationCancel` 事件， 然后放弃整个导航。
+ 如果对 `isAuthorized(route.queryParams.login)` 的调用返回了 `true`, 那么守卫传参成功。 否则， 守卫传参失败， 路由器会发出 `NavigationCancel` 事件， 然后中止整个导航。
  
- 其他的守卫(guards)包括 [canLoad](https://angular.io/api/router/CanLoad)(模块是否被懒加载)、[canActivateChild](https://angular.io/api/router/CanActivateChild) 和 [canDeactivate](https://angular.io/api/router/CanDeactivate)(这对于防止用户导航离开页面非常有用， 比如，填写表单时)。
+ 其他的守卫(guards)包括 [canLoad](https://angular.io/api/router/CanLoad)(模块是否被懒加载)、[canActivateChild](https://angular.io/api/router/CanActivateChild) 和 [canDeactivate](https://angular.io/api/router/CanDeactivate)(在存在表单填写的场景下，为了防止已填写的表单信息丢失，阻止用户直接从当前页面导航离开)。
  
  守卫类似于服务，它们被注册为提供者(providers)，并且是可注射(injectable)的。每当 URL 发生变化时，路由器都会运行守卫程序。
  
@@ -176,7 +176,7 @@ canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean 
 
 ![](../assets/angular-119/6.png)
 
-路由解析器是我们可以在导航的过程中，在路由器渲染任何内容之前用来预取数据的函数。类似于守卫，我们在路由配置中使用 resolve 属性指定解析器:
+路由解析器是我们可以在导航的过程中，在路由器渲染内容之前用来预取数据的函数。类似于守卫，我们在路由配置中使用 resolve 属性指定解析器:
 
 `{ path: 'users', ..., resolve: { users: UserResolver } }`
 
@@ -211,7 +211,7 @@ export class UsersComponent implements OnInit {
 
 **解析器允许我们在路由期间预取组件数据**。这种技术可以通过预取数据来避免向用户显示部分加载的模板。请记住，在 `OnInit` 期间，组件的模板对用户是可见的，因此获取需要在该生命周期钩子中渲染的任何数据都可能导致部分页面加载。
 
-**但是，通常最好让页面部分加载**。如果做得好，它将提高用户对站点的[感知性能](https://blog.teamtreehouse.com/perceived-performance)。是否预取数据取决于你，但通常最好是部分页面加载并有个漂亮的加载动画，而不是使用解析器。
+**但是，页面部分加载的情况也时常发生**。如果做得好，将会提高用户对站点的[感知性能](https://blog.teamtreehouse.com/perceived-performance)。是否预取数据取决于你，但是如果需要加载部分页面，最好配合使用合适的加载动画而不是使用解析器进行处理。
 
 在内部，路由器有个 `runResolve` 方法，它将执行解析器，并将结果存储在 ActivatedRoute 快照(snapshot)上。
 
@@ -262,9 +262,9 @@ activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver|
 
 - 在第 9 行，ComponentFactoryResolver 用于创建 `UsersComponent` 的实例。路由器从第 7 行ActivatedRouteSnapshot 中提取此信息。
 
-- 在第 12 行，实际上创建了组件。`location` 是正指向的` <router-outlet> `的 ViewContainerRef。如果您曾经想知道为什么渲染的内容被放置为 `<router-outlet>` 的同级内容，而不是放在它的内部，那么可以通过[追寻 createComponent 内部的细节来找到详细信息](https://github.com/angular/angular/blob/master/packages/core/src/view/refs.ts#L199)。
+- 在第 12 行，组件被真正创建。`location` 是指向 ` <router-outlet> `的 ViewContainerRef。如果您曾经想知道为什么渲染的内容被放置为 `<router-outlet>` 的同级内容，而不是放在它的内部，那么可以通过[追寻 createComponent 内部的细节来找到详细信息](https://github.com/angular/angular/blob/master/packages/core/src/view/refs.ts#L199)。
 
-- 在创建并激活组件之后，将调用 `activateChildRoutes`(未显示)。这样做是为了解释任何嵌套的 `<router-outlet>`，即子路由。
+- 在创建并激活组件之后，将调用上文未列出的 `activateChildRoutes`，为用户处理嵌套的 `<router-outlet>`，即存在子路由的场景。
 
 路由器将在屏幕上渲染组件。如果所渲染的组件有任何嵌套的 `<router-outlet>` 元素，路由器也将遍历并渲染这些元素。
 
