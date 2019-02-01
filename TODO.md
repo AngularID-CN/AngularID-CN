@@ -16,7 +16,7 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - |  |  |  |  |
+156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
 154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 | sawyerbutton | 校对中 |  |
 153 | [Creating Reusable Angular Components — How To Avoid the Painful Trap Most Go In](https://blog.angularindepth.com/creating-reusable-angular-components-how-to-avoid-the-painful-trap-most-go-in-d531761d6c7a?source=---------3---------------------) | - |  |  |  |  |
@@ -24,7 +24,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 151 | [Debug Angular apps in production without revealing source maps](https://blog.angularindepth.com/debug-angular-apps-in-production-without-revealing-source-maps-ab4a235edd85?source=---------5---------------------) | - |  |  |  |  |
 150 | [Best stories of 2018 on Angular-In-Depth](https://blog.angularindepth.com/best-stories-of-2018-on-angular-in-depth-80a1dfa17fd5?source=---------0---------------------) | - | sawyerbutton | Ice Panpan | 已发表 | [2018年度Angular In Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
 149 | [Improved Navigation in Angular 7 with switchMap](https://blog.angularindepth.com/new-in-angular-7-better-navigations-79267db452c0) | - | sunny |  | 待校验 |  |
-148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
+148 | [5 Tips to improve User Experience of your Angular app with NgRx](https://blog.angularindepth.com/5-tips-to-improve-user-experience-of-your-angular-app-with-ngrx-6e849ca99529?source=---------0---------------------) | - | dreamdevil00 | sawyerbutton | 待发表 | [使用 NgRx 改善用户体验的 5 个技巧](articles/angular-148.[翻译]-使用-NgRx-改善用户体验的-5-个技巧.md) |
 147 | [Gravatar Directive in Angular](https://blog.angularindepth.com/gravatar-directive-in-angular-e379a681dbe4?source=---------1---------------------) | - |  |  |  |  |
 146 | [Angular Smart 404 Page](https://blog.angularindepth.com/angular-smart-404-page-85a45b109fd8?source=---------2---------------------) | - |  |  |  |  |
 145 | [Improved UX with Ghost Elements + Angular 7 Animations](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba?source=---------3---------------------) | - |  |  |  |  |
@@ -250,3 +250,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
+
+
+## 宣传语模板
+https://zhuanlan.zhihu.com/p/{{id}}
+Angular In Depth系列的再一篇技术博客翻译发布了，这次的主题是 {{主题}}。
+
+现在有一个热爱Angular相关领域的翻译小组正持续翻译Angular相关英文文档及博客。翻译组旨在帮助国内的Angular开发者了解硬核和一手的Angular相关技术，希望大家可以关注下专栏给与我们鼓励 https://zhuanlan.zhihu.com/DepthInAngular
