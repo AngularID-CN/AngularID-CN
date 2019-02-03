@@ -7,7 +7,7 @@
 
 ![DOM & Angular](../assets/angular-73/1.png)
 
-我最近在 **[NgConf workshop](https://www.youtube.com/watch?v=vz9cNCkaPsY)** 中分享了 Angular 操作 DOM 的一些高级用法，从 `templateRef` 和 `DOM query` 到 `view container` 与 `dynamic component`。如果还没有观看这个分享视频，那么建议你抽时间看一下，分享中穿插了一系列的示例，可以帮助你更好的理解这些概念。另外，还有一个在 **[NgViking](https://www.youtube.com/watch?v=qWmqiYDrnDc)** 中简短的分享，也是关注这个本主题的。
+我最近在 **[NgConf workshop](https://www.youtube.com/watch?v=vz9cNCkaPsY)** 中分享了 Angular 操作 DOM 的一些高级用法，从 `templateRef` 和 `DOM query` 到 `view container` 与 `dynamic component`。如果还没有观看这个分享视频，那么建议你抽时间看一下，分享中穿插了一系列的示例，可以帮助你更好的理解这些概念。另外，还有一个在 **[NgViking](https://www.youtube.com/watch?v=qWmqiYDrnDc)** 中简短的分享，也是关于这个本主题的。
 
 如果你觉得视频太长或者更喜欢阅读文章而不是观看视频，那么本篇文章已经总结了视频中涉及的关键内容。我将首先解释这些工具方法的用法，以及如何使用他们来在 Angular 中操作 DOM，随后将介绍一些优化手段，这部分内容在 `NgConf workshop` 中没有涉及。
 
@@ -67,7 +67,7 @@ export class AppComponent {
 
 ## View Container
 
-`View Container` 能够保证发生在其内部的 DOM 操作更加安全（译者注：保证 `View` 与 DOM 同步），Angular 中所有内置的指令中都有用到它。它是一种特殊类型的 `view node`，它即存在于视图之中，也可以作为视图的容器，挂载其他视图：
+`View Container` 能够保证发生在其内部的 DOM 操作更加安全（译者注：保证 `View` 与 DOM 同步），Angular 中所有内置的指令中都有用到它。它是一种特殊类型的 `view node`，它既存在于视图之中，也可以作为视图的容器，挂载其他视图：
 
 ![View Nodes](../assets/angular-73/6.png)
 
@@ -75,7 +75,7 @@ export class AppComponent {
 
 它们是 Angular 仅有的视图类型，它们之间的最大不同是用于创建它们的载体（译者注：API 的输入不同）不同。内嵌视图仅仅可以添加到 `view container` 中，而宿主视图除此之外，还可以添加到任意 DOM 元素中（这个元素通常被称之宿主元素）。
 
-内嵌视图从模板创建，使用 `TemplateRef` 方法，宿主视图从视图创建，使用 `ComponentFactoryResolve` 方法。例如，用来启动 Angular 应用（ `AppComponent` ）的入口组件，在内部表示为附加到组件的宿主元素（<app-comp>）的宿主视图。
+内嵌视图从模板创建，使用 `TemplateRef` 方法，宿主视图从视图创建，使用 `ComponentFactoryResolve` 方法。例如，用来启动 Angular 应用（ `AppComponent` ）的入口组件，在内部表示为附加到组件的宿主元素（`<app-comp>`）的宿主视图。
 
 `View Cotainer` 提供了动态创建、操作、移除视图的 API，我们称它为动态视图，是相对框架中使用静态组件模板创建的视图。Angular 静态视图没有使用到 `view container`，它是在子组件中的指定节点存放一个子视图的引用。下图是静态视图的示例：
 
@@ -175,7 +175,7 @@ export class AppComponent implements AfterViewChecked {
 
 在开发中，会遇到这样的场景：我们需要重复的隐藏和显示某个组件或者模板元素，类似下图展示的那样：
 
-![View Nodes static](../assets/angular-73/8.png)
+![View Nodes static](../assets/angular-73/8.gif)
 
 如果我们简单的利用上文中学到的知识来解决这个问题，代码如下：
 
@@ -195,7 +195,7 @@ export class AppComponent {
 
 这样实现，会导致在切换隐藏和显示组件时，频繁地销毁和重建视图。
 
-在这个案例中，切换 `show ? componet`，这个宿主视图在我们调用 `createComponent` 方法时会销毁和重新创建视图。如果我们使用 `createEmbeddedView` 和 `TemplateRef` 构造的嵌套视图，也一样会不断的销毁和重建视图：
+在这个特定的示例中，因为它是宿主视图，所以销毁和重新创建视图使用了 component factory 和 `createComponent` 方法。如果我们使用 `createEmbeddedView` 和 `TemplateRef`，那么就是内嵌视图被销毁和重建：
 
 ```ts
 show(type) {
@@ -211,11 +211,11 @@ show(type) {
 
 ## ViewRef
 
-`ComponentFactory` 和 `TemplateRef` 创建视图的方法，都可以创建一个视图。事实上，`view container` 中提供了对应的方式，分别是 `createComponent` 和 `createEmbbedView` 方法。我们可以利用这些方法来创建宿主视图或者内嵌视图，并且获得视图的引用，在 Angular 中这个视图的引用即是：[`ViewRef`](https://angular.cn/api/core/ViewRef) 以及它的子类。
+`ComponentFactory` 和 `TemplateRef` 实现了 **view** 接口的创建视图的方法，都可以用来创建一个视图。事实上，`view container` 在调用 `createComponent` 和 `createEmbbedView` 方法时以及传递输入数据时，隐藏了一些细节。我们也可以自己利用这些方法来创建宿主视图或者内嵌视图，并且获得视图的引用，在 Angular 中这个视图的引用即是：[`ViewRef`](https://angular.cn/api/core/ViewRef) 以及它的子类。
 
 ## 创建一个宿主视图
 
-下面是使用 `component factory` 来创建一个宿主视图，并且获得返回的引用：
+下面是使用 `component factory` 来创建一个宿主视图，并且获得返回的引用的示例：
 
 ```ts
 aComponentFactory = resolver.resolveComponentFactory(AComponent);
@@ -254,5 +254,5 @@ ngAfterViewInit() {
 
 这个例子与上一个示例类似，也可以通过 `detach` 和 `insert` 来实现优化，具体示例，可以参考[这里](https://stackblitz.com/github/maximusk/dom-manipulation-workshop/tree/s6?file=src%2Fapp%2Fapp.component.ts)。
 
-
+（译者注：这里概念容易弄混，上文与下文提到的两种创建内嵌/宿主视图的方式的区别就是：create 的行为时是否由 view container 发起，实际使用效果没有差别。）
 
