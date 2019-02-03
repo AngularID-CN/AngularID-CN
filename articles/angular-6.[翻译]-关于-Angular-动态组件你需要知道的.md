@@ -1,10 +1,12 @@
 # [翻译] 关于 Angular 动态组件你需要知道的
 
-> 原文链接：**[Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e)**
+> 原文链接：**[Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e)**  
+> 原文作者：[Max Koretskyi，aka Wizard](https://blog.angularindepth.com/@maxim.koretskyi?source=post_header_lockup)  
+> 原技术博文由 [`Max Koretskyi`](https://twitter.com/maxim_koretskyi) 撰写发布，他目前于 [ag-Grid](https://angular-grid.ag-grid.com/?utm_source=medium&utm_medium=blog&utm_campaign=angularcustom) 担任开发者职位。  
+> *译者按：开发大使负责确保其所在的公司认真听取社区的声音并向社区传达他们的行动及目标，其作为社区和公司之间的纽带存在。*  
+> 译者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**；校对者：**[秋天](https://github.com/jkhhuse)**  
 
-![Create Components Dynamically](https://cdn-images-1.medium.com/max/800/1*6KbvW_GQYI9u6Cc_S2AHLQ@2x.png)
-
-本文主要解释如何在 Angular 中动态创建组件（注：在模板中使用的组件可称为静态地创建组件）。
+![Create Components Dynamically](../assets/angular-6/1.png)
 
 如果你之前使用 AngularJS（第一代 Angular 框架）来编程，可能会使用 `$compile` 服务生成 HTML，并连接到数据模型从而获得双向绑定功能：
 
@@ -18,7 +20,7 @@ dataModel.name = 'dynamic';
 linkFn(dataModel);
 ```
 
-AngularJS 中指令可以修改 DOM，但是没法知道修改了什么。这种方式的问题和动态环境一样，很难优化性能。动态模板当然不是 AngularJS 性能慢的主要元凶，但也是重要原因之一。
+AngularJS 中指令可以使用多种方式去修改 DOM，但是框架却无法感知修改了什么。这种方式产生的问题和任何动态环境下的问题一样，很难去优化性能。当然，动态模板不是 AngularJS 性能慢的主要元凶，但也是重要原因之一。
 
 我在看了 Angular 内部代码一段时间后，发现这个新设计的框架非常重视性能，在 Angular 源码里你会经常发现这几句话（注：为清晰理解，不翻译）：
 
@@ -30,25 +32,19 @@ Note: We use one type for all nodes so that loops that loop over all nodes of a 
 For performance reasons, we want to check and update the list every five seconds.
 ```
 
-所以，Angular 设计者决定牺牲灵活性来获得巨大的性能提升，如引入了 JIT 和 AOT Compiler，静态模板（static templates），指令/模块工厂（**[ComponentFactory](https://github.com/angular/angular/blob/master/packages/core/src/linker/component_factory.ts#L70)**），工厂解析器（**[ComponentFactoryResolver](https://github.com/angular/angular/blob/master/packages/core/src/linker/component_factory_resolver.ts#L39)**）。对 AngularJS 社区来说，这些概念很陌生，甚至充满敌意，不过不用担心，如果你之前仅仅是听说过这些概念，但现在想知道这些是什么，继续阅读本文，将让你茅塞顿开。
+所以，Angular 设计者决定牺牲灵活性来获得更大的性能提升，如引入了 JIT 和 AOT Compiler 和静态模板（static templates），指令/模块工厂（**[ComponentFactory](https://github.com/angular/angular/blob/master/packages/core/src/linker/component_factory.ts#L70)**），工厂解析器（**[ComponentFactoryResolver](https://github.com/angular/angular/blob/master/packages/core/src/linker/component_factory_resolver.ts#L39)**）。对 AngularJS 社区来说，这些概念很陌生，甚至充满敌意，不过不用担心，如果你之前仅仅是听说过这些概念，但现在想知道这些是什么，继续阅读本文，将让你茅塞顿开。
 
-> 注：实际上，JIT/AOT Compiler 说的是同一个 Compiler，只是这个 Compiler 在 building time 阶段还是在 running time 阶段被使用而已。
-
-> 至于 factory，是 Angular Compiler 把你写的组件如 a.component.ts 编译为 a.component.ngfactory.js，即 Compiler 使用 @Component decorator 作为原材料，把你写的组件/指令类编译为另一个视图工厂类。
-
-> 回到刚刚的 JIT/AOT Compiler，如果 a.component.ngfactory.js 是在 build 阶段生成的那就是 AOT Compiler，这个 Compiler 不会被打包到依赖包里；如果是在 run 阶段生成，那 Compiler 就需要被打包到依赖包里，被用户下载到本地，在运行时 Compiler 会编译组件/指令类生成对应的视图工厂类，仅此而已。下文将会看下这些 *.ngfactory.js 文件代码是什么样的。
-
-> 至于 factory resolver，那就更简单了，就是一个对象，通过它拿到那些编译后的 factory 对象。
-
+> 注：实际上，JIT/AOT Compiler 说的是同一个 Compiler，只是这个 Compiler 在 building time 阶段还是在 running time 阶段被使用而已。  
+> 至于 factory，是 Angular Compiler 把你写的组件如 a.component.ts 编译为 a.component.ngfactory.js，即 Compiler 使用 @Component decorator 作为原材料，把你写的组件/指令类编译为另一个视图工厂类。  
+> 回到刚刚的 JIT/AOT Compiler，如果 a.component.ngfactory.js 是在 build 阶段生成的那就是 AOT Compiler，这个 Compiler 不会被打包到依赖包里；如果是在 run 阶段生成，那 Compiler 就需要被打包到依赖包里，被用户下载到本地，在运行时 Compiler 会编译组件/指令类生成对应的视图工厂类，仅此而已。下文将会看下这些 *.ngfactory.js 文件代码是什么样的。  
+> 至于 factory resolver，那就更简单了，就是一个对象，通过它拿到那些编译后的 factory 对象。  
 
 ## 组件工厂和编译器
 Angular 中每一个组件是由组件工厂创建的，组件工厂又是由编译器根据你写的 `@Component` 装饰器里的元数据编译生成的。如果你在网上读了大量的 decorator 文章还有点迷惑，可以参考我写的这篇 Medium 文章 **[Implementing custom component decorator](https://medium.com/@maximus.koretskyi/implementing-custom-component-decorator-in-angular-4d037d5a3f0d)** 。
 
-Angular 内部使用了 **视图** 概念，或者说整个框架是一颗视图树。每一个视图是由大量不同类型节点（node）组成的：元素节点，文本节点等等（注：可查看 **[译 Angular DOM 更新机制](https://juejin.im/post/5ad35b0cf265da2381561347)**）。每一个节点都有其专门作用，这样每一个节点的处理只需要花很少的时间，并且每一个节点都有 `ViewContainerRef` 和 `TemplateRef` 等服务供使用，还可以使用 `ViewChild/ViewChildren` 和 `ContentChild/ContentChildren` 做 DOM 查询这些节点。
+Angular 内部使用了 **视图（view）** 概念，或者说整个框架是一颗视图树。每个视图都是由不同类型的节点（node）组成：元素节点，文本节点等等（注：可查看 **[译 Angular DOM 更新机制](https://juejin.im/post/5ad35b0cf265da2381561347)**）。种个节点都有其专门作用，这样每种节点的处理只需要花很少的时间。此外，每种节点都有与之对应的服务提供商（provider），例如 `ViewContainerRef` 和 `TemplateRef`。还可以使用 `ViewChild/ViewChildren` 和 `ContentChild/ContentChildren` 来查找节点。
 
-> 注：简单点说就是 Angular 程序是一颗视图树，每一个视图（view）又是有多种节点（node）组成的，每一个节点又提供了模板操作 API 给开发者使用，这些节点可以通过 DOM Query API 拿到。
-
-每一个节点包含大量信息，并且为了性能考虑，一旦节点被创建就生效，后面不容许更改（注：被创建的节点会被缓存起来）。节点生成过程是编译器搜集你写的组件信息（注：主要是你写的组件里的模板信息），并以组件工厂形式封装起来。
+每一个节点包含大量信息，为了性能考虑，节点一旦被创建就生效，后面不允许被更改（注：被创建的节点会被缓存起来）。节点生成过程是编译器搜集你写的组件信息（注：主要是你写的组件里的模板信息），并以组件工厂形式封装起来。
 
 假设你写了如下的一个组件：
 
@@ -60,7 +56,7 @@ Angular 内部使用了 **视图** 概念，或者说整个框架是一颗视图
 class AComponent {}
 ```
 
-编译器根据你写的信息生成类似如下的组件工厂代码，代码只包含重要部分（注：下面整个代码可理解为**视图**，其中 `elementDef2` 和 `jit_textDef3` 可理解为**节点**）：
+编译器根据你写的信息，生成类似如下的组件工厂代码，代码只包含重要部分（注：下面整个代码可理解为**视图**，其中 `elementDef2` 和 `jit_textDef3` 可理解为**节点**）：
 
 ```ts
 function View_AComponent_0(l) {
@@ -70,7 +66,7 @@ function View_AComponent_0(l) {
     ]
 ```
 
-上面代码基本描述了组件视图的结构，并被用来实例化一个组件。其中，第一个节点 `elementDef2` 就是元素节点定义，第二个节点 `jit_textDef3` 就是文本节点定义。你可以看到每一个节点都有足够的参数信息来实例化，而这些参数信息是编译器解析所有依赖生成的，并且在运行时由框架提供这些依赖的具体值。
+上面代码基本描述了组件视图的结构，并在实例化组件时使用。其中，第一个节点 `elementDef2` 就是元素节点定义，第二个节点 `jit_textDef3` 就是文本节点定义。你可以看到每一个节点都有足够的参数信息来实例化，而这些参数信息是编译器解析所有依赖生成的，并且在运行时由框架提供这些依赖的具体值。
 
 从上文知道，如果你能够访问到组件工厂，就可以使用它实例化出对应的组件对象，并使用 **[ViewContainerRef](https://angular.io/api/core/ViewContainerRef)** API 把该组件/视图插入 DOM 中。如果你对 `ViewContainerRef` 感兴趣，可以查看 **[译 探索 Angular 使用 ViewContainerRef 操作 DOM](https://juejin.im/post/5ab09a49518825557005d805)**。应该如何使用这个 API 呢（注：下面代码展示如何使用 `ViewContainerRef` API 往视图树上插入一个视图）：
 

@@ -1,8 +1,11 @@
+# Angular开发常见问题：subscribe()  还是 | async 管道 ? 终极答案就在这里
+
+
 > 原文链接：[The Ultimate Answer To The Very Common Angular Question: subscribe() vs | async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794)
 >
+> 作者：[Tomas Trajan](https://blog.angularindepth.com/@tomastrajan)
+>
 > 译者：[vaanxy](https://github.com/vaanxy)；校对者：[Ice Panpan](http://www.github.com/TanYiBing)
-
-# Angular开发常见问题：subscribe()  还是 | async 管道 ? 终极答案就在这里
 
 ![img](../assets/angular-123/1.png)
 
