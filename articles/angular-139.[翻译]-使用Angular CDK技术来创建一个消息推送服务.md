@@ -4,7 +4,7 @@
 >
 > 作者：**[Adrian Fâciu](https://blog.angularindepth.com/@adrianfaciu?source=post_header_lockup)**
 >
-> 译者：**[秋天](https://github.com/jkhhuse)** 
+> 译者：**[秋天](https://github.com/jkhhuse)**； 校对者：**[尊重](https://github.com/sawyerbutton)**
 
 ![toast service](../assets/angular-139/1.jpg)
 
