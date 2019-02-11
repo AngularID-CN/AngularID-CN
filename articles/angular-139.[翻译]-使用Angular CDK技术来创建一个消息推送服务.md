@@ -691,4 +691,4 @@ public static forRoot(config = defaultToastConfig): ModuleWithProviders {
 
 ![toast service](../assets/angular-139/2.gif)
 
-最后是放在 [StackBlitz](https://stackblitz.com/edit/angular-toast-service) 中的整个工程代码！
+最后是放在 [StackBlitz](https://stackblitz.com/edit/angular-toast-service) 中的整个工程代码！
