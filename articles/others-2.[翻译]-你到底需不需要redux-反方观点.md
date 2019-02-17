@@ -12,7 +12,7 @@
 >
 > 原文作者： **[Jack R. Scott](https://hackernoon.com/@jackrobertscott)**
 
-> 译者按：本系列文章分为 **你到底需不需要redux-反方观点** 和 **你到底需不需要redux-正方观点** 两部分，翻译这一系列文章的原因是，译者在去年的 **ngChina** 开发者活动中咨询了有关状态管理的问题，当时咨询的问题是 **项目中是否真的需要NGRX这样的状态管理工具**，虽然当时没有得到完全正面的回答，但是译者会后还是觉得形如 NGRX Redux 之类的状态管理工具/包 **对于项目是否真的需要**是难以一言以蔽之的，故而翻译系列文章来传递来自多方多角度的观点，关于状态管理的争论必然将持续存在，谨望各位阅读此文的开发者能从中获得启发，获得自己的理解
+> 译者按：本系列文章分为 **你到底需不需要redux-反方观点** 和 **你到底需不需要redux-正方观点** 两部分，翻译这一系列文章的初衷是译者在去年的 **ngChina** 开发者活动中咨询了有关状态管理的问题，当时咨询的问题是 **项目中是否真的需要NGRX这样的状态管理工具**，虽然当时没有得到完全正面的回答，但是译者会后还是觉得形如 NGRX Redux 之类的状态管理工具/包 **对于项目是否真的需要**是难以一言以蔽之的，故而翻译系列文章来传递来自多方多角度的观点，关于状态管理的争论必然将持续存在，谨望各位阅读此文的开发者能从中获得启发，获得自己的理解
 
 > 译者：[尊重](https://github.com/sawyerbutton)，校对：[]()
 
@@ -141,3 +141,99 @@ class Counter extends Component {
 [Redux 库](https://redux.js.org/)仅仅是一组帮助器，用以将 reducers 挂载到单个全局存储对象上而已。你完全可以根据自己的喜好，或多用，或少用，Redux。
 
 只是记住，如果你因为是用 Redux 付出了一些东西，确保你也因此获得了相应的回报。
+
+## 你可能并不需要 Redux
+
+> 作者按：我从评论区中获取了超棒的评论，因此我在文章的最后添加了一些相关的链接。
+
+每天都要提醒你自己，听从自己的直觉。
+
+不要相信炒作。
+
+不要过度优化。
+
+不要因为某些包/库很流行就在你的项目中加入他们。
+
+你是否遇到过这样的状况：你的同事们都想要或正在使用 Redux，而你却仍然不知道其中缘由。也许你是一名还在熟悉 React 的高级工程师。亦或者你已经阅读过了 Redux，并在文档中留下了你的怨念与可能的粗鄙之语。
+
+我写这篇文章的原因是，我曾经是一个初级工程师。我仍然记得我学习 React 时的开心时光和学习 Redux 时遭受的痛苦。我现在还在指导初级工程师/编程初学者，高阶的 React 知识（Redux/Route）毫无疑问是造成 React 学习曲线陡峭的第一缘由。**我们应该怎么办**
+
+### 应用状态
+
+启动一个 create-react-app 项目并创建一个名为 `AppState` 的文件。它将用于它在构建应用程序时保留应用所有状态（数据）。
+
+<p align="center"> 
+    <img src="../assets/others-2/1.png">
+</p>
+
+让我们过一遍这个文件：
+
+* 构造函数设定了组件的属性，默认状态和绑定函数
+* 函数 `setAppState` 是对 `setState` 的封装，用于允许潜在的记录和类似的功能
+* 函数 `render` 则是一个简单的用于 传递状态 并向其 children 提供回调函数的 div 元素
+
+### 更新顶层渲染
+
+<p align="center"> 
+    <img src="../assets/others-2/2.png">
+</p>
+
+现在打开 index.js 文件将将 `App` 封进之前创建的组件 `AppState` 中。
+
+这是用于在应用程序的顶层维护状态并传递回调以进行更新一种基本模式。因为这就是 React 的模式，所以你可以现在就在任何一个版本的 React 中使用之。
+
+该模式最棒的地方在于：其在 AppState 的状态逻辑中建立了清晰简单的联系，保持组件的渲染和基本状态简单明了。
+
+**[代码地址](https://github.com/blairanderson/react-no-redux)**
+
+**[demo地址](https://www.blairanderson.co/react-no-redux/)**
+
+### 比较 Redux 和 组件状态，为什么要比较？
+
+无论是 Redux 还是组件状态，其目标都是创建一种模式以帮助你和你的工作伙伴知晓 在应用逐渐增长的情况下 去哪里增加状态。一些状态的例子比如：
+
+* Ajax 的响应数据（哪一个用户在登录?）
+* 页面是否正在加载？已经加载完成了吗?
+* 从该组件渲染完成已经经过了多少时间？
+
+创建一个模式去维护状态可以帮助你在应用中跨组件去共享数据。如果你事先没有考虑好创建一个模式，那么应用的每一个新组件都毫无疑问地会增加应用的复杂度。
+
+### Movin’ On Up
+
+对于共享状态的需求最好的解决方案就是”将状态存放在更高的地方“。React 的渲染过程是由顶部到底部的，因此状态也应当被放置在应用的顶端并传递给子组件。这样的状态管理模式允许你将状态于一处更新，而更新效果由别处展示。
+
+### 状态到底是什么
+
+状态是 React 组件中最关键的部分，其用于定义应用当前状况。
+
+你的厨房现在是脏乱还是整洁？它可能现在是脏乱的，但是如果你清理它，那么厨房的状态就会变成整洁。在 React 组件中，我们通过内建方法 `setState` 持续追踪应用的状态。
+
+更新状态：
+
+```javascript
+//with a function(best)
+this.setState(function(prevState, props) {   
+  return {dirty: false}; 
+});
+//or with an object(ok but buggy with big apps)
+setState({dirty: false})
+```
+
+之后你就能在应用中看到值：
+
+```javascript
+{this.state.dirty && <div>this kitchen is totally dirty</div>}
+```
+
+那么 Redux 会做什么呢？Redux 保持应用的状态并提供一种模式用于将状态插回到应用顶层的组件中。问题是 Redux 增加了一些不是真正必要的新概念，除非你的应用程序在开发过程中因为没有人遵循单一的模式而变得很大且真的很难处理，否则你并不一定需要它。
+
+我再次重申，[我没有反对 Redux](https://medium.com/@blairanderson/hi-mark-ill-add-your-link-to-the-end-of-the-article-8f0ab879b474)。我只是希望你不要过早地接触使用 Redux，因为在不必要的情况下使用 Redux 将会让你的同事们感到困惑和恼怒。
+
+希望你也去看看下面的文章：
+
+[全栈 React：Redux 以及 Redux为什么对你会有益处](https://www.fullstackreact.com/articles/redux-with-mark-erikson/)
+
+[React 异步样例（不含 Redux）](https://medium.com/@blairanderson/react-async-example-without-redux-ba7337d6545f)
+
+如果你还感兴趣的话，可以阅读下面这篇 [新的React 错误捕获解决方案](https://medium.com/@blairanderson/react-v16-new-error-handler-example-d62499117bfa)
+
