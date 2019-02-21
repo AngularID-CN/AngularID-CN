@@ -250,9 +250,10 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
 1 | [Angular How-to: Editable Config Files](https://blogs.msdn.microsoft.com/premier_developer/2018/03/01/angular-how-to-editable-config-files/?source=---------0---------------------) | - | sawyerbutton |  | 待校验 | [如何在 Angular 中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
-
+2 | [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367=---------0---------------------) | - | sawyerbutton |  | 待校验 | [你到底需不需要redux-多方观点版本](articles/others-2.[翻译]-你到底需不需要redux-反方观点.md)
 
 ## 宣传语模板
+
 https://zhuanlan.zhihu.com/p/{{id}}
 Angular In Depth系列的再一篇技术博客翻译发布了，这次的主题是 {{主题}}。
 
