@@ -4,7 +4,7 @@
 >
 > 作者：[Nicholas Jamieson](https://blog.angularindepth.com/@cartant)
 >
-> 译者：[vaanxy](https://github.com/vaanxy)；校对者：暂无
+> 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
 
 ![img](../assets/rxjs-19/1.png)
 

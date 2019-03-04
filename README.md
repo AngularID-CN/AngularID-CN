@@ -41,6 +41,7 @@
 33. [[翻译]-使用Angular CDK技术来创建一个消息推送服务](articles/angular-139.[翻译]-使用Angular_CDK技术来创建一个消息推送服务.md)
 34. [[翻译]-你到底需不需要redux-反方观点](articles/others-2.[翻译]-你到底需不需要redux-反方观点.md)
 35. [[翻译]-appendChild-会在父节点间移动-DOM-节点的原因](articles/angular-113.[翻译]-appendChild-会在父节点间移动-DOM-节点的原因.md)
+36. [[翻译]-RxJS-关闭的-Subjects](articles/rxjs-19.[翻译]-RxJS-关闭的-Subjects.md)
 
 ## Memeber 
 
