@@ -14,7 +14,7 @@
 
 #### Subscriptions
 
-如果你看过 `Observable.prototype.subscribe` 的签名，你会发现该函数会返回一个 `Subscription`。并且如果你使用过 observables，那么你会对调用 subscription 的 `unsubscribe` 感到熟悉。然而，一个 subscription 不仅仅只包含一个 `unsubscribe` 方法。
+如果你看过 `Observable.prototype.subscribe` 的签名，你会发现该函数会返回一个 `Subscription`。并且如果你使用过 observables，那么你会对调用 subscription 的 `unsubscribe` 方法感到熟悉。然而，一个 subscription 不仅仅只包含一个 `unsubscribe` 方法。
 
 特别的，`Subscription` 类实现了 `ISubscription` 接口：
 
@@ -96,9 +96,9 @@ ObjectUnsubscribedError: object unsubscribed
   at AsyncScheduler.flush
 ```
 
-为什么？实际上 `Subject` 中的 `unsubscribe` 方法并没有取消订阅任何东西。取而代之，它将 subject 标记成 `closed`  并且它将其内部的 subscribed observer 数组（`Subject` 扩展了 `Observable`）设置为 `null`。请务必记住这一点。
+为什么？实际上 `Subject` 中的 `unsubscribe` 方法并没有取消订阅任何东西，而是将 subject 标记成 `closed`  并且它将其内部的 subscribed observer 数组（`Subject` 扩展了 `Observable`）设置为 `null`。请务必记住这一点。
 
-Subject 会追踪所有订阅它的 observers，但是与 subscribers 不同，他们不跟踪 subjects 本身订阅的observables，因此 subjects 无法从他们的来源中取消订阅自己。
+Subject 会追踪所有订阅它的 observers，但是与 subscribers 不同，他们不跟踪 subjects 本身订阅的 observables，因此 subjects 无法从他们的来源中取消订阅自己。
 
 所以为什么会发生这个错误？在 subject 被标记成 `closed` 后，其 `next`，`error` 或者  `complete` 再被调用，那么将会抛出该错误。并且[该行为是故意这么设计的](https://medium.com/@benlesh/on-the-subject-of-subjects-in-rxjs-2b08b7198b93):
 
