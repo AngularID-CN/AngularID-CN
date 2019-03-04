@@ -14,7 +14,7 @@
 
 #### Subscriptions
 
-如果你看过 `Observable.prototype.subscribe` 的签名，你会发现该函数会返回一个 `Subscription`。并且如果你使用过 observables，那么你会对调用 subscription 的 `unsubscribe` 感到熟悉。然而，一个 subscription 不仅仅只包含一个 `unsubscribe` 方法。
+如果你看过 `Observable.prototype.subscribe` 的签名，你会发现该函数会返回一个 `Subscription`。并且如果你使用过 observables，那么你会对调用 subscription 的 `unsubscribe` 方法感到熟悉。然而，一个 subscription 不仅仅只包含一个 `unsubscribe` 方法。
 
 特别的，`Subscription` 类实现了 `ISubscription` 接口：
 
