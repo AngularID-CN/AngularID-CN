@@ -186,7 +186,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  
 30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  
 29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy | dreamdevil00 | 已发表 | [rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用](articles/rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用.md) 
-28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  
+28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - | dreamdevil00 |  | 翻译中 |  
 27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  
 26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
 25 | [RxJS: TSLint Rules for Version 6](https://blog.angularindepth.com/rxjs-tslint-rules-for-version-6-d10e2482292d?source=---------12---------------------) | - |  |  |  |  
