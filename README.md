@@ -47,4 +47,4 @@
 
 > P.S. 以下成员按照**加入时间先后顺序**排列
 
-[sunny](https://segmentfault.com/u/lx1036/articles) , [秋天](http://www.github.com/jkhhuse) , [baishusama](https://github.com/baishusama) , [Ice Panpan](http://www.github.com/TanYiBing) , [strange]() , [sawyerbutton](https://github.com/sawyerbutton) , [Zack Chapple](https://twitter.com/ZChapple) , [vaanxy](https://github.com/vaanxy) , [dreamdevil00](https://github.com/dreamdevil00)
+[sunny](https://github.com/lx1036) , [秋天](http://www.github.com/jkhhuse) , [baishusama](https://github.com/baishusama) , [Ice Panpan](http://www.github.com/TanYiBing) , [strange]() , [sawyerbutton](https://github.com/sawyerbutton) , [Zack Chapple](https://twitter.com/ZChapple) , [vaanxy](https://github.com/vaanxy) , [dreamdevil00](https://github.com/dreamdevil00)
