@@ -250,3 +250,109 @@ export function translateCacheFactory(
 直到目前，本文没有什么特别之处，我们仅仅是跟随着各种文档将 i18n 的相关逻辑封装在一个独立的模块中。而向项目中添加SSR则有许多有趣的部分，让我们继续向下。
 
 *** 上述代码位于本[仓库](https://github.com/DmitryEfimenko/ssr-with-i18n/tree/step-1-b)
+
+## 在应用中添加SSR
+
+[Angular CLI](https://juristr.com/blog/2019/08/thank-you-angular-cli-team/) 是非常强大的工具，尤其是 CLI 所提供的 Schenmatics 特性允许开发者通过简单的指令，向应用中添加新能力。在本例中，将使用如下指令向应用中添加 SSR 。
+
+```bash
+ng add @nguniversal/express-engine --clientProject ssr-with-i18n
+```
+
+运行上述指令将会更新一些项目文件并添加一些新文件。
+
+![1](../assets/angular-157/2.webp)
+
+此时，Package.json 文件中会新增一些可执行的新脚本命令，其中最重要的两个是 _build:ssr_ 和 _serve:ssr_ 。
+
+当我们执行上述的新脚本命令时，执行都会成功，但是当我们打开浏览器时加载页面时，将会产生一个错误。
+
+> TypeError: Cannot read property 'match' of undefined
+    at new I18nModule (C:\Source\Random\ssr-with-i18n\dist\server\main.js:113153:35)
+
+追根溯源一下，将会发现出错的代码是
+
+```typescript
+browserLang.match(/en|ru/)
+```
+
+_browserLang_ 变量为 _undefined_, 这意味着下述语句失效了
+
+```typescript
+const browserLang = translateCacheService.getCachedLanguage() || translate.getBrowserLang();
+```
+
+当我们在使用服务端渲染时获取浏览器特性的API，毫无疑问会报错（_getBrowserLang_ 函数显然不是一个能运行在服务端的函数）。现在先姑且将 _browserLang_ 这个参数赋固定的值，之后再来具体解决这个问题。
+
+```typescript
+const browserLang = 'en';
+```
+
+重启应用之后将不会在产生之前的错误。打开开发者工具，可以观察到 SSR 正常运作，只是我们的翻译功能没有实现。
+
+![3](../assets/angular-157/3.webp)
+
+为什么？可以观察到 _TranslateModule_ 模块中用于加载翻译所使用的工厂函数为 _translateLoaderFactory_
+。 这个函数使用了 _HttpClient_ 并且知晓如何从浏览器加载包含翻译的 JSON 文件。但是该工厂函数并不清楚如何在服务端环境中加载这些文件。
+
+针对此种情况，需要解决两个问题：
+
+1. 需要确保在客户端和服务端环境下正确地加载选中语言（而不是用固定赋值的方式）。
+2. 针对不同的环境，使用合适的机制去加载包含翻译的 JSON 文件。
+
+针对这两个问题，探寻解决方案
+
+## 评估已有的解决方案
+
+有许多方式可以确保解决问题，在 ngx-translate 的官方仓库中有一个和启用SSR 相关的 [issue #754](https://github.com/ngx-translate/core/issues/754)，提到了问题1和2的某些解决方案。
+
+### 方案1：通过 HttpInterceptor 进行弥补
+
+issue中最新提及的一个方案来自于 [Angular Universal: How to add multi language support?](https://itnext.io/angular-universal-how-to-add-multi-language-support-68d83f6dfc4d), 用于解决问题2，作者推荐使用 _HttpInterceptor_ 给请求打上补丁，确保在服务端环境下请求可以获取到 JSON 文件。
+
+这个方案的确可行，但是给请求打补丁的方式还是有点怪异。为什么在相对本地的情况下，还需要进行一次额外的请求以获取文件呢？使用文件系统可能是一个更简洁的方案。
+
+### 方案2: 直接读取 JSON 文件
+
+在上述 Issue 中也有人提及到，可以直接将文件导入到定义模块的文件中去即可，这样在我们可以确认环境的情况下，我们可以决定使用 _TranslateHttpLoader_ 还是自定义的内容（直接导入 JSON 文件）。这个方案提供了一个思路，如何检查代码运行于哪个环境之中：_if (isPlatformBrowser(platform))_, 我们也将在下文中使用这个思路。
+
+```typescript
+import { PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from '@angular/common';
+import * as translationEn from './assets/i18n/en.json';
+import * as translationEs from './assets/i18n/es.json';
+
+const TRANSLATIONS = {
+  en: translationEn,
+  es: translationEs,
+};
+
+export class JSONModuleLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    return of(TRANSLATIONS[lang]);
+  }
+}
+
+export function translateLoaderFactory(http: HttpClient, platform: any) {
+  if (isPlatformBrowser(platform)) {
+    return new TranslateHttpLoader(http);
+  } else {
+    return new JSONModuleLoader();
+  }
+}
+
+// module imports:
+TranslateModule.forRoot({
+  loader: {
+    provide: TranslateLoader,
+    useFactory: translateLoaderFactory,
+    deps: [HttpClient, PLATFORM_ID]
+  }
+})
+```
+
+虽然这的确是一个解决方案，但是极力不推荐使用这个方案，若以上述方式引入 JSON 文件，JSON 文件将会存在于构建出的浏览器包中。而使用 _HttpLoader_ 的目标就是按需加载语言文件以减少构建后的浏览器包大小。
+
+使用这种方案将会导致所有的语言文件打包在一起，并影响JS的运行性能。
+
+即使上述结局方案都从某种程度上解决了问题2，但是他们都存在其劣势。一个方案需要增加不必要的请求而另一个会影响应用的性能。最重要的是，都没人能解决问题1。
