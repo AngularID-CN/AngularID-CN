@@ -356,3 +356,69 @@ TranslateModule.forRoot({
 使用这种方案将会导致所有的语言文件打包在一起，并影响JS的运行性能。
 
 即使上述结局方案都从某种程度上解决了问题2，但是他们都存在其劣势。一个方案需要增加不必要的请求而另一个会影响应用的性能。最重要的是，都没人能解决问题1。
+
+### 更好的方案 - 前置条件
+
+下文中将会提供两个不同的方案以解决上述问题，而两个方案都需要下述前置条件：
+
+1. 需要使用名为 [cookie-parser](https://www.npmjs.com/package/cookie-parser) 的第三方依赖。
+2. 需要理解 Angular 中的 REQUEST 注入 token
+
+#### 前置1：为什么需要 cookie-parser
+
+ngx-translate-cache 库只负责当用户在客户端选择了一种语言后创建一个cookie，通常来说，cookie的名字是 lang（支持可配置）。在接下来的解决方案中，我们需要在服务端获取到 cookie 的值。一般状况下，我们可以从任意的 Express请求处理的对象 req.headers.cookie 中获取到相关的信息，cookie 的值形如：
+
+```typescript
+lang=en; other-cookie=other-value
+```
+
+这份属性包含了我们所需要的全部信息，只是我们需要将 lang 这个参数解析出来。而作为 express 中间件的 cookie-parser 刚好承担了这样的任务。
+
+安装需要的依赖
+
+```bash
+npm install cookie-parser
+npm install @types/cookie-parser -D
+```
+
+使用 cookie-parser 更新 server.ts 文件
+
+```typescript
+import * as cookieParser from 'cookie-parser';
+app.use(cookieParser());
+```
+
+事实上，cookie-parser 将会解析 Cookies 并将其存储在 req.cookies 的字典对象中。
+
+```JSON
+{
+  "lang": "en",
+  "other-cookie": "other-value"
+}
+```
+
+#### 前置2：Angular 的 REQUEST 注入 token
+
+现在我们已经拥有了从请求体（request object）中获取 cookie 的能力，我们需要在 Angular 应用中获取 req 对象了。而 REQUEST Injection token 就是是做这个的。
+
+```typescrpit
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { Request } from 'express';
+
+export class AnyModule {
+  constructor(@Inject(REQUEST) private req: Request) {
+    console.log(req.cookies.lang); // 'en' | 'ru'
+  }
+}
+```
+
+这里需要注意的是，REQUEST Injection token 是属于 @nguniversal/express-engine/tokens 模块的。
+同时，req 对象是 Request 类型，而 Request 是由 express 库提供的类型定义。
+
+如果我们玩合计将 Request 的类型定义从 express 库引入， typescript 将会假设 Request 来自于 lib.dom.d.ts 的 Fetch API，而来自 lib.dom.d.ts 类型定义文件中的 Request 是不包含 req.cookies的，并将配合 tslint 给出错误提示。
+
+## 现在已经临门一脚了
+
+请查看下面链接中的代码，因为它将会是系列的后续部分的基础。
+
+*** 上述代码位于本[仓库](https://github.com/DmitryEfimenko/ssr-with-i18n/tree/step-2)
