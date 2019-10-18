@@ -2,8 +2,13 @@
 
 每个开发者都应该对 Zone.js 有基本的了解
 
+[原文链接](https://medium.com/better-programming/zone-js-for-angular-devs-573d89bbb890)
+
 原作者：[Matthias Junker](https://medium.com/@matt_junker?source=post_page-----573d89bbb890----------------------)
-译者：sawyer
+
+译者:[尊重](https://www.zhihu.com/people/yiji-yiben-ming/posts)
+
+校对:[lx1036](https://lx1036.github.io)
 
 ![logo](../../angularindepth/assets/angular-158/1.jpeg)
 
