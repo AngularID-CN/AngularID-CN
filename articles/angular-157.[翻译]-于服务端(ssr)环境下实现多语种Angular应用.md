@@ -2,7 +2,7 @@
 
 > 原文链接：[Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/)
 > 作者：**[Dmitry Efimenko](https://indepth.dev/author/dmitry/)**
-> 译者：**[sawyer](https://github.com/sawyerbutton)**
+> 译者：**[尊重](https://github.com/sawyerbutton)**
 
 **本文描述了：SSR场景下多语种Angular应用的可复用落地方式**
 
@@ -422,3 +422,5 @@ export class AnyModule {
 请查看下面链接中的代码，因为它将会是系列的后续部分的基础。
 
 *** 上述代码位于本[仓库](https://github.com/DmitryEfimenko/ssr-with-i18n/tree/step-2)
+
+## To Be Continue

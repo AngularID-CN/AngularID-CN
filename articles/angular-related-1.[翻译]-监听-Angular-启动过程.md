@@ -2,6 +2,8 @@
 
 > 原文链接： **[Hooking into the Angular bootstrap process](https://blog.angularindepth.com/hooking-into-the-angular-bootstrap-process-36e82a01fba8)**
 
+> 译者：[尊重](https://www.zhihu.com/people/yiji-yiben-ming/columns)
+
 
 Angular 提供了一些机制来监听框架初始化过程，本文主要探索如何使用这些机制。
 
