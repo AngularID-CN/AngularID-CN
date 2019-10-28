@@ -1,5 +1,11 @@
 # 理解Zones
 
+[原文链接](https://blog.thoughtram.io/angular/2016/01/22/understanding-zones.html)
+
+译者:[尊重](https://www.zhihu.com/people/yiji-yiben-ming/posts)
+
+校对:[lx1036](https://lx1036.github.io)
+
 2014年的 NG-Conf 上，[Brain](http://twitter.com/briantford) 介绍了美妙的 [Zone](https://www.youtube.com/watch?v=3IqtmUscE_U)，以及 Zone 是如何改变我们处理异步代码的方式的。如果你还没有看过这个视频，强烈建议你去看一看，视频只有大约15分钟。时至今日， Zone 的 APIs 可能已经变化了，但是背后的语义概念和理念并不会变化。本文我们将会略微深入地了解 Zone 的工作方式。
 
 ## 需要解决的问题
