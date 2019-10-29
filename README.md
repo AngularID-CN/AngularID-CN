@@ -42,7 +42,13 @@
 34. [[翻译]-你到底需不需要redux-反方观点](articles/others-2.[翻译]-你到底需不需要redux-反方观点.md)
 35. [[翻译]-appendChild-会在父节点间移动-DOM-节点的原因](articles/angular-113.[翻译]-appendChild-会在父节点间移动-DOM-节点的原因.md)
 36. [[翻译]-RxJS-关闭的-Subjects](articles/rxjs-19.[翻译]-RxJS-关闭的-Subjects.md)
-
+37. [[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识](articles/rxjs-36.[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md)
+38. [[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏](articles/angular-150.[翻译]-2018年度Angular-In-Depth专栏最佳文章大赏.md)
+39. [[翻译]-在Angular中使用DOM：新认知以及优化技术](articles/angular-73.[翻译]-在Angular中使用DOM：新认知以及优化技术.md)
+40. [[翻译]-如何在-Angular-中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
+41. [[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
+42. [[翻译]-Angular CLI的新功能，不用先初始化工作区就来创建Angular Library](articles/angular-154.[翻译]-AngularCLI的新功能，不用先初始化工作区就来创建Angular-Library.md)
+43. [[翻译]Schematics的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md)
 ## Memeber 
 
 > P.S. 以下成员按照**加入时间先后顺序**排列
