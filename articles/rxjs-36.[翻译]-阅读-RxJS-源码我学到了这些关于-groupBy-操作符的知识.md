@@ -1,13 +1,12 @@
-> 原文：[Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------)
-> 作者：[Kiran Holla](https://blog.angularindepth.com/@kiranjholla?source=post_header_lockup)
-> 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
-
-
-
 # 阅读 RxJS 源码我学到了这些关于 `groupBy` 操作符的知识
 
 ### 构建基于一定准则的数据分组管道时所隐藏的陷阱
 
+> 原文：[Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------)
+> 
+> 作者：[Kiran Holla](https://blog.angularindepth.com/@kiranjholla?source=post_header_lockup)
+> 
+> 译者：[vaanxy](https://github.com/vaanxy)；校对者：[dreamdevil00](https://github.com/dreamdevil00)
 
 
 ![img](../assets/rxjs-36/1.png)

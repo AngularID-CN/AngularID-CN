@@ -133,7 +133,7 @@ Angular 框架从 DOM 中移除 `template` 元素，并在其位置插入注释�
 
 ## ViewRef
 
-该抽象类型表示一个 Angular 视图（View），在 Angular 世界里，视图（View）是构建应用中 UI 的基础单元。它可显示元素的最小分组单位，他们会被同时创建和销毁。Angular 鼓励开发者把 UI 作为一堆视图（View）的组合，而不仅仅是 html 标签组成的树。
+该抽象类型表示一个 Angular 视图（View），在 Angular 世界里，视图（View）是构建应用中 UI 的基础单元。它是可以同时创建与销毁的最小元素组合。Angular 鼓励开发者把 UI 作为一堆视图（View）的组合，而不仅仅是 html 标签组成的树。
 
 Angular 支持两种视图类型：
 
