@@ -16,7 +16,10 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-158 | [Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/) | - | sawyer |  | 翻译中 |  |
+161 | [Understanding Zones](https://blog.thoughtram.io/angular/2016/01/22/understanding-zones.html/) | - | sawyer |  | 翻译完成 | [理解Zones](./articles/angular-161.[翻译]-理解Zones.md) | 
+160 | [Zones in  Angular](https://blog.thoughtram.io/angular/2016/02/01/zones-in-angular-2.html/) | - | sawyer |  | 翻译完成 | [Angular 中的 Zone](./articles/angular-160.[翻译]-Angular中的Zone.md) | 
+159 | [10 Things Every Angular Developer Should Know About Zone.js](https://medium.com/better-programming/zone-js-for-angular-devs-573d89bbb890/) | - | sawyer |  | 翻译完成 | [每个Angular开发人员应了解的Zone.js之十件事](./articles/angular-159.[翻译]-每个Angular开发人员应了解的Zone.js之十件事) |
+158 | [Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/) | - | sawyer |  | 翻译完成 | [于服务端(ssr)环境下实现多语种Angular应用](./articles/angular-158.[翻译]-于服务端(ssr)环境下实现多语种Angular应用.md) |
 157 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 待校对 | [优雅地处理 API 调用状态](./articles/angular-156.[翻译]优雅地处理-API-调用状态.md)  |
 155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |

@@ -48,7 +48,11 @@
 40. [[翻译]-如何在-Angular-中使用可编辑的配置文件](articles/others-1.[翻译]-如何在-Angular-中使用可编辑的配置文件.md)
 41. [[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library](articles/angular-78.[翻译]-Angular-Library-系列之使用-Angular-CLI-创建-Library.md)
 42. [[翻译]-Angular CLI的新功能，不用先初始化工作区就来创建Angular Library](articles/angular-154.[翻译]-AngularCLI的新功能，不用先初始化工作区就来创建Angular-Library.md)
-43. [[翻译]Schematics的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md)
+43. [[翻译]于服务端(ssr)环境下实现多语种Angular应用](articles/angular-158.[翻译]-于服务端(ssr)环境下实现多语种Angular应用.md)
+44. [[翻译]每个Angular开发人员应了解的Zone.js之十件事](articles/angular-159.[翻译]-每个Angular开发人员应了解的Zone.js之十件事.md)
+45. [[翻译]Angular中的Zone](articles/angular-160.[翻译]-Angular中的Zone.md)
+46. [[翻译]理解Zones](articles/angular-161.[翻译]-理解Zones.md)
+47. [[翻译]优雅地处理-API-调用状态](articles/angular-156.[翻译]优雅地处理-API-调用状态.md)
 ## Memeber 
 
 > P.S. 以下成员按照**加入时间先后顺序**排列
