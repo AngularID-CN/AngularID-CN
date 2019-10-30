@@ -16,8 +16,9 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
-157 | [Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/) | - | sawyer |  | 翻译中 |  |
-156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
+158 | [Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/) | - | sawyer |  | 翻译中 |  |
+157 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
+156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 待校对 | [优雅地处理 API 调用状态](./articles/angular-156.[翻译]优雅地处理-API-调用状态.md)  |
 155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
 154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 | sawyerbutton | 校对中 |  |
 153 | [Creating Reusable Angular Components — How To Avoid the Painful Trap Most Go In](https://blog.angularindepth.com/creating-reusable-angular-components-how-to-avoid-the-painful-trap-most-go-in-d531761d6c7a?source=---------3---------------------) | - |  |  |  |  |
@@ -34,6 +35,8 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 142 | [A gentle introduction into change detection in Angular](https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10?source=---------0---------------------) | - | sawyerbutton | baishusama | 已发表 | [关于 Angular 变更检测不那么硬核的介绍](articles/angular-142.[翻译]-关于Angular变更检测不那么硬核的介绍.md)
 141 | [Keeping browser tabs in sync using localStorage, NgRx, and RxJS](https://blog.angularindepth.com/keeping-browser-tabs-in-sync-using-localstorage-ngrx-and-rxjs-87de3bca4e2c?source=---------2---------------------) | - |  |  |  |  |
 140 | [My Adventures Running Angular Ivy inside StackBlitz: Yes, It Is Possible!](https://blog.angularindepth.com/my-adventures-running-angular-ivy-inside-stackblitz-yes-it-is-possible-f4984fafd7d4?source=---------3---------------------) | - |  |  |  |  |
+139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - | 秋天 |  | 翻译中 |  |
+138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - | dreamdevil00 |  | 待校验 | [Angular 路由器系列三部曲之三: 懒加载， AOT 以及 预加载](articles/angular-138.[翻译]-Angular-路由器系列三部曲之三-懒加载-AOT以及预加载.md)  |
 139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - | 秋天 | 尊重 | 已发表 | [使用Angular CDK技术来创建一个消息推送服务](articles/angular-139.[翻译]-使用Angular_CDK技术来创建一个消息推送服务.md) |
 138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - | |  | |  |
@@ -54,13 +57,13 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 122 | [Improve Angular’s performance through memoization and TypeScript decorators](https://blog.angularindepth.com/how-to-improve-angular-performance-by-just-adding-just-8-characters-877bde708ddd?source=---------12---------------------) | - |  |  |  |  
 121 | [Test for accessibility and help millions of people](https://blog.angularindepth.com/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4?source=---------13---------------------) | - |  |  |  |  
 120 | [Angular Flex Layout: The Masquerade](https://blog.angularindepth.com/angular-flex-layout-the-masquerade-58fb58d0ab45?source=---------14---------------------) | - |  |  |  |  
-119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - | dreamdevil00 |  | 翻译中 |  
+119 | [Angular Router Series: Pillar 2 — Navigation](https://blog.angularindepth.com/angular-router-series-pillar-2-navigation-d050286bf4fa?source=---------15---------------------) | - | dreamdevil00 | sawyerbutton | 待发表 |  [Angular 路由器系列三部曲之二: 理解路由器的导航循环](articles/angular-119.[翻译]-Angular路由器系列三部曲之二-理解路由器的导航循环.md)
 118 | [Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290?source=---------16---------------------) | - |  |  |  |  
 117 | [Angular Flex-Layout: Flexbox and Grid Layout for Angular Component](https://blog.angularindepth.com/angular-flex-layout-flexbox-and-grid-layout-for-angular-component-6e7c24457b63?source=---------17---------------------) | - |  |  |  |  
 116 | [Policy-Based Client-Side Encryption in Angular](https://blog.angularindepth.com/policy-based-client-side-encryption-in-angular-b47068b26d50?source=---------18---------------------) | - |  |  |  |  
 115 | [Easier embedding of Angular UI in ag-Grid](https://blog.angularindepth.com/easier-embedding-of-angular-ui-in-ag-grid-52db93b73884?source=---------19---------------------) | - |  |  |  |  
 114 | [State Management in Angular using Akita](https://blog.angularindepth.com/state-management-in-angular-using-akita-82f117d282dd?source=---------20---------------------) | - |  |  |  |  
-113 | [Here is why appendChild moves a DOM node between parents](https://blog.angularindepth.com/here-is-why-appendchild-moves-a-dom-node-instead-of-cloning-it-f8ef7a31735c?source=---------21---------------------) | - | dreamdevil00  | sunny | 校验中 |  [appendChild 会在父节点间移动 DOM 节点的原因](articles/angular-113.[翻译]-appendChild-会在父节点间移动-DOM-节点的原因.md)
+113 | [Here is why appendChild moves a DOM node between parents](https://blog.angularindepth.com/here-is-why-appendchild-moves-a-dom-node-instead-of-cloning-it-f8ef7a31735c?source=---------21---------------------) | - | dreamdevil00  | sunny | 已发表 |  [appendChild 会在父节点间移动 DOM 节点的原因](articles/angular-113.[翻译]-appendChild-会在父节点间移动-DOM-节点的原因.md)
 112 | [Angular Router Series: Secondary Outlets Primer](https://blog.angularindepth.com/angular-router-series-secondary-outlets-primer-139206595e2?source=---------22---------------------) | - |  |  |  |  
 111 | [Angular Routing Series: Pillar 1 — Router States and Url Matching](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc?source=---------23---------------------) | - | sunny |  | 翻译中 |  
 110 | [Sharing data between modules is peanuts.](https://blog.angularindepth.com/sharing-data-between-modules-is-peanuts-3f40fcb38dd?source=---------24---------------------) | - |  |  |  |  
@@ -178,6 +181,7 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :- 
+38 | [RxJS: Don't Unsubscribe – Ben Lesh – Medium](https://medium.com/@benlesh/rxjs-dont-unsubscribe-6753ed4fda87) | - | Echo Xiao | - | 翻译中 | -
 37 | [The difference between NgDoCheck and AsyncPipe in OnPush components](https://blog.angularindepth.com/the-difference-between-ngdocheck-and-asyncpipe-in-onpush-components-4918ec4b29d4?source=---------0---------------------) | - | Ice Panpan | vaanxy | 已发表 | [[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md](articles/rxjs-37.[翻译]-OnPush-组件中-NgDoCheck-和-AsyncPipe-的区别.md) 
 36 | [Here is what I’ve learn about groupBy operator by reading RxJS sources](https://blog.angularindepth.com/those-hidden-gotchas-within-rxjs-7d5c57406041?source=---------1---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md](articles/rxjs-36.[翻译]-阅读-RxJS-源码我学到了这些关于-groupBy-操作符的知识.md) 
 35 | ~~[The Ultimate Answer To The Very Common Angular Question: subscribe() vs \| async Pipe](https://blog.angularindepth.com/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794?source=---------2---------------------)~~ | - | 与 angular-123 重复 |  |  |  
@@ -186,17 +190,17 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 32 | [RxJS: Avoiding Unbound Methods](https://blog.angularindepth.com/rxjs-avoiding-unbound-methods-fcf2648a805?source=---------5---------------------) | - |  |  |  |  
 31 | [RxJS: Testing with Fake Time](https://blog.angularindepth.com/rxjs-testing-with-fake-time-94114271eed2?source=---------6---------------------) | - |  |  |  |  
 30 | [RxJS: How to Observe an Object](https://blog.angularindepth.com/rxjs-how-to-observe-an-object-20c47cf51571?source=---------7---------------------) | - |  |  |  |  
-29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用](articles/rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用.md) 
-28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - |  |  |  |  
+29 | [Power of RxJS when using exponential backoff](https://blog.angularindepth.com/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0?source=---------8---------------------) | - | vaanxy | dreamdevil00 | 已发表 | [rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用](articles/rxjs-29.[翻译]-指数退避场景下-RxJS-的妙用.md) 
+28 | [RxJS: Avoiding takeUntil Leaks](https://blog.angularindepth.com/rxjs-avoiding-takeuntil-leaks-fb5182d047ef?source=---------9---------------------) | - | dreamdevil00 |  | 待校对 |  [[翻译]-避免-takeUntil-泄漏](articles/rxjs-28.[翻译]-避免-takeUntil-泄漏.md)
 27 | [RxJS: Improving the Static pipe Function](https://blog.angularindepth.com/rxjs-improving-the-static-pipe-function-81146fbb14b6?source=---------10---------------------) | - |  |  |  |  
 26 | [RxJS: Combining Operators](https://blog.angularindepth.com/rxjs-combining-operators-397bad0628d0?source=---------11---------------------) | - |  |  |  |  
 25 | [RxJS: TSLint Rules for Version 6](https://blog.angularindepth.com/rxjs-tslint-rules-for-version-6-d10e2482292d?source=---------12---------------------) | - |  |  |  |  
 24 | [RxJS: When to Use switchMap](https://blog.angularindepth.com/when-to-use-switchmap-dfe84ac5a1ff?source=---------13---------------------) | - |  |  |  |  
-23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - | vaanxy | sawyerbutton， dreamdevil00 | 待发表 | [[翻译]-RxJS-避免-switchMap-的相关-Bug](articles/rxjs-23.[翻译]-RxJS-避免-switchMap-的相关-Bug.md) 
+23 | [RxJS: Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524?source=---------14---------------------) | - | vaanxy | sawyerbutton， dreamdevil00 | 已发表 | [[翻译]-RxJS-避免-switchMap-的相关-Bug](articles/rxjs-23.[翻译]-RxJS-避免-switchMap-的相关-Bug.md) 
 22 | [RxJS: Understanding Expand](https://blog.angularindepth.com/rxjs-understanding-expand-a5f8b41a3602?source=---------15---------------------) | - |  |  |  |  
 21 | [Practical RxJS In The Wild 🦁— Requests with concatMap() vs mergeMap() vs forkJoin() 🥊](https://blog.angularindepth.com/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293?source=---------16---------------------) | - |  |  |  |  
 20 | [RxJS: Composing Subscriptions](https://blog.angularindepth.com/rxjs-composing-subscriptions-b53ab22f1fd5?source=---------17---------------------) | - |  |  |  |  
-19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - | Vaanxy |  | 翻译中 |  
+19 | [RxJS: Closed Subjects](https://blog.angularindepth.com/rxjs-closed-subjects-1b6f76c1b63c?source=---------18---------------------) | - | vaanxy | dreamdevil00 | 待发表 | [[翻译]-RxJS-关闭的-Subjects](articles/rxjs-19.[翻译]-RxJS-关闭的-Subjects.md) 
 18 | [RxJS: Understanding Subjects](https://blog.angularindepth.com/rxjs-understanding-subjects-5c585188c3e1?source=---------19---------------------) | - |  |  |  |  
 17 | [Insider’s guide into interceptors and HttpClient mechanics in Angular](https://blog.angularindepth.com/insiders-guide-into-interceptors-and-httpclient-mechanics-in-angular-103fbdb397bf?source=---------20---------------------) | - | Ice Panpan | dreamdevil00 | 已发表 |  [[翻译] Angular 中拦截器的真相和 HttpClient 内部机制](articles/rxjs-17.[翻译]-Angular-中拦截器的真相和-HttpClient-内部机制)
 16 | [Learn to combine RxJs sequences with super intuitive interactive diagrams](https://blog.angularindepth.com/learn-to-combine-rxjs-sequences-with-super-intuitive-interactive-diagrams-20fce8e6511?source=---------21---------------------) | - |  |  |  |  
@@ -245,6 +249,12 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 1 | [Metaprogramming, Higher-Order Components and Mixins with Angular Ivy](https://blog.nrwl.io/metaprogramming-higher-order-components-and-mixins-with-angular-ivy-75748fcbc310?source=---------0---------------------) | - | sawyerbutton | baishusama | 待发表 | [Angular Ivy 与元编程,高阶组件和混入](articles/nrwl-1.[翻译]-Angular-Ivy-与元编程,高阶组件和混入.md)
 
 ---
+## [Angular Blog](https://blog.angular.io/)
+
+No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
+ :-: | :- | :-: | :-: | :- | :-: | :- 
+1 | [Schematics — An Introduction](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2?source=---------16---------------------) | - | ssrivers |  | 待校验 | [Schematics的介绍](articles/angular-blog-1.[翻译]-Schematics的介绍.md) |
+2 | [Angular Schematics: Unit Testing](https://blog.angular.io/angular-schematics-unit-testing-3a0a9aaab186?source=---------2---------------------) | - |  |  |  |  |
 
 ## Others
 
