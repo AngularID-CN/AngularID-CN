@@ -16,6 +16,8 @@ P.S. 关于进度：
 
 No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
  :-: | :- | :-: | :-: | :- | :-: | :-
+158 | [Implementing multi-language Angular applications rendered on a server (SSR)](https://indepth.dev/implementing-multi-language-angular-applications-rendered-on-server/) | - | sawyer |  | 翻译中 |  |
+157 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 翻译中 |  |
 156 | [Handle API call state NICELY](https://blog.angularindepth.com/handle-api-call-state-nicely-445ab37cc9f8?source=---------0---------------------) | - | dreamdevil00 |  | 待校对 | [优雅地处理 API 调用状态](./articles/angular-156.[翻译]优雅地处理-API-调用状态.md)  |
 155 | [Deploying an Angular Site to Firebase with CircleCI](https://blog.angularindepth.com/deploying-an-angular-site-to-firebase-with-circleci-ed881cb6a2fa?source=---------1---------------------) | - |  |  |  |  |
 154 | [Angular Workspace: No Application for You!](https://blog.angularindepth.com/angular-workspace-no-application-for-you-4b451afcc2ba?source=---------2---------------------) | - | 秋天 | sawyerbutton | 校对中 |  |
@@ -37,12 +39,12 @@ No. | 原文 | 转载 | 译者 | 校对 | 进度 | 译文
 138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - | dreamdevil00 |  | 待校验 | [Angular 路由器系列三部曲之三: 懒加载， AOT 以及 预加载](articles/angular-138.[翻译]-Angular-路由器系列三部曲之三-懒加载-AOT以及预加载.md)  |
 139 | [Creating a toast service with Angular CDK](https://blog.angularindepth.com/creating-a-toast-service-with-angular-cdk-a0d35fd8cc12?source=---------4---------------------) | - | 秋天 | 尊重 | 已发表 | [使用Angular CDK技术来创建一个消息推送服务](articles/angular-139.[翻译]-使用Angular_CDK技术来创建一个消息推送服务.md) |
 138 | [Angular Router Series: Pillar 3 — Lazy Loading, AOT, and Preloading](https://blog.angularindepth.com/angular-router-series-pillar-3-lazy-loading-aot-and-preloading-a23a046c51f0?source=---------5---------------------) | - | dreamdevil00 |  | 翻译中 |  |
-137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - |  |  |  |  |
+137 | [Testing Angular Container Components](https://blog.angularindepth.com/testing-angular-container-components-2962f215eda6?source=---------6---------------------) | - | |  | |  |
 136 | [Angular Routing — Reusing common layout for pages from different modules](https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57?source=---------7---------------------) | - |  |  |  |  |
 135 | [How to Read the RxJS 6 Sources Part 1: Understanding of() and Subscriptions](https://blog.angularindepth.com/how-to-read-the-rxjs-6-sources-part-1-understanding-of-and-subscriptions-694e7d9def6b?source=---------8---------------------) | - |  |  |  |  |
 134 | [Dynamic Import of Locales in Angular](https://blog.angularindepth.com/dynamic-import-of-locales-in-angular-b994d3c07197?source=---------0---------------------) | - |  |  |  |  
 133 | [Mixing Storybook with Angular with a sprinkle of Applitools](https://blog.angularindepth.com/mixing-storybook-with-angular-with-a-sprinkle-of-applitools-8413bb950cf8?source=---------1---------------------) | - |  |  |  |  
-132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - | 秋天 |  | 翻译中 |  
+132 | [Container Components with Angular](https://blog.angularindepth.com/container-components-with-angular-11e4200f8df?source=---------2---------------------) | - | sawyerbutton |  | 待发表 |  
 131 | [Transclusion, Injection and Procrastination](https://blog.angularindepth.com/transclusion-injection-and-procrastination-8e1581c7a34e?source=---------3---------------------) | - |  |  |  |  
 130 | [Angular 7 in the House!](https://blog.angularindepth.com/angular-7-in-the-house-7bfaebb452f5?source=---------4---------------------) | - |  |  |  |  
 129 | [The History of Model-View-Presenter](https://blog.angularindepth.com/the-history-of-model-view-presenter-c0eef61ecbb1?source=---------5---------------------) | - |  |  |  |  
