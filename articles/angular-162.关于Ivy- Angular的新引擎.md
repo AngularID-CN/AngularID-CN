@@ -307,7 +307,7 @@ export class AppComponent {
 
 这样的操作会产生一个异常，很好理解，我们想要将引入的 component 加入到视图中，但是并没有告知其宿主元素是谁。
 
-![](../assts/../assets/angular-162/11.png)
+![](../assts/../assets/angular-162/10.png)
 
 在这我们有两个选择，第一个 - 在 DOM 增加一个 `FeatureComponent` 选择器，这样 Angular 将会在选择器所在的位置渲染组件：
 
@@ -373,7 +373,7 @@ export class FeatureComponent implements OnInit {
 
 现在，如果我们尝试去加载组件，将会触发一个异常，因为我们的组件缺少一个注入器（injector）：
 
-![](../assets/angular-162/14.png)
+![](../assets/angular-162/11.png)
 
 不在 module 中申明组件也有坏处，实际上我们没有在组件中使用 injector。尽管如此， `renderComponent`配置也允许我们声明一个Injector:
 
