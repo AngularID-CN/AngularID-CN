@@ -1,8 +1,16 @@
 # 深入理解 Angular Platforms 之 什么是 Angular Platforms
 
-Angular 框架的设计初衷是将其打造成一个独立平台。这样的设计思路确保了 Angular 应用可以跨环境正常执行 -  无论是在浏览器，服务端，web-worker 甚至是在移动设备上。
+[原文链接](https://medium.com/angular-in-depth/angular-platforms-in-depth-part-1-what-are-angular-platforms-9919d45f3054)
 
-在这一系列文章中，我将带你揭示 Angular 应用跨平台执行的奥秘。我们还会学习如果创建自定义 Angular 平台，该平台可以在系统命令终端中，使用 ASCII 图像工具渲染应用。
+原作者:[
+Nikita Poltoratsky
+](https://twitter.com/NikPoltoratsky)
+
+译者:[尊重](https://www.zhihu.com/people/yiji-yiben-ming/posts)
+
+Angular 框架的设计初衷是将其打造成一个独立平台。这样的设计思路确保了 Angular 应用可以正常地跨环境执行 -  无论是在浏览器，服务端，web-worker 甚至是在移动设备上。
+
+在这一系列文章中，我们将揭示 Angular 应用跨平台执行的奥秘。我们还会学习如果创建自定义 Angular 平台，该平台可以在系统命令终端中，使用 ASCII 图像工具渲染应用。
 
 系列文章：
 
@@ -16,11 +24,11 @@ Angular 框架的设计初衷是将其打造成一个独立平台。这样的设
 
 - Angular 是一个跨平台框架
 - 什么是 Angular platforms
-- Angular platforms 如何确保跨平台能力执行
+- Angular platforms 如何确保跨平台能力的执行
 
 ## Angular 是一个跨平台框架
 
-正如前文所述，Angular 在设计之初就将灵活性作为设计考量之一。这也是为什么 Angular 是一个跨平台框架，而不仅仅限制使用于浏览器。确保 Angular 执行的唯一条件是一个 JavaScript 引擎。让我们看看最受欢迎的 Angular 运行环境。
+正如前文所述，Angular 在设计之初就将灵活性作为设计考量之一，这也是为什么 Angular 是一个跨平台框架，而不仅仅限制使用于浏览器。确保 Angular 执行的唯一条件是 JavaScript 引擎。让我们看看最受欢迎的 Angular 运行环境。
 
 ### 浏览器
 
@@ -28,7 +36,7 @@ Angular 框架的设计初衷是将其打造成一个独立平台。这样的设
 
 ### 服务端
 
-Angular 应用可以被编译和执行于服务端；在这种场景下，我们可以将 Angular 应用编译为静态 HTML 文件，再发给客户端相关文件。
+Angular 应用可以被编译和执行于服务端；在这种场景下，我们可以将 Angular 应用编译为静态 HTML 文件，再将相关文件发送给客户端。
 
 通过这样的方式，我们可以提升应用的加载速度，同样确保应用可以被所有搜索引擎正确索引。
 
@@ -36,7 +44,7 @@ Angular 应用可以被编译和执行于服务端；在这种场景下，我们
 
 我们可以将 Angular 应用的部分移动到其他的线程中运行 - web worker 线程中。在这种情况下，我们将只留下应用的一小部分在主线程中，而这一部分将允许 web worker 涉及的部分通过 document API 进行沟通。
 
-通过这样的方式，我们可以塑造出一个顺滑的没有卡顿的 UI，因为应用中大部分的计算过程都会和 UI 渲染部分隔离开。
+通过这样的方式，我们可以塑造出一个顺滑的没有卡顿的 UI，因为应用中大部分的计算过程都会和 UI 渲染部分离开。
 
 > Web worker 环境从一开始就处于试验阶段，自动 Angular 8 开始就被摒弃了。
 
@@ -77,7 +85,7 @@ const platformRef: PlatformRef = platformBrowserDynamic();
 platformRef.bootstrapModule(AppModule);
 ```
 
-`platformBrowserDynamic` 是一个 **platform factory** - 是一个创建新 platforms 实例的函数。 `platformBrowserDynamic` 函数的返回结果是一个 `PlatformRef`。 `PlatformRef` 只是一个 Angular 服务，该服务知晓如何引导启动 Angular 应用。为了更好理解 `PlatformRef` 这个实例的创建过程，让我们仔细看看 `platformBrowserDynamic` 的实现：
+`platformBrowserDynamic` 是一个 **platform factory** - 一个创建新 platforms 实例的函数。 `platformBrowserDynamic` 函数的返回结果是一个 `PlatformRef`。 `PlatformRef` 只是一个 Angular 服务，该服务知晓如何引导启动 Angular 应用。为了更好理解 `PlatformRef` 这个实例的创建过程，让我们看看 `platformBrowserDynamic` 的实现：
 
 ```typescript
 export const platformBrowserDynamic = createPlatformFactory(
@@ -132,11 +140,11 @@ export function createPlatformFactory(
 }
 ```
 
-当我们调用 `createPlatformFactory` 函数时，函数返回一个 platform factory 函数。该函数为我们的应用接受额外的 `StaticProviders`。如果我们提供了父级 platform factory， `createPlatformFactory` 函数将会调用之并返回它的结果；否则，`createPlatformFactory` 函数将只会创建并返回一个新的 platform。 让我们一步步分析以更好理解 `platformBrowserDynamic` 函数的创建过程。
+当我们调用 `createPlatformFactory` 函数时，函数返回一个 platform factory 函数。该函数为我们的应用接受额外的 `StaticProviders`。如果我们提供了父级 platform factory， `createPlatformFactory` 函数将会调用之并返回它的结果；否则，`createPlatformFactory` 函数将只会创建并返回一个新的 platform。 让我们逐步分析以更好理解 `platformBrowserDynamic` 函数的创建过程。
 
 1. `platformBrowserDynamic` 通过 `createPlatformFactory` 函数调用所创建，而 `platformCoreDynamic` 作为其父级 platform。
 2. 我们调用 `platformBrowserDynamic` 函数创建了一个新的 platform
-3. 该 platform 检查 `parentPlatformFactory` 是否存在，若存在则添加上额外的 providers 并调用 `parentPlatformFactory` 函数，最终返回 `parentPlatformFactory` 的结果：
+3. 该 platform 检查 `parentPlatformFactory` 是否存在，若存在则添加额外的 providers 并调用 `parentPlatformFactory` 函数，最终返回 `parentPlatformFactory` 的结果：
 
 ```typescript
 if (parentPlatformFactory) { 
@@ -145,7 +153,7 @@ if (parentPlatformFactory) {
 ```
 
 4. 在这个阶段，我们注意到， `platformBrowserDynamic` 函数的返回结果 其实是 添加了通过 `platformBrowserDynamic` 提供的服务后构成的 `platformCoreDynamic` 函数 的返回结果。
-5. `platformCoreDynamic` 和 `platformBrowserDynamic` 很大程度上以同样的方式被创建，只有两点不同，`platformCoreDynamic` 拓展自 `platformCore 并提供了其自身的 providers。
+5. `platformCoreDynamic` 和 `platformBrowserDynamic` 很大程度上以同样的方式被创建，只有两点不同，`platformCoreDynamic` 拓展自 `platformCore` 并提供了其自身的 providers。
 
 ```typescript
 
@@ -156,7 +164,7 @@ export const platformCoreDynamic = createPlatformFactory(
 );
 ```
 
-到了此刻我们意识到，我们遇到的是同样的场景：因为父级 platform 的存在，我们只是返回添加了额外的 providers 的父级 platform factory 函数结果。
+到了此刻我们意识到，我们遇到的是同样的场景：因为父级 platform 的存在，我们只是返回 添加了额外的 providers 的父级 platform factory 的函数结果。
 
 ```typescript
 platformCore([ ...CORE_DYNAMIC_PROVIDERS, ...BROWSER_DYNAMIC_PROVIDERS ]);
@@ -193,7 +201,7 @@ const ref: PlatformRef = platformBrowserDynamic();
 
 ![](../assets/angular-165/3.png)
 
-我们注意到，`platformCore` 和其他 platforms 有所不同。 `platformCore` 有些特别。因为其负责对 platform 的创建过程提供 `PlatformRef`, 这也是为什么将其用作 Angular 生态系统 中每个 platform 的 root platform 的原因。
+我们注意到，`platformCore` 和其他 platforms 有所不同。 `platformCore` 有些特别，因为其负责对 platform 的创建过程提供 `PlatformRef`, 这也是为什么使用 `platformCore` 作为 Angular 生态系统中每个 platform 的 root platform 的原因。
 
 通过上述的论述，我们可以得出结论，每个 Angular platform 包含两个重要的部分：
 
@@ -247,7 +255,7 @@ export abstract class DomAdapter {
 export class BrowserDomAdapter extends DomAdapter { ... }
 ```
 
-`BrowserDomAdapter` 与浏览器的 DOM 直接交互，这也是为什么该实现无法用于浏览器环境之外。
+`BrowserDomAdapter` 与浏览器的 DOM 直接交互，这也是为什么该实现只能用于浏览器环境中。
 
 出于服务器端渲染的目的而使用 Server Platform 以确保在服务器端正常执行，而 Server Platform 也提供了对 `DomAdapter` 抽象类的另一种实现：
 
@@ -263,7 +271,7 @@ export class DominoAdapter extends DomAdapter { ... }
 
 ## 结论
 
-恭喜，你已经抵达这篇文章的末尾了。在本文中，我们讨论了什么是 Angular platforms，以及如何创建 Angular platforms ，并一步步地了解了 `platformBrowserDynamic` 的启动过程。最后，我们了解了 platforms 理念如何允许 Angular 成为一个跨平台框架。
+恭喜，你已经抵达这篇文章的末尾了。在本文中，我们讨论了什么是 Angular platforms，以及如何创建 Angular platforms ，并一步步地了解 `platformBrowserDynamic` 的启动过程。最后，我们了解了 platforms 理念如何确保 Angular 成为一个跨平台框架。
 
 如果你希望了解更多有关 Angular platforms 的知识，还请阅读后续的系列文章
 
@@ -271,4 +279,4 @@ export class DominoAdapter extends DomAdapter { ... }
 - [Angular Platforms in depth. Part 2. 应用启动流程](https://blog.angularindepth.com/angular-platforms-in-depth-part-2-application-bootstrap-process-8be461b4667e)
 - [Angular Platforms in depth. Part 3. 在命令行终端中渲染 Angular 应用](https://medium.com/angular-in-depth/angular-platforms-in-depth-part-3-rendering-angular-applications-in-terminal-117e4da9c0cc)
 
-别忘了，在 [twitter](https://twitter.com/NikPoltoratsky) 上 follow 我，以尽快获得有关 Angular 文章的最新通知。
+别忘了，在 [twitter](https://twitter.com/NikPoltoratsky) 上粉我一下，你会在第一时间获得有关 Angular 文章的通知。
