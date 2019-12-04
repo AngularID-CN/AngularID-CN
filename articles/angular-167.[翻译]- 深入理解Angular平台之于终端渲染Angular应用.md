@@ -465,7 +465,7 @@ node ./dist/main.js
 
 恭喜，你已经抵达这篇文章的末尾了。在本文中，我们学习了许多有关 Angular platforms 的知识，领略了自定义 platform 的创造流程，了解了关键的 Angular 服务和模块，并在最终，构建了一个自定义 platform，实现了使用 ASCII 图像工具将 Angular 应用渲染在系统终端中的壮举。
 
-你可以在这个[repo]( https://github.com/Tibing/platform-terminal)中找到所有关于终端 platrofm 的源代码。
+你可以在这个[repo]( https://github.com/Tibing/platform-terminal)中找到所有关于终端 platform 的源代码。
 
 如果你希望了解更多有关 Angular platforms 的知识，还请阅读后续的系列文章
 
