@@ -13,19 +13,19 @@
 
 ## 求助
 
-[如果你是 Angular In depth 的分析，请在 Twitter 上支持我们](https://blog.angularindepth.com/fan-of-angular-in-depth-and-my-writings-support-us-on-twitter-e3bfcbabb4b1)
+[如果你是 Angular In depth 的粉丝，请在 Twitter 上支持我们](https://blog.angularindepth.com/fan-of-angular-in-depth-and-my-writings-support-us-on-twitter-e3bfcbabb4b1)
 
-> 免责声明：本文只是我个人对 new Angular renderer 的学习历程记录。
+> 免责声明：本文只是我个人对 new Angular renderer 的学习笔记。
 
 ![Angular 视图引擎的发展之路](../assets/angular-171/1.png)
 
-虽然 Ivy 渲染引擎尚未完全公布，但是许多开发者希望了解 Ivy 的运作方式以及其将会给开发者带来哪些变化。
+虽然 Ivy 渲染引擎尚未完全公布，但是许多开发者希望了解 Ivy 的运作方式以及将会给开发者带来哪些变化。
 
-在本文中，Ivy 的变更检测机制将使用可视化的方式展示出来，除了展示那些激动人心的功能之外，还将从零开始指导你构建基于 Ivy 的 demo 应用。
+在本文中，我们将可视化的方式展示 Ivy 的变更检测机制 ，除了展示那些激动人心的功能之外，还将从零开始指导你构建基于 Ivy 的 demo 应用。
 
 ## 正文
 
-首先，介绍一下我们将会研究的应用
+首先，介绍一下作为 demo 的应用
 
 ![](../assets/angular-171/2.png)
 
@@ -68,13 +68,13 @@ export class SubChildComponent {
 }
 ```
 
-我创建了一个[在线demo](https://alexzuza.github.io/ivy-cd/)希望可以帮助你理解其背后的概念。
+我创建了一个[在线demo](https://alexzuza.github.io/ivy-cd/)，希望可以帮助你更好地理解本文内容。
 
 ![](../assets/angular-171/3.gif)
 
-demo 使用的是 Angular 6.0.1 的 aot 编译器。任何一个生命周期区块都可以点击，点击后将会重定向到生命周期的定义页面。
+demo 使用的是 Angular 6.0.1 的 aot 编译器。任何一个生命周期区块都可以点击，点击后将重定向到对应的定义页面。
 
-为了触发行变更检测的运行流程，只需要在 Sub-Child 组件的下方的输入框内键入文字即可。
+为了触发行变更检测的运行流程，你只需要在 Sub-Child 组件的下方的输入框内键入文字即可。
 
 ## 视图
 
@@ -110,7 +110,7 @@ View 是用来描述模板的，所以其包含了用于反射模板结构的数
 <sub-child *ngFor="let item of items" [item]="item"></sub-child>
 ```
 
-当前使用的 view engine 使用 视图定义(view definition) factory 创建节点，并将节点创出在视图定义的 **nodes** 数组中。
+当前的 view engine 使用 视图定义(view definition) factory 创建节点，并将节点存储在视图定义的 **nodes** 数组中。
 
 ![](../assets/angular-171/4.png)
 
@@ -118,9 +118,11 @@ Ivy 使用 `ngComponentDef.template` 函数创建 LNodes，并将其**存储**�
 
 ![](../assets/angular-171/5.png)
 
-除了 nodes 之外，新的 view 于 data 数组中包含绑定信息（如上图中的 `data[4]`, `data[5]`, `data[6]`）。视图中的所有绑定均以其在模板中出现的顺序排列存储，存储的位置起始于 `bindingStateIndex` 参数的值
+除了 nodes 之外，Ivy view 于 data 数组中包含绑定信息（如上图中的 `data[4]`, `data[5]`, `data[6]`）。视图中的所有绑定均以其在模板中出现的顺序存储，存储的位置起始于 `bindingStateIndex` 参数的值
 
-> 现在，如何才能获取 ChildComponent 的 view 实例呢？ **ComponentInstance.__ngHostLNode__ ** 包含了组件宿主节点的引用（或者使用注入 ChangeDetectorRef 的方式获取组件宿主节点）
+> 现在，如何才能获取 ChildComponent 的 view 实例呢？ 
+> 
+> **ComponentInstance.__ngHostLNode__** 包含了组件宿主节点的引用（或者使用注入 ChangeDetectorRef 的方式获取组件宿主节点）
 
 通过这样的方式，Angular 首先创建 root view 并将宿主元素定位在 `data` 数组中下标为0的位置
 
@@ -134,13 +136,13 @@ RootView
 
 ## 变更检测
 
-在继续向下之前，我们先了解一下，`ChangeDetectorRef` 是一个抽象类，包含两个抽象方法 `detectChanges` 和 `markForCheck`。
+补充一下基础知识：`ChangeDetectorRef` 是一个抽象类，包含两个抽象方法 `detectChanges` 和 `markForCheck`。
 
 ![](../assets/angular-171/6.png)
 
-当我们在组建的构造器中注入 `ChangeDetectorRef` 时，实际上获取从 `ChangeDetectorRef`类 extends 所得到的 **ViewRef** 实例。
+当我们在组件的构造器中注入 `ChangeDetectorRef` 时，实际上获取的是从 `ChangeDetectorRef` 类拓展所得到的 **ViewRef** 实例。
 
-现在，检查一下在 Ivy 中真正运行变更检测机制的内部方法。有些内部方法是公有 API（`markViewDirty` 和 `detectChanges`），但是其他方法是否是公有 API 并不确定。
+现在，检查一下在 Ivy 中真正运行变更检测机制的内部方法。有些内部方法是公有 API（`markViewDirty` 和 `detectChanges`），但是并不是全部方法都是共有API。
 
 ![](../assets/angular-171/7.png)
 
@@ -148,7 +150,7 @@ RootView
 
 以同步的方式在一个组件（及其子组件）上执行变更检测
 
-> 本方法以同步的方式在一个组件上触发变更检测。只有当你有足够的理由时，才应当直接调用 `detectChanges` 方法触发变更检测；一般更推荐的触发变更检测的方法是使用 `markDirty` 函数:等待未来的某个时间点通过调度器调用该函数。因为单个用户操作通常可能导致多个组件失效，与此同时，同时调用每个组件的变更检测实在是低效的做；。等到所有组件都被标记为 dirty 后，对所有组件执行单次变更检测更加高效。
+> 本方法以同步的方式在一个组件上触发变更检测。只有当你有足够的理由时，才应当直接调用 `detectChanges` 方法触发变更检测；一般更推荐的方法是使用 `markDirty` 函数:等待未来的某个时间点通过调度器调用该函数。因为单个用户操作通常可能导致多个组件失效，与此同时，同时调用每个组件的变更检测非常低效。等到所有组件都被标记为 dirty 后，对所有组件执行单次变更检测更加高效。
 
 ```Typescript
 export function detectChanges<T>(component: T): void {
@@ -164,7 +166,7 @@ export function detectChanges<T>(component: T): void {
 
 用于在整个应用层面触发变更检测
 
-> 与 `detectChanges` 方法相类似，只是 `tick` 方法在根组件上被调用。除此之外， `tick` 还会执行生命周期钩子并基于组建的 `ChangeDetectionStrategy` 和 `ditry` 状态有条件地检查组件。
+> 与 `detectChanges` 方法相类似，只是 `tick` 方法在根组件上被调用。除此之外， `tick` 还会执行生命周期钩子并基于组件的 `ChangeDetectionStrategy` 和 `ditry` 状态有条件地检查组件。
 
 ```typescript
 export function tick<T>(component: T): void {
@@ -179,7 +181,7 @@ export function tick<T>(component: T): void {
 
 ### scheduleTick
 
-用于安排整个应用的变更检测计划。不像是 `tick`，`scheduleTick` 会将多个调用合并在一个变更检测轮旬中执行。当 view 需要重新渲染时，`scheduleTick` 方法通常会通过调用 `markDirty` 方法间接调用之。
+用于调度整个应用的变更检测计划。不像是 `tick`，`scheduleTick` 会将多个调用合并在一个变更检测轮旬中执行。当 view 需要重新渲染时，通常会通过调用 `markDirty` 方法间接调用`scheduleTick` 方法。
 
 ```Typescript
 export function scheduleTick<T>(rootContext: RootContext) {
@@ -220,7 +222,7 @@ export function markViewDirty(view: LView): void {
 
 将组件标记为 `dirty`（需要变更检测）
 
-> 经某个组件标记为 `dirty` 意味着安排在未来的某个时间点对该组件进行变更检测。将已被标记为 `dirty` 的组件再次标记不会产生额外的效果，组件还是保持原有的 `dirty` 状态。每一个组件树只会被安排上一个变更检测。（使用不同的 `renderComponent` 所构造的组件拥有不同的处置器）。
+> 某个组件标记为 `dirty` 意味着调度器在未来的某个时间点将对该组件进行变更检测。对已被标记为 `dirty` 的组件再次标记不会产生额外的效果，组件还是保持原有的 `dirty` 状态。每一个组件树只会被调度一个变更检测。（使用不同的 `renderComponent` 所构造的组件拥有不同的处置器）。
 
 ```Typescript
 export function markDirty<T>(component: T) {
@@ -236,7 +238,7 @@ export function markDirty<T>(component: T) {
 
 --------------------------------------------------------------------
 
-当我调试新的变更检测机制时，我发现我忘记安装 zone.js 了。但是很奇怪的是，就算没有 zone.js 应用也在正常运行，没有 zone 的依赖，没有 `cdRef.detectChanges` 或 `tick`，但是为什么？
+当我调试新的变更检测机制时，我发现我忘记安装 zone.js 了。但是很奇怪的是，就算没有 zone.js 应用也能正常运行，没有 zone 的依赖，没有 `cdRef.detectChanges` 或 `tick`，但是为什么？
 
 基于当前设计，对于采用了 OnPush 的组件， Angular 只有在[这些](https://stackoverflow.com/questions/42312075/change-detection-issue-why-is-this-changing-when-its-the-same-object-referen/42312239#42312239)状况下才会触发变更检测。
 
@@ -244,9 +246,9 @@ export function markDirty<T>(component: T) {
 
 - [Input 的内容发生了变化](https://github.com/angular/angular/blob/43d62029f0e2da0150ba6f09fd8989ca6391a355/packages/core/src/render3/instructions.ts#L890)
 - [组件/子组件的绑定事件触发](https://github.com/angular/angular/blob/43d62029f0e2da0150ba6f09fd8989ca6391a355/packages/core/src/render3/instructions.ts#L1743)
-- 手动调用 `markForCheck`(现在 markViewDirty 方法负责这个功能)
+- 手动调用 `markForCheck`(Ivy 中是 markViewDirty)
 
-在 subChildComponent 中存在一个 output 绑定，其通过 (input) 事件触发。应用第二个规则，将会调用 `markForCheck` 方法。我们已经知道 `markForCheck` 方法将会触发变更检测，这样就可以解释为什么就算没有 zone.js 应用也可以正常运行了。
+`subChildComponent` 中存在一个 output 绑定，其通过 (input) 事件触发。应用第二个规则，将会调用 `markForCheck` 方法。我们已经知道 `markForCheck` 方法将会触发变更检测，这样就可以解释为什么就算没有 zone.js 应用也可以正常运行了。
 
 **那个很有名的bug会怎么样 - ExpressionChangedAfterItHasBeenCheckedError**
 
@@ -254,13 +256,14 @@ export function markDirty<T>(component: T) {
 
 ### 变更检测的错误
 
-因为 Angular 开发组花了大精力确保 Ivy 以正确的顺序处理所有生命周期钩子，这也就是意味着操作的顺序应当是相似的。
+因为 Angular 开发组花了大量精力确保 Ivy 以正确的顺序处理所有生命周期钩子，这也就是意味着操作的顺序应当是相似的。
 
 [Max NgWizard K](https://medium.com/u/bd29063a4857?source=post_page-----ab68d4231f2c----------------------) 的[博客](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd)更好的解释了这个问题
 
-> 虽然操作还是很相似的，但是操作的顺序似乎发生了一些改变。比如，Angular 首先检测子组件，然后检测嵌入的视图。因为此时没有任何编译器产生足以验证我设想的输出，所以上面这句话的内容并不确认。
+> 虽然操作很相似，但是操作的顺序似乎发生了一些改变。比如，Angular 首先检测子组件，然后检测嵌入的视图。
 
-让我们返回到我们的小 demo 中的 ChildComponent
+
+让我们返回到 demo 中的 ChildComponent
 
 ```HTML
 <h2>Child {{ prop1 }}</h2>
@@ -276,11 +279,11 @@ export function markDirty<T>(component: T) {
 
 上图可见，Angular 首先检查嵌入的视图，再检查常规的组件。在这个方面，和过去的视图引擎没有什么区别。
 
-在 demo 中还有一个可选的 `run angular complier` 按钮，我可以检测其他场景。
+在 demo 中还有一个可选的 `run angular complier` 按钮，可以检测其他场景。
 
 ## One-time string initialization
 
-假设有一个组件可以以一个字符串值的方式接受颜色。现在我们希望将该输入以字符串常量的形式传入：
+假设有一个组件以一个字符串值的方式接受颜色参数。现在我们希望将该输入以字符串常量的形式传入：
 
 ```HTML
 <comp color="#efefef"></comp>
@@ -290,7 +293,7 @@ export function markDirty<T>(component: T) {
 
 > Angular 设置了它，并遗忘了它
 
-其实这意味着，Angular 将不再会对这个绑定做任何额外的检查。但是在 Angular 5 中，在 `updateDirectives` 函数被调用的阶段中，每一次变更检测循环都会对其进行检查。
+其实这意味着，Angular 将不再会对这个绑定做任何额外的检查。但是在 Angular 5 中，在 `updateDirectives` 函数被调用的阶段内，每一次变更检测循环都会对其进行检查。
 
 ```Typescript
 unction updateDirectives(_ck,_v) {
@@ -327,7 +330,7 @@ AppComponent.ngComponentDef = i0.ɵdefineComponent({
 
 > 更新：[https://github.com/angular/angular/pull/24346](https://github.com/angular/angular/pull/24346)
 
-及时你不了解 Angular ViewContainer 的工作原理，当你打开浏览器开发者工具时，你肯定曾会看到下述的图片内容：
+即使你不了解 Angular ViewContainer 的工作原理，当你打开浏览器开发者工具时，你肯定曾会看到下述的图片内容：
 
 ![](../assets/angular-171/9.png)
 
@@ -337,9 +340,19 @@ AppComponent.ngComponentDef = i0.ɵdefineComponent({
 
 ![](../assets/angular-171/10.png)
 
-虽然我不是100%确定，但是我猜测当 Ivy 稳定后，上述截图的输出内容就是生成的模板结果了。
+虽然我不是100%确定，但是猜测当 Ivy 稳定后，上述截图的输出内容就是生成的模板结果了。
 
 因此下述代码中的 `query` 将会返回 `null`:
+
+```Typescript
+@Component({
+  ...,
+  template: '<ng-template #foo></ng-template>'
+})
+class SomeComponent {
+  @ViewChild('foo', {read: ElementRef}) query;
+}
+```
 
 > Angular 将不会再通过 指向容器中被注释的 DOM 节点的原生元素 阅读 ElementRef 了。
 
@@ -355,7 +368,7 @@ AppComponent.ngComponentDef = i0.ɵdefineComponent({
 
 ![](../assets/angular-171/11.png)
 
-假设页面上已经存在了 <inupt> 元素和 <button> 元素：
+假设页面上已经存在了 `<inupt>` 元素和 `<button>` 元素：
 
 ```html
 <input type="text" value="Alexey">
@@ -373,9 +386,9 @@ AppComponent.ngComponentDef = i0.ɵdefineComponent({
 </ul>
 ```
 
-为了渲染上述动态内容，我们需要 `elementOpen` `elementClose` 和 `text` “instructions”（我之所以以这种方式为其命名，因为 Angular 使用这些名字作为 Ivys，可以被当做是某种特殊的虚拟 CPU）
+为了渲染上述动态内容，我们需要 `elementOpen` `elementClose` 和 `text` 的“instructions”（我之所以这种方式为其命名，因为 Angular 使用这些名字作为 Ivys，可以被当做是某种特殊的虚拟 CPU）
 
-首先我们需要些一个特殊的帮助行数遍历节点树：
+首先我们需要些一个特殊的帮助函数遍历节点树：
 
 ```typescript
 // The current nodes being processed
@@ -463,7 +476,7 @@ function getData(node) {
 }
 ```
 
-现在，我们需要改变 `renderDOM` 方法，这样如果当前位置已经存在同样的节点时，不会再将新的元素添加到 DOM 中：
+现在，我们需要改变 `renderDOM` 方法，如果当前位置已经存在同样的节点时，不会再将新的元素添加到 DOM 中：
 
 ```Typescript
 const matches = function(matchNode, name/*, key */) {
@@ -566,6 +579,6 @@ patch(document.body, render, data);
 
 ![](../assets/angular-171/12.gif)
 
-所以 IDOM 的核心理念就是使用真实的 DOM 区与 new tree 进行比较。
+所以 IDOM 的核心理念就是使用真实的 DOM 与 new tree 进行比较。
 
 感谢阅读...
