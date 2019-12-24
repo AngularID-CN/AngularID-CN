@@ -2,7 +2,6 @@
 
 > * 原文连接：**[Angular Unit Testing performance](https://blog.angularindepth.com/angular-unit-testing-performance-34363b7345ba)**
 > * 译者：**[Sunny Liu](https://segmentfault.com/u/lx1036/articles)**；
-> * 校对者：
 
 
 > 注：这篇文章提出了两个优化测试性能很精巧的方式，尤其是每个测试套件内重用编译结果的优化方式。翻译出来供大家结合自己的项目，参考学习并使用。如果你的 Angular 项目还没有测试，且是个长期维护的项目，别偷懒了，赶紧加上代码测试吧。
