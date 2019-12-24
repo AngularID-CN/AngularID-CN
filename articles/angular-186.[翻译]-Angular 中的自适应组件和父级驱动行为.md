@@ -1,5 +1,11 @@
 # Angular 中的自适应组件和父级驱动行为
 
+[原文链接](https://medium.com/angular-in-depth/adaptive-components-parent-driven-behavior-in-angular-7969f63bbb08)
+
+[原作者:Levent Arman Özak](https://medium.com/@ozak?source=post_page-----7969f63bbb08----------------------)
+
+译者:[尊重](https://www.zhihu.com/people/yiji-yiben-ming/posts)
+
 如果想要完全掌握 Angular 中的 智能/非智能/有状态/无状态 组件, 单向数据流, 内容投影, 视图和 DOM 操作, 以及依赖注入等知识，毫无疑问需要花费大量的时间。但是这些知识及其更深层次的信息则是构建一个稳定高扩展却又保持灵活的组件架构所必须的内容。在你钻研学习的过程中，当你不断地将新学到的知识运用到实际应用中时，新的问题和需求会不断地向你涌来。是不是应该通过一个输入属性设置这个样式？父组件是否需要知道其子组件的工作方式？类似的疑问会不断地冲击你的知识体系。
 
 > 智能/非智能/状态/无状态的区别就在于组件自身是否产生数据逻辑
